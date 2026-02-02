@@ -214,11 +214,12 @@ if __name__ == "__main__":
     input_csv = f'../4.2.Clusters_Final_Latent.csv'
 
     # 输入 2: 隐性关系 Pickle
-    input_pkl = '../2_Implicit_Identification/Implicit_Relationships.pkl'
+    input_pkl = '../Implicit_Identification/Implicit_Relationships.pkl'
 
     # 输出
     output_csv = f'../5.3.Network_Flows_Validated_Reinforcement_v1.20.csv'
 
     calculate_reinforcement_fine_grained(input_csv, input_pkl, output_csv)
+
 
 
