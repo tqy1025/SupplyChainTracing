@@ -90,10 +90,11 @@ if __name__ == "__main__":
     # base_dir = '../../DTW_1_12'  # 注意：根据您的报错日志，这里似乎是 ../../DTW_1_12
 
     # 输入文件
-    input_csv = f'../5.1.Remaining_Unique_LLM_judge_False.csv'
+    input_csv = f'../4.2.Clusters_Final_Latent.csv'
 
     # 输出文件
-    output_csv = f'../6.1.Network_Flows_Validated_Cooccurrence_v1.20.csv'
+    output_csv = f'../5.1.Network_Flows_Validated_Cooccurrence_v1.20.csv'
 
 
     validate_multi_cluster_cooccurrence(input_csv, output_csv)
+
