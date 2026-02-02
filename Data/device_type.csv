@@ -1,0 +1,306 @@
+﻿Device_Name,Type
+360 Camera_selfdata,Camera
+Allure Speaker_Mon(uk),Speaker
+Amazon Echo Gen1_Mon(uk),Speaker
+Amazon Echo Gen1_Mon(us),Speaker
+Amazon Echo Gen1_Our,Speaker
+Amazon Echo Gen1_Our2,Speaker
+Amazon Echo Gen1_UNSW,Speaker
+Amazon Echo Gen1_YT,Speaker
+Amazon Echo Gen2_Mon(uk),Speaker
+Amazon Echo Gen2_Mon(us),Speaker
+Amazon Echo Gen2_Our,Speaker
+Amazon Echo Gen3_Mon(uk),Speaker
+Amazon Echo Gen3_Mon(us),Speaker
+Amazon Echo Look_Our,Camera
+Amazon Echo Look_Our2,Camera
+Amazon Echodot3a_IoTLS,Speaker
+Amazon Fire TV_IoTLS,TV
+Amazon Fire TV_Mon(uk),TV
+Amazon Fire TV_Mon(us),TV
+Amazon Fire TV_YT,TV
+Amazon T-echodot_IoTLS,Speaker
+Amcrest Camera_IoTLS,Camera
+Amcrest Camera_Mon(us),Camera
+Amcrest Camera_Our2,Camera
+Apple home Pod_IoTLS,Speaker
+Apple Home Pod_YT,Speaker
+Apple TV(4thGen)_YT,TV
+Apple TV_IoTLS,TV
+Apple TV_Mon(uk),TV
+Apple TV_Mon(us),TV
+Aqara Camera_selfdata,Camera
+Aqara Hub_selfdata,Hub
+Aqara Light_selfdata,Light
+Aqara Plug_selfdata,Plug
+Aria_IoT-Sentinel,Glasses
+August Doorbell Camera_YT,Doorbell
+Belkin Net Camera_YT,Camera
+Belkin WeMo Crock Pot_YT,Cooker
+Belkin WeMo Link_YT,Hub
+Belkin WeMo Motion Sensor_UNSW,Sensor
+Belkin WeMo Motion Sensor_YT,Sensor
+Belkin Wemo switch_UNSW,Switch
+Belkin WeMo Switch_YT,Switch
+Blink Camera_Mon(uk),Camera
+Blink Camera_Mon(us),Camera
+Blink Hub_IoTLS,Hub
+Blink Hub_Mon(uk),Hub
+Blink Hub_Mon(us),Hub
+Blipcare Blood Pressure Meter_UNSW,BloodPressure
+Bolian Hub_selfdata,Hub
+Bose Sound Touch10_YT,Speaker
+Bosiwo Camera Wired_Mon(uk),Camera
+Bull Plug_selfdata,Plug
+Canary_YT,Camera
+Caseta Wireless Hub_YT,Hub
+Chamberlain myq Garage Opener_YT,Dooropener
+Charger Camera_Mon(uk),Camera
+Chinese Web Camera_YT,Camera
+Cloud Camera_Mon(us),Camera
+Cubetoou Camera_selfdata,Camera
+Dalen Light_selfdata,Light
+deebot_cleaner,Cleaner
+D-Link Camera_IoT-Sentinel,Camera
+D-Link Day Camera_IoT-Sentinel,Camera
+D-Link DCS-5009L Camera_YT,Camera
+D-Link Door Sensor_IoT-Sentinel,Sensor
+D-Link Home Hub_IoT-Sentinel,Hub
+Dlink Mov_IoTLS,Camera
+Dlink Mov_Mon(us),Camera
+D-Link Sensor_IoT-Sentinel,Sensor
+D-Link Siren_IoT-Sentinel,Siren
+D-Link Switch_IoT-Sentinel,Switch
+D-Link Water Sensor_IoT-Sentinel,Sensor
+Drop Camera_UNSW,Camera
+duonisi_feeder,Feeder
+Edimax Cam1_IoT-Sentinel,Camera
+Edimax Cam2_IoT-Sentinel,Camera
+Edimax Plug1101W_IoT-Sentinel,Plug
+Edimax Plug2101W_IoT-Sentinel,Plug
+Ednet Cam1_IoT-Sentinel,Camera
+Ednet Cam2_IoT-Sentinel,Camera
+Flux Bulb_Mon(us),Bulb
+Fos Camera_Our2,Camera
+Google Home Mini_Mon(uk),Speaker
+Google Home Mini_Mon(us),Speaker
+Google Home Mini_YT,Speaker
+Google Home Mini3_IoTLS,Speaker
+Google Home_Mon(uk),Speaker
+Google Home_YT,Speaker
+Google On Hub_Our,Hub
+Google On Hub_YT,Hub
+Gosound Plug_selfdata,Plug
+Govee Sensor_selfdata,Sensor
+Greatwall Camera_selfdata,Camera
+Haier Camera_selfdata,Camera
+Harmon Kardon Invoke_YT,Speaker
+Home Matic Plug_IoT-Sentinel,Plug
+HoneyWell Thermostat_Mon(uk),Thermostat
+Hongyar Plug_selfdata,Plug
+Honorxiaotun Camera_selfdata,Camera
+HP Printer_UNSW,HP
+Huawei Camera_selfdata,Camera
+Huawei Sound_selfdata,Huawei
+huawei_tv,Huawei
+Huaweizhengtai Plug_selfdata,Huawei
+Hue Bridge_IoT-Sentinel,Hub
+Hue Switch_IoT-Sentinel,Switch
+iHome_UNSW,Speaker
+Insteon Camera_UNSW,Camera
+Insteon Hub_Mon(uk),Hub
+Insteon Hub_Mon(us),Hub
+Insteon Hub_YT,Hub
+Invoke_IoTLS,Speaker
+Invoke_Mon(us),Speaker
+JD Camera_selfdata,Camera
+Jingxun Hub_selfdata,Hub
+Konka Camera_selfdata,Camera
+Koogeek Lightbulb_YT,Bulb
+Lecheng Camera_selfdata,Camera
+Lecheng Doorbell_selfdata,Doorbell
+Lefun Camera Wired_Mon(us),Camera
+Lenovo Camera_selfdata,Camera
+LG Smart TV_IoTLS,TV
+LG Smart TV_Mon(us),TV
+LG Smart TV_Our,TV
+LG Smart TV_Our2,TV
+LiFX Bulb_UNSW,Bulb
+LIFX Bulb_YT,Bulb
+Lightify Hub_IoT-Sentinel,Hub
+Lightify Hub_Mon(uk),Hub
+Lightify Hub_Mon(us),Hub
+Logitech Harmony Hub_YT,Hub
+Logitech Logi Circle_YT,Camera
+Luohe Spycamera_Mon(us),Camera
+Magic Home Strip_Mon(uk),Strip
+Magic Home Strip_Mon(us),Strip
+MAX Gateway_IoT-Sentinel,Gateway
+Meian Hub_selfdata,Hub
+Meross Dooropener_IoTLS,Dooropener
+MiCasaVerde VeraLite_YT,Hub
+Microseven Camera_Mon(us),Camera
+Microwave_IoTLS,Microwave
+Microwave_Mon(us),Microwave
+Midea Light_selfdata,Light
+Midea Speaker_selfdata,Speaker
+midea_mirror,Mirror
+Mijia Humidifier_selfdata,Humidifier
+Mijia Lighthub_selfdata,Hub
+Mijia Plug_selfdata,Plug
+Mijia Plugtwo_selfdata,Plug
+Mingdou Hub_selfdata,Hub
+Mingdou Plug_selfdata,Plug
+Nest Camera_Our,Camera
+Nest Camera_Our2,Camera
+Nest Camera_YT,Camera
+Nest CamIQ_YT,Camera
+Nest Dropcam_UNSW,Camera
+Nest Guard_YT,SecureSystem
+Nest Protect smoke alarm_UNSW,Alarm
+Nest Protect smoke alarm_YT,Alarm
+Nest Tstat_IoTLS,Thermostat
+Nest Tstat_Mon(uk),Thermostat
+Nest Tstat_Mon(us),Thermostat
+Netatmo Weather Station_Mon(uk),Sensor
+Netatmo Weather Station_UNSW,Sensor
+Netatmo Welcome_UNSW,Camera
+NetgearArlo Camera_YT,Camera
+nVidia Shield_YT,TV
+Philips Bulb_Mon(us),Bulb
+Philips HUEHub_YT,Hub
+Philips Light_selfdata,Light
+Piper NV_YT,Camera
+Pisen Camera_selfdata,Camera
+PIX-STAR Photo-frame_UNSW,Photo-frame
+qianniao_camera,Camera
+Qiaoan Camera_selfdata,Camera
+Ring Doorbell_Mon(uk),Doorbell
+Ring Doorbell_Mon(us),Doorbell
+Ring Doorbell_Our,Doorbell
+Ring Doorbell_Our2,Doorbell
+Ring Doorbell_YT,Doorbell
+Roku TV_IoTLS,TV
+Roku TV_Mon(uk),TV
+Roku TV_Mon(us),TV
+Roku TV_YT,TV
+Roku4_YT,TV
+Roomba_YT,Roomba
+Samsung Dryer_IoTLS,Dryer
+Samsung Dryer_Mon(us),Dryer
+Samsung Fridge_IoTLS,Fridge
+Samsung Smart TV_Mon(uk),TV
+Samsung Smart TV_Mon(us),TV
+Samsung Smart TV_YT,TV
+Samsung SmartCam_UNSW,Camera
+Samsung SmartThings Hub 2_Our,Hub
+Samsung SmartThings Hub 2_Our2,Hub
+Samsung SmartThings Hub_YT,Hub
+Samsung Washer_Mon(us),Washer
+Sansung Fridge_Mon(us),Fridge
+Securifi Almond_YT,Routers
+Sengled Hub_Mon(uk),Hub
+Sengled Hub_Mon(us),Hub
+Shuixing Camera_selfdata,Camera
+Smart Things_UNSW,Unknown
+Smart WiFi Plug01_Our,Plug
+Smart WiFi Plug01_Our2,Plug
+Smart WiFi Plug02_Our,Plug
+Smarter Brewer_IoTLS,Brewer
+Smarter Brewer_Mon(us),Brewer
+Smarter Coffee_IoT-Sentinel,Coffee
+Smarter Coffee_Mon(uk),Coffee
+smarter ikettle_IoTLS,kettle
+smarter Ikettle_Mon(us),kettle
+Smartlife Bulb_IoTLS,Bulb
+Smartlife Remote_IoTLS,Unknown
+Smartmi Humidifier_selfdata,Humidifier
+Smartthings Hub_IoTLS,Hub
+Smartthings Hub_Mon(uk),Hub
+Smartthings Hub_Mon(us),Hub
+Sonoff Camera_selfdata,Camera
+Sonoff Hub_selfdata,Hub
+Sonos_YT,Speaker
+Sousvide_Mon(uk),Sousvide
+Sousvide_Mon(us),Sousvide
+Switchbot Hub_IoTLS,Hub
+Tenda Camera_selfdata,Camera
+Tianmao Speaker_selfdata,Speaker
+T-Philips Hub_IoTLS,Hub
+T-Philips Hub_Mon(uk),Hub
+T-Philips Hub_Mon(us),Hub
+TP-Link Blub_IoTLS,Bulb
+TP-Link Bulb_Mon(uk),Bulb
+TP-Link Bulb_Mon(us),Bulb
+TP-Link Camera_selfdata,Camera
+TP-Link Day Night Cloud camera_UNSW,Camera
+TP-Link Doorbell_selfdata,Doorbell
+TP-Link Plug_Mon(uk),Plug
+TP-Link Plug_Mon(us),Plug
+TP-Link PlugHS100_IoT-Sentinel,Plug
+TP-Link PlugHS110_IoT-Sentinel,Plug
+TP-Link Smart Plug_UNSW,Plug
+TP-Link SmartWiFi LED Bulb_YT,Bulb
+TP-Link WiFi Plug_IoTLS,Plug
+TP-Link WiFi Plug_YT,Plug
+Triby Speaker_UNSW,Speaker
+Tuya Hub_selfdata,Hub
+Tuya Plug_selfdata,Plug
+Tuya Sensor_selfdata,Sensor
+T-wemo Plug_Mon(uk),Plug
+T-wemo Plug_Mon(us),Plug
+Wansview Camera Wired_Mon(uk),Camera
+Wansview Camera Wired_Mon(us),Camera
+WeMo Insight Switch_IoT-Sentinel,Switch
+WeMo Insight Switch2_IoT-Sentinel,Switch
+WeMo Link_IoT-Sentinel,Hub
+Wemo Plug_IoTLS,Plug
+WeMo Switch_IoT-Sentinel,Switch
+WeMo Switch2_IoT-Sentinel,Switch
+Wink Hub_YT,Hub
+Wink Hub2_IoTLS,Hub
+Wink Hub2_Mon(us),Hub
+Wink Hub2_YT,Hub
+Withings Aura smart sleep sensor_UNSW,Sensor
+Withings Home_YT,Camera
+Withings Smart Baby Monitor_UNSW,BabyMonitor
+Withings Smart scale_UNSW,Scale
+Withings_IoT-Sentinel,Unknown
+Wiz Light_selfdata,Light
+Xiangrikui Plug_selfdata,Plug
+Xiaobai Camera_selfdata,Camera
+Xiaobai Doorbell_selfdata,Doorbell
+Xiaobai Y2camera_selfdata,Camera
+xiaobaismart_camera,Camera
+Xiaodu Clock_selfdata,Clock
+Xiaodu Plug_selfdata,Plug
+Xiaodu Sensor_selfdata,Sensor
+xiaodu_speaker,Speaker
+Xiaojingyu Clock_selfdata,Clock
+Xiaomao Camera_selfdata,Camera
+Xiaomi Camera_Mon(uk),Camera
+Xiaomi Camera_selfdata,Camera
+Xiaomi Camera3_selfdata,Camera
+Xiaomi Cleaner_Mon(uk),Cleaner
+Xiaomi Cleaner_Mon(us),Cleaner
+Xiaomi Hub_Mon(uk),Hub
+Xiaomi Hub_Mon(us),Hub
+Xiaomi Hub_selfdata,Hub
+Xiaomi Ricecooker_Mon(us),Cooker
+Xiaomi Sound_selfdata,Speaker
+Xiaomi Speaker_selfdata,Speaker
+Xiaomi Strip_Mon(us),Strip
+xiaomitv_speaker,Speaker
+Xiaopai Camera_selfdata,Camera
+Xiaotun Camera_selfdata,Camera
+Xiaovv Camera_selfdata,Camera
+Yi Camera_Mon(uk),Camera
+Yi Camera_Mon(us),Camera
+Yibang Camera_selfdata,Camera
+Yingshi Camera_selfdata,Camera
+Yingshi Hub_selfdata,Hub
+Yingshi Plug_selfdata,Plug
+Yingshi Sensor_selfdata,Sensor
+Zmodo Doorbell_IoTLS,Doorbell
+Zmodo Doorbell_Mon(us),Doorbell
+Zte Camera_selfdata,Camera
