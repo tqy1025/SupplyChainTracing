@@ -68,7 +68,7 @@ SIMILARITY_THRESHOLD = 0.90
 DISTANCE_THRESHOLD = 1.0 - SIMILARITY_THRESHOLD
 
 # --- 输入/输出路径 ---
-INPUT_PICKLE_PATH = "../ALL_Flow_Adjust_DTW/Aright1_traffic_features_total_signed.pkl"
+INPUT_PICKLE_PATH = "../ALL_Flow_Adjust_DTW/traffic_features_total_signed.pkl"
 OUTPUT_PICKLE_PATH = f"../DTW_1_12/1.In_Device_Complete_{DTW_SIGMA}_{SIMILARITY_THRESHOLD:.2f}_v1.12.pkl"
 CHECKPOINT_PATH = f"../DTW_1_12/checkpoint_complete_{DTW_SIGMA}_{SIMILARITY_THRESHOLD:.2f}_v1.12.pkl"
 DEVICE_TYPE_CSV_PATH = "../Input/device_type.csv"
@@ -469,4 +469,5 @@ def main():
 if __name__ == '__main__':
     multiprocessing.freeze_support()
     limit_memory(200)  # 内存限制 200GB
+
     main()
