@@ -71,7 +71,7 @@ DISTANCE_THRESHOLD = 1.0 - SIMILARITY_THRESHOLD
 INPUT_PICKLE_PATH = "../ALL_Flow_Adjust_DTW/traffic_features_total_signed.pkl"
 OUTPUT_PICKLE_PATH = f"../DTW_1_12/1.In_Device_Complete_{DTW_SIGMA}_{SIMILARITY_THRESHOLD:.2f}_v1.12.pkl"
 CHECKPOINT_PATH = f"../DTW_1_12/checkpoint_complete_{DTW_SIGMA}_{SIMILARITY_THRESHOLD:.2f}_v1.12.pkl"
-DEVICE_TYPE_CSV_PATH = "../Input/device_type.csv"
+DEVICE_TYPE_CSV_PATH = "../Data/device_type.csv"
 
 # --- 并行配置 ---
 NUM_WORKERS = 32  # 根据 CPU 核数调整
@@ -471,3 +471,4 @@ if __name__ == '__main__':
     limit_memory(200)  # 内存限制 200GB
 
     main()
+
