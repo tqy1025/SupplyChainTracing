@@ -11,10 +11,8 @@ import time
 
 # ================= 配置区域 =================
 ROOT_DIRS = [
-    # "F:/供应链项目/总数据集/Dataset",
-    # "F:/供应链项目/总数据集/New_data_JCH",
-    # "F:/供应链项目/总数据集/New_data_TQY",
-    "TEMP2"
+    "xxxxxxxx",
+    "xxxxxxxx",
 ]
 
 # 假设CSV文件的路径
@@ -108,125 +106,6 @@ def get_task_list(root_dirs, csv_path):
                 })
     return tasks
 
-
-# def process_single_pcap(task):
-#     """
-#     子进程工作函数：提取全包长度、带符号整数、支持流切分
-#     """
-#     pcap_path = task['full_path']
-#     device_ip = task['device_ip']
-#     device_name = task['device_name']
-#     filename = task['filename']
-#
-#     flow_results = []
-#
-#     try:
-#         packets = rdpcap(pcap_path)
-#     except Exception as e:
-#         return {'status': 'error', 'msg': str(e), 'path': pcap_path}
-#
-#     # 1. 构建 DNS 映射
-#     ip_to_domain = {}
-#     for pkt in packets:
-#         if pkt.haslayer(DNS) and pkt.haslayer(DNSRR):
-#             try:
-#                 ans_count = pkt[DNS].ancount
-#                 for i in range(ans_count):
-#                     ans = pkt[DNS].an[i]
-#                     if ans.type == 1:
-#                         rrname = ans.rrname.decode('utf-8').rstrip('.')
-#                         ip_to_domain[ans.rdata] = rrname
-#             except Exception:
-#                 pass
-#
-#     # 2. 初始流聚合 (按五元组)
-#     # raw_flows 存储: Key -> List of packets
-#     raw_flows = defaultdict(list)
-#
-#     for pkt in packets:
-#         if IP in pkt and (TCP in pkt or UDP in pkt):
-#             src = pkt[IP].src
-#             dst = pkt[IP].dst
-#
-#             if src != device_ip and dst != device_ip:
-#                 continue
-#
-#             remote_ip = dst if src == device_ip else src
-#             proto_name = "TCP" if TCP in pkt else "UDP"
-#             proto_obj = TCP if TCP in pkt else UDP
-#
-#             sport = pkt[proto_obj].sport
-#             dport = pkt[proto_obj].dport
-#
-#             # Key: (Protocol, Remote_IP, Sorted_Ports)
-#             # 保证双向流量属于同一个 Key
-#             ports_key = tuple(sorted((sport, dport)))
-#             flow_key = (proto_name, remote_ip, ports_key)
-#
-#             # --- 改进点 1: 提取全包长度 (Total Length) ---
-#             # len(pkt) 包含 Eth + IP + TCP/UDP + Payload
-#             total_len = len(pkt)
-#
-#             # 标记方向和符号
-#             sign = 1 if src == device_ip else -1
-#             signed_size = total_len * sign
-#
-#             raw_flows[flow_key].append({
-#                 'ts': float(pkt.time),
-#                 'signed_size': signed_size
-#             })
-#
-#     # 3. 流切分与结果生成
-#     # 我们需要将同一个 flow_key 下的数据包，根据时间间隔切分成多个 Sessions
-#
-#     # 临时存储：用于按 (Proto, Remote_IP) 汇总，方便生成 Flow_Index
-#     grouped_sessions = defaultdict(list)
-#
-#     for (proto, remote_ip, ports), pkts in raw_flows.items():
-#         # 按时间排序
-#         pkts.sort(key=lambda x: x['ts'])
-#
-#         # --- 改进点 2: 流切分逻辑 (Flow Splitting) ---
-#         current_session = []
-#         last_ts = -1.0
-#
-#         for p in pkts:
-#             curr_ts = p['ts']
-#
-#             # 检查是否超时：如果不是第一个包，且间隔超过阈值
-#             if last_ts != -1.0 and (curr_ts - last_ts) > FLOW_TIMEOUT:
-#                 # 保存当前流，开始新流
-#                 if len(current_session) >= MIN_FLOW_LENGTH:
-#                     grouped_sessions[(proto, remote_ip)].append(current_session)
-#                 current_session = []
-#
-#             current_session.append(p['signed_size'])
-#             last_ts = curr_ts
-#
-#         # 保存最后一个流
-#         if len(current_session) >= MIN_FLOW_LENGTH:
-#             grouped_sessions[(proto, remote_ip)].append(current_session)
-#
-#     # 4. 最终组装
-#     for (proto, remote_ip), sessions in grouped_sessions.items():
-#         domain = ip_to_domain.get(remote_ip, None)
-#
-#         # 对该 Remote IP 下的所有 Session 进行编号
-#         for idx, payload_sequence in enumerate(sessions):
-#             record = {
-#                 'Domain': domain,
-#                 'Remote_IP': remote_ip,
-#                 'Device': device_name,
-#                 'Protocol': proto,
-#                 'Device_IP': device_ip,
-#                 'Pcap_Filename': filename,
-#                 'Flow_Index': idx,  # 这里 idx 区分了不同的端口对以及不同的时间段
-#                 'Payload_Sequence': payload_sequence,  # Signed Total Packet Sizes
-#                 'Source_Full_Path': pcap_path
-#             }
-#             flow_results.append(record)
-#
-#     return {'status': 'success', 'data': flow_results, 'path': pcap_path}
 def process_single_pcap(task):
     """
     子进程执行单元：
@@ -421,4 +300,5 @@ def main():
 
 
 if __name__ == '__main__':
+
     main()
