@@ -14,8 +14,8 @@ OUTPUT_FILE = 'Traffic_Cleaned_v3_DomainA.pkl'
 
 
 # LLM 配置
-PROXY_API_KEY = os.getenv("PROXY_API_KEY") or "sk-8VI89370effc22b5f385033ad7d3930a4c227b7ac06kV9ug"  # 请替换为你的 Key
-BASE_URL = "https://api.gptsapi.net/v1"  # 或你的 Proxy 地址
+PROXY_API_KEY = os.getenv("PROXY_API_KEY") or "xxxxxxxxxxxxxxxxx"  # 请替换为你的 Key
+BASE_URL = "xxxxxxxxxxxxxxxxxxxxxxxxxx"  # 或你的 Proxy 地址
 
 client = OpenAI(
     api_key=PROXY_API_KEY,
@@ -370,3 +370,4 @@ def main():
 if __name__ == "__main__":
 
     main()
+
