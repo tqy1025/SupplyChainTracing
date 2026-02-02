@@ -9,7 +9,7 @@ from collections import defaultdict
 # ==============================================================================
 # 配置区域
 # ==============================================================================
-INPUT_PICKLE_PATH = "../../ALL_Flow_Adjust_DTW/Aright1_traffic_features_total_signed.pkl"
+INPUT_PICKLE_PATH = "../../traffic_features_total_signed.pkl"
 OUTPUT_PICKLE_PATH = "Preprocessed/Traffic_Cleaned_v2.pkl"
 DEVICE_TYPE_CSV_PATH = "../../Input/device_type.csv"
 
@@ -212,3 +212,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
