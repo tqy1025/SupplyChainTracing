@@ -92,12 +92,13 @@ if __name__ == "__main__":
     # base_dir = '../DTW_1_12'
 
     # 输入 1: 之前生成的带有厂商信息的宽表
-    input_csv = f'../../DTW_1_12/4.2.Extended_Network_Flows_vendor_type_raw_v1.12.csv'
+    input_csv = f'../../DTW_1_12/2.Extended_Network_Flows_vendor_type_raw_v1.12.csv'
 
     # 输入 2: 之前生成的隐性关系字典
     input_pkl = '../2_Implicit_Identification/Implicit_Relationships.pkl'  # 假设在当前目录，如果在 base_dir 请修改
 
     # 输出: 过滤后的中间文件，供下一步使用
-    output_csv = f'./A1.Filtered_Implicit_MultiVendor_Flows_v1.12.csv'
+    output_csv = f'./3.Filtered_Implicit_MultiVendor_Flows_v1.12.csv'
+
 
     filter_implicit_and_multivendor(input_csv, input_pkl, output_csv)
