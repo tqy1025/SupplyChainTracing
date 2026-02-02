@@ -119,9 +119,10 @@ if __name__ == "__main__":
     # base_dir = '../DTW_1_12'
 
     # 输入: 上一步生成的 Filtered 文件
-    input_csv = f'../addition_pro/5.1.Remaining_Unique_LLM_judge_False.csv'
+    input_csv = f'../4.2.Clusters_Final_Latent.csv'
 
     # 输出: 包含复合模式验证结果的文件
-    output_csv = f'../addition_pro/5.2.Network_Flows_Validated_Composite_v1.20.csv'
+    output_csv = f'../5.2.Network_Flows_Validated_Composite_v1.20.csv'
 
     validate_composite_pattern(input_file=input_csv, output_file=output_csv)
+
