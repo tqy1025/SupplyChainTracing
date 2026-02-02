@@ -17,8 +17,8 @@ OUTPUT_REMAINING_CSV = '4.2.Clusters_Final_Latent.csv'
 
 # --- LLM API Configuration ---
 # Uses environment variable PROXY_API_KEY, with a fallback for local testing
-PROXY_API_KEY = os.getenv("PROXY_API_KEY", "sk-8VI89370effc22b5f385033ad7d3930a4c227b7ac06kV9ug")
-BASE_URL = "https://api.gptsapi.net/v1"
+PROXY_API_KEY = os.getenv("PROXY_API_KEY", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+BASE_URL = "xxxxxxxxxxxxxxxxxxxxx"
 LLM_MODEL = "gemini-3-pro-preview"  # Using a standard Gemini model name
 
 # --- Caching ---
@@ -422,4 +422,5 @@ if __name__ == '__main__':
 #
 # if __name__ == '__main__':
 #     main()
+
 
