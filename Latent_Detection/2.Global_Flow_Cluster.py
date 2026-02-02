@@ -30,7 +30,7 @@ except ImportError:
 # ==============================================================================
 # --- 路径配置 ---
 BASE_DIR = "../DTW_1_12"
-INPUT_DIR = "../Input"  # 外部输入文件目录
+INPUT_DIR = "../Data"  # 外部输入文件目录
 
 DTW_SIGMA = 35.0
 SIMILARITY_THRESHOLD = 0.90
@@ -448,3 +448,4 @@ def ensure_mock_external_files():
 
 if __name__ == '__main__':
     main()
+
