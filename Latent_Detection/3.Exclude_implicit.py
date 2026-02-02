@@ -12,7 +12,7 @@ TRAFFIC_PKL = '../1_Data_Preprocessing/Traffic_Cleaned_v3_Final.pkl'
 
 # 3. 输出文件
 OUTPUT_CONSISTENT = '3.1.Clusters_Consistent_Implicit.csv'  # 证明有一致性的
-OUTPUT_INCONSISTENT = '3.1.Clusters_Inconsistent_NoImplicit.csv'  # 没有任何一致性的
+OUTPUT_INCONSISTENT = '3.2.Clusters_Inconsistent_NoImplicit.csv'  # 没有任何一致性的
 
 
 # ================= 主流程 =================
@@ -195,3 +195,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
