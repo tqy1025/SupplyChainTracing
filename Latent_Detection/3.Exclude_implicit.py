@@ -1,198 +1,369 @@
-import pandas as pd
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 import os
-import numpy as np
+import re
+import pandas as pd
 
-# ================= 配置部分 =================
-# 1. 待分析的聚类文件 (输入)
-CSV_FILE = '../../DTW_1_12/2.Extended_Network_Flows_vendor_type_big_than_1_diff_vendor_v1.12.csv'
+# ==============================================================================
+# 0) Config
+# ==============================================================================
+DTW_SIGMA = 35.0
+SIMILARITY_THRESHOLD = 0.90
+MAX_SEQ_LEN = 100
 
-# 2. 流量详情文件 (提供 Service 和 Infrastructure 的映射依据)
-# 必须包含列: 'Remote_IP', 'Domain_A' (Service), 'Domain_PTR' (Infrastructure)
-TRAFFIC_PKL = '../1_Data_Preprocessing/Traffic_Cleaned_v3_Final.pkl'
+INPUT_CSV = f"./2.Global_Component_from_v3Final_vendor_type_{DTW_SIGMA}_{SIMILARITY_THRESHOLD:.2f}_cap{MAX_SEQ_LEN}_nopad.csv"
 
-# 3. 输出文件
-OUTPUT_CONSISTENT = '3.1.Clusters_Consistent_Implicit.csv'  # 证明有一致性的
-OUTPUT_INCONSISTENT = '3.2.Clusters_Inconsistent_NoImplicit.csv'  # 没有任何一致性的
+OUTPUT_COMPONENT_SUMMARY = f"./3.0.Component_Summary_Strict_cap{MAX_SEQ_LEN}_nopad.csv"
+OUTPUT_CONSISTENT = f"./3.1.Flows_Consistent_Strict_cap{MAX_SEQ_LEN}_nopad.csv"
+OUTPUT_INCONSISTENT = f"./3.2.Flows_Inconsistent_Strict_cap{MAX_SEQ_LEN}_nopad.csv"
+
+# generic endpoint filtering switch
+ENABLE_GENERIC_FILTER = True
+
+# Your real header bindings
+COL_COMPONENT = "Component_ID"
+COL_DEVICE_COUNT = "Device_Count"
+COL_DEVICE = "Device"
+COL_VENDOR = "device_vendor"
+COL_REMOTE_IP = "Remote_IP"
+COL_SERVICE = "Domain_A"      # Service layer
+COL_INFRA = "Domain_PTR"      # Infrastructure layer
+
+# ==============================================================================
+# 1) Generic filtering rules (evidence-only)
+# ==============================================================================
+
+HARD_GENERIC_PATTERNS = [
+    # NTP / time
+    r"^pool\.ntp\.org$",
+    r".*\.pool\.ntp\.org$",
+    r"^time\d*\.google\.com$",
+    r"^time(-[a-z0-9-]+)?\.g\.aaplimg\.com$",
+    r"^time\.microsoft\.akadns\.net$",
+    r"^time-a-b\.nist\.gov$",
+    r"^ntp\d*\.glb\.nist\.gov$",
+    r"^utcnist2\.colorado\.edu$",
+    r"^ntp-.*\.amazon\.com$",
+
+    # Captive / connectivity check
+    r"^connectivitycheck\.gstatic\.com$",
+    r"^clients3\.google\.com$",
+    r"^clients\.l\.google\.com$",
+    r"^captive\.apple\.com$",
+    r"^msftconnecttest\.com$",
+    r"^www\.msftconnecttest\.com$",
+    r"^msftncsi\.com$",
+    r"^ipv4\.connman\.net$",
+
+    # Google talk / messaging frontends
+    r"^mtalk\.google\.com$",
+    r"^mobile-gtalk\.l\.google\.com$",
+
+    # OCSP/CRL (optional; comment out if you want to keep)
+    r"^ocsp\..*$",
+    r"^crl\..*$",
+]
+
+INFRA_ROOT_SUFFIXES = [
+    # AWS/Amazon infra
+    "amazonaws.com",
+    "amazonaws.com.cn",
+    "cloudfront.net",
+
+    # Akamai
+    "akamai.net",
+    "akamaihd.net",
+    "akamaiedge.net",
+    "akamaitechnologies.com",
+    "edgesuite.net",
+    "edgekey.net",
+
+    # Azure/Microsoft
+    "cloudapp.net",
+    "windows.net",
+    "azureedge.net",
+    "azurefd.net",
+    "trafficmanager.net",
+    "azurewebsites.net",
+
+    # Google infra-ish
+    "googleusercontent.com",
+    "1e100.net",
+
+    # Huawei reverse-ish
+    "hwclouds-dns.com",
+
+    # LLNW
+    "llnwd.net",
+
+    # Fastly
+    "fastly.net",
+]
+
+# patterns that are *specific enough* (so not treated as generic even if under infra roots)
+ALLOW_SPECIFIC_PATTERNS = [
+    # --- AWS ---
+    r"^[a-z0-9][a-z0-9\.\-]{1,61}[a-z0-9]\.s3([.-][a-z0-9\-]+)?\.amazonaws\.com(\.cn)?$",
+    r"^[a-z0-9]{8,}\.execute-api\.[a-z0-9\-]+\.amazonaws\.com$",
+    r"^.+\.[a-z0-9\-]+\.elb\.amazonaws\.com$",
+    r"^.+\.elb\.amazonaws\.com$",
+    r"^.+\.aws-prd\.net$",
+
+    # --- Aliyun ---
+    r"^[a-z0-9][a-z0-9\-\.]{1,61}[a-z0-9]\.oss-[a-z0-9\-]+\.aliyuncs\.com$",
+    r"^[a-z0-9\-\.]+\.[a-z0-9\-]+\.log\.aliyuncs\.com$",
+
+    # --- Azure ---
+    r"^[a-z0-9]{3,24}\.(blob|file|queue|table)\.core\.windows\.net$",
+    r"^[a-z0-9\-]{8,}\.cloudapp\.net$",
+
+    # --- Netflix business naming ---
+    r"^.+\.prodaa\.netflix\.com$",
+    r"^.+\.nflxso\.net$",
+
+    # --- Akamai structured edge hostnames ---
+    r"^e\d+\.[a-z0-9\-]+\.(akamaiedge\.net)$",
+]
+
+_RE_HARD = [re.compile(p, re.IGNORECASE) for p in HARD_GENERIC_PATTERNS]
+_RE_ALLOW = [re.compile(p, re.IGNORECASE) for p in ALLOW_SPECIFIC_PATTERNS]
 
 
-# ================= 主流程 =================
+def normalize_host(x) -> str:
+    if x is None:
+        return ""
+    s = str(x).strip().lower()
+    if s in ("none", "nan", "null", ""):
+        return ""
+    if s.endswith("."):
+        s = s[:-1]
+    return s
+
+
+def pick_first_nonempty_pipe_value(x) -> str:
+    s = normalize_host(x)
+    if not s:
+        return ""
+    if "|" not in s:
+        return s
+    parts = [p.strip() for p in s.split("|") if p.strip()]
+    return parts[0] if parts else ""
+
+
+def is_allow_specific(host: str) -> bool:
+    for r in _RE_ALLOW:
+        if r.match(host):
+            return True
+    return False
+
+
+def is_hard_generic(host: str) -> bool:
+    for r in _RE_HARD:
+        if r.match(host):
+            return True
+    return False
+
+
+def is_infra_root(host: str) -> bool:
+    for suf in INFRA_ROOT_SUFFIXES:
+        if host.endswith(suf):
+            return True
+    return False
+
+
+def is_generic_public_service(host: str) -> bool:
+    h = normalize_host(host)
+    if not h:
+        return False
+    # allow-specific overrides generic judgement
+    if is_allow_specific(h):
+        return False
+    if is_hard_generic(h):
+        return True
+    if is_infra_root(h):
+        return True
+    return False
+
+
+# ==============================================================================
+# 2) Strict consistency logic
+# ==============================================================================
+
+def strict_consistency_check_component(group_df: pd.DataFrame,
+                                      ip_col: str,
+                                      svc_col_evi: str,
+                                      infra_col_evi: str):
+    """
+    Strict:
+      - IP: all non-empty and exactly one unique
+      - Service: all non-empty and exactly one unique
+      - Infra: all non-empty and exactly one unique
+    """
+    res = {
+        "Is_Strict_Implicit": False,
+        "Consistent_Layers": [],
+        "Cluster_Val_IP": None,
+        "Cluster_Val_Service": None,
+        "Cluster_Val_Infra": None,
+    }
+
+    # IP
+    ips = group_df[ip_col].astype(str).str.strip().replace({"nan": "", "None": ""})
+    if (ips != "").all():
+        uniq = ips.unique().tolist()
+        if len(uniq) == 1:
+            res["Cluster_Val_IP"] = uniq[0]
+            res["Consistent_Layers"].append("IP")
+            res["Is_Strict_Implicit"] = True
+
+    # Service
+    svcs = group_df[svc_col_evi].astype(str).str.strip().replace({"nan": "", "None": ""})
+    if (svcs != "").all():
+        uniq = svcs.unique().tolist()
+        if len(uniq) == 1:
+            res["Cluster_Val_Service"] = uniq[0]
+            res["Consistent_Layers"].append("Service")
+            res["Is_Strict_Implicit"] = True
+
+    # Infra
+    infs = group_df[infra_col_evi].astype(str).str.strip().replace({"nan": "", "None": ""})
+    if (infs != "").all():
+        uniq = infs.unique().tolist()
+        if len(uniq) == 1:
+            res["Cluster_Val_Infra"] = uniq[0]
+            res["Consistent_Layers"].append("Infrastructure")
+            res["Is_Strict_Implicit"] = True
+
+    res["Consistent_Layers"] = "|".join(res["Consistent_Layers"])
+    return res
+
+
+# ==============================================================================
+# 3) Main pipeline
+# ==============================================================================
 
 def main():
-    print("[-] Loading datasets...")
+    if not os.path.exists(INPUT_CSV):
+        raise FileNotFoundError(f"Input CSV not found: {INPUT_CSV}")
 
-    if not os.path.exists(CSV_FILE):
-        print(f"[!] Error: {CSV_FILE} not found.")
-        return
     try:
-        df_flows = pd.read_csv(CSV_FILE, dtype={'Remote_IP': str})
+        df = pd.read_csv(INPUT_CSV, dtype={COL_REMOTE_IP: str})
     except UnicodeDecodeError:
-        df_flows = pd.read_csv(CSV_FILE, encoding='gbk', dtype={'Remote_IP': str})
+        df = pd.read_csv(INPUT_CSV, encoding="gbk", dtype={COL_REMOTE_IP: str})
 
-    if not os.path.exists(TRAFFIC_PKL):
-        print(f"[!] Error: {TRAFFIC_PKL} not found.")
-        return
+    # sanity check required columns
+    required_cols = [COL_COMPONENT, COL_DEVICE_COUNT, COL_DEVICE, COL_VENDOR, COL_REMOTE_IP, COL_SERVICE, COL_INFRA]
+    missing = [c for c in required_cols if c not in df.columns]
+    if missing:
+        raise KeyError(f"Missing required columns: {missing}")
 
-    print(f"[-] Loading mapping data from {TRAFFIC_PKL}...")
-    df_traffic = pd.read_pickle(TRAFFIC_PKL)
+    # normalize
+    df[COL_COMPONENT] = df[COL_COMPONENT].astype(str).str.strip()
+    df[COL_DEVICE] = df[COL_DEVICE].astype(str).str.strip()
+    df[COL_VENDOR] = df[COL_VENDOR].astype(str).str.strip().str.lower()
+    df[COL_REMOTE_IP] = df[COL_REMOTE_IP].astype(str).str.strip()
+    df[COL_DEVICE_COUNT] = pd.to_numeric(df[COL_DEVICE_COUNT], errors="coerce").fillna(0).astype(int)
 
-    # 标准化列名
-    if 'Domain_A' not in df_traffic.columns and 'Remote_domain' in df_traffic.columns:
-        df_traffic['Domain_A'] = df_traffic['Remote_domain']
-    if 'Domain_PTR' not in df_traffic.columns and 'DNS' in df_traffic.columns:
-        df_traffic['Domain_PTR'] = df_traffic['DNS']
+    # --------------------------------------------------------------------------
+    # Step 2: remove Device_Count == 1 components
+    # --------------------------------------------------------------------------
+    before = len(df)
+    df = df[df[COL_DEVICE_COUNT] > 1].copy()
+    print(f"[Filter] Remove Device_Count==1: rows {before} -> {len(df)}")
 
-    # 确保列存在，没有则补 None
-    for col in ['Domain_A', 'Domain_PTR']:
-        if col not in df_traffic.columns: df_traffic[col] = None
+    # --------------------------------------------------------------------------
+    # Step 3: remove same-vendor components (cross-vendor only)
+    #   rule: within component, vendors all identical AND non-empty
+    # --------------------------------------------------------------------------
+    def is_single_vendor(group: pd.DataFrame) -> bool:
+        vs = [v for v in group[COL_VENDOR].tolist() if v and v not in ("nan", "none", "")]
+        if not vs:
+            return False  # cannot conclude same-vendor if missing
+        return len(set(vs)) == 1
 
-    # 构建 IP 映射表
-    # 注意：这里我们要非常小心。一个 IP 在 Traffic 文件中可能有多条记录。
-    # 有些记录可能有 Domain，有些可能没有（虽然理论上 IP 的 PTR 应该是固定的，但 Domain_A 取决于抓包时的 SNI/Host）。
-    # 策略：对于同一个 IP，如果曾经出现过非空的 Domain_A，我们应该尽量采用非空值。
-    # 因此，排序让非空值排在前面，然后 drop_duplicates
+    before = len(df)
+    single_vendor_flags = df.groupby(COL_COMPONENT, sort=False).apply(is_single_vendor)
+    drop_components = set(single_vendor_flags[single_vendor_flags].index.tolist())
+    df = df[~df[COL_COMPONENT].isin(drop_components)].copy()
+    print(f"[Filter] Remove same-vendor comps: rows {before} -> {len(df)} (dropped comps={len(drop_components)})")
 
-    # 辅助列用于排序：非空为0，空为1
-    df_traffic['Service_Rank'] = df_traffic['Domain_A'].isna().astype(int)
-    df_traffic['Infra_Rank'] = df_traffic['Domain_PTR'].isna().astype(int)
+    # --------------------------------------------------------------------------
+    # Step 4: generic filtering evidence-only (keep originals in output)
+    #   Evidence columns used for strict checks
+    # --------------------------------------------------------------------------
+    df["Service_Orig"] = df[COL_SERVICE]
+    df["Infra_Orig"] = df[COL_INFRA]
 
-    # 1. 构建 IP -> Service (取最优值)
-    df_svc = df_traffic.sort_values(['Remote_IP', 'Service_Rank'])
-    map_svc = df_svc.drop_duplicates('Remote_IP')[['Remote_IP', 'Domain_A']]
-    ip_to_service = dict(zip(map_svc['Remote_IP'], map_svc['Domain_A']))
+    df["Service_Norm"] = df["Service_Orig"].apply(pick_first_nonempty_pipe_value)
+    df["Infra_Norm"] = df["Infra_Orig"].apply(pick_first_nonempty_pipe_value)
 
-    # 2. 构建 IP -> Infrastructure (取最优值)
-    df_inf = df_traffic.sort_values(['Remote_IP', 'Infra_Rank'])
-    map_inf = df_inf.drop_duplicates('Remote_IP')[['Remote_IP', 'Domain_PTR']]
-    ip_to_infra = dict(zip(map_inf['Remote_IP'], map_inf['Domain_PTR']))
+    if ENABLE_GENERIC_FILTER:
+        def to_evidence(host):
+            h = normalize_host(host)
+            if not h:
+                return ""
+            return "" if is_generic_public_service(h) else h
 
-    print(f"    > Mapped {len(ip_to_service)} IPs.")
+        df["Service_Evidence"] = df["Service_Norm"].apply(to_evidence)
+        df["Infra_Evidence"] = df["Infra_Norm"].apply(to_evidence)
+        print("[Generic] ENABLED: evidence blanks generic endpoints; originals preserved.")
+    else:
+        df["Service_Evidence"] = df["Service_Norm"]
+        df["Infra_Evidence"] = df["Infra_Norm"]
+        print("[Generic] DISABLED: evidence equals normalized originals.")
 
-    # ==============================================================================
-    # 映射到原始 DataFrame
-    # ==============================================================================
-    print("[-] Mapping Service and Infrastructure columns...")
-    df_flows['Service'] = df_flows['Remote_IP'].map(ip_to_service)
-    df_flows['Infrastructure'] = df_flows['Remote_IP'].map(ip_to_infra)
+    # --------------------------------------------------------------------------
+    # Step 5: strict consistency at component level
+    # --------------------------------------------------------------------------
+    print(f"[Strict] Checking {df[COL_COMPONENT].nunique()} components...")
 
-    # 填充 NaN 为 None 方便逻辑判断
-    df_flows['Service'] = df_flows['Service'].where(pd.notnull(df_flows['Service']), None)
-    df_flows['Infrastructure'] = df_flows['Infrastructure'].where(pd.notnull(df_flows['Infrastructure']), None)
+    comp_rows = []
+    for comp_id, g in df.groupby(COL_COMPONENT, sort=False):
+        r = strict_consistency_check_component(
+            g,
+            ip_col=COL_REMOTE_IP,
+            svc_col_evi="Service_Evidence",
+            infra_col_evi="Infra_Evidence"
+        )
+        r[COL_COMPONENT] = comp_id
+        r["Num_Flows"] = len(g)
+        r["Num_Devices"] = g[COL_DEVICE].nunique()
+        r["Num_Vendors"] = len(set([v for v in g[COL_VENDOR].tolist() if v and v not in ("nan", "none", "")]))
+        comp_rows.append(r)
 
-    # 打印一下刚才那个有问题的 IP 映射结果，确保映射逻辑本身没问题（即确实是 None）
-    check_ip = '42.157.165.144'
-    print(f"    [Check] IP {check_ip} maps to Service: {ip_to_service.get(check_ip)}")
+    df_comp = pd.DataFrame(comp_rows)
+    df_comp.to_csv(OUTPUT_COMPONENT_SUMMARY, index=False, encoding="utf-8-sig")
+    print(f"[Out] Component summary saved: {OUTPUT_COMPONENT_SUMMARY}")
 
-    # ==============================================================================
-    # 聚类一致性检查 (Strict Logic)
-    # ==============================================================================
-    print(f"[-] Checking consistency for {len(df_flows['Component_ID'].unique())} clusters...")
+    # --------------------------------------------------------------------------
+    # Step 6: backfill to flow-level and split outputs
+    # --------------------------------------------------------------------------
+    df_final = df.merge(df_comp, on=COL_COMPONENT, how="left")
 
-    results = []
-    grouped = df_flows.groupby('Component_ID')
+    df_consistent = df_final[df_final["Is_Strict_Implicit"] == True].copy()
+    df_inconsistent = df_final[df_final["Is_Strict_Implicit"] == False].copy()
 
-    for comp_id, group in grouped:
-        res = {
-            'Component_ID': comp_id,
-            'Is_Implicit': False,
-            'Consistent_Layers': [],
-            'Cluster_Val_IP': None,
-            'Cluster_Val_Service': None,
-            'Cluster_Val_Infra': None
-        }
+    df_consistent.to_csv(OUTPUT_CONSISTENT, index=False, encoding="utf-8-sig")
+    df_inconsistent.to_csv(OUTPUT_INCONSISTENT, index=False, encoding="utf-8-sig")
 
-        # --- A. Check IP Consistency ---
-        # 逻辑：所有流的 IP 必须完全一致
-        unique_ips = group['Remote_IP'].unique()
-        if len(unique_ips) == 1:
-            res['Cluster_Val_IP'] = unique_ips[0]
-            res['Consistent_Layers'].append('IP')
-            res['Is_Implicit'] = True
-
-        # --- B. Check Service Consistency (Strict) ---
-        # 逻辑：
-        # 1. 提取所有流的 Service 值
-        # 2. 如果包含任何 None/NaN，直接判定为不一致 (因为无法证明那个 None 的 IP 连的是同一个服务)
-        # 3. 如果不含 None，但包含 >1 个不同的值，不一致
-        # 4. 只有当 Unique 值只有 1 个且非 None 时，才一致
-
-        # 注意：这里要处理空字符串的情况
-        services = group['Service'].tolist()
-
-        # 检查是否全非空
-        has_none = any((s is None or str(s).strip() == '') for s in services)
-
-        if not has_none:
-            unique_svcs = set(services)
-            if len(unique_svcs) == 1:
-                res['Cluster_Val_Service'] = list(unique_svcs)[0]
-                res['Consistent_Layers'].append('Service')
-                res['Is_Implicit'] = True
-
-        # --- C. Check Infrastructure Consistency (Strict) ---
-        infras = group['Infrastructure'].tolist()
-        has_none_inf = any((i is None or str(i).strip() == '') for i in infras)
-
-        if not has_none_inf:
-            unique_infs = set(infras)
-            if len(unique_infs) == 1:
-                res['Cluster_Val_Infra'] = list(unique_infs)[0]
-                res['Consistent_Layers'].append('Infrastructure')
-                res['Is_Implicit'] = True
-
-        res['Consistent_Layers'] = "|".join(res['Consistent_Layers'])
-        results.append(res)
-
-    # ==============================================================================
-    # 合并与保存
-    # ==============================================================================
-    print("[-] Splitting results...")
-
-    df_results = pd.DataFrame(results)
-    df_final = df_flows.merge(df_results, on='Component_ID', how='left')
-
-    df_consistent = df_final[df_final['Is_Implicit'] == True].copy()
-    df_inconsistent = df_final[df_final['Is_Implicit'] == False].copy()
-
-    # 清理列
-    cols_to_drop_inc = ['Is_Implicit', 'Consistent_Layers', 'Cluster_Val_IP', 'Cluster_Val_Service',
-                        'Cluster_Val_Infra']
-    df_inconsistent.drop(columns=cols_to_drop_inc, errors='ignore', inplace=True)
-
-    print(f"[-] Saving {len(df_consistent)} rows to {OUTPUT_CONSISTENT}...")
-    df_consistent.to_csv(OUTPUT_CONSISTENT, index=False)
-
-    print(f"[-] Saving {len(df_inconsistent)} rows to {OUTPUT_INCONSISTENT}...")
-    df_inconsistent.to_csv(OUTPUT_INCONSISTENT, index=False)
-
-    # 统计
-    print("\n" + "=" * 40)
-    print("STRICT CONSISTENCY STATISTICS")
-    print("=" * 40)
-    total_clusters = len(results)
-    implicit_clusters = df_results['Is_Implicit'].sum()
-
-    print(f"Total Clusters: {total_clusters}")
-    print(f"Strict Implicit: {implicit_clusters} ({implicit_clusters / total_clusters * 100:.2f}%)")
-    print(f"Inconsistent: {total_clusters - implicit_clusters}")
-
-    cnt_ip = df_results['Consistent_Layers'].str.contains('IP').sum()
-    cnt_svc = df_results['Consistent_Layers'].str.contains('Service').sum()
-    cnt_inf = df_results['Consistent_Layers'].str.contains('Infrastructure').sum()
-
-    print(f"  IP Consistent: {cnt_ip}")
-    print(f"  Service Consistent: {cnt_svc}")
-    print(f"  Infrastructure Consistent: {cnt_inf}")
-    print("=" * 40)
-
-    # 调试：查看原来的 0621 号 Cluster 现在被分到哪里了
-    # 假设 Component_ID 是 Comp_0621
-    target_id = 'Comp_0621'
-    if target_id in df_final['Component_ID'].values:
-        row = df_final[df_final['Component_ID'] == target_id].iloc[0]
-        print(f"\n[Debug] {target_id} is now classified as: {'Implicit' if row['Is_Implicit'] else 'Inconsistent'}")
-        print(f"        Layers: {row['Consistent_Layers']}")
+    # Stats
+    total_components = len(df_comp)
+    strict_components = int(df_comp["Is_Strict_Implicit"].sum())
+    print("\n" + "=" * 60)
+    print("STRICT CONSISTENCY STATISTICS (after filtering)")
+    print("=" * 60)
+    print(f"Components total: {total_components}")
+    pct = (strict_components / total_components * 100.0) if total_components else 0.0
+    print(f"Strict implicit:  {strict_components} ({pct:.2f}%)")
+    print(f"Inconsistent:     {total_components - strict_components}")
+    print("-" * 60)
+    print(f"Flows consistent:   {len(df_consistent)}")
+    print(f"Flows inconsistent: {len(df_inconsistent)}")
+    print("=" * 60)
+    print(f"[Out] Consistent flows:   {OUTPUT_CONSISTENT}")
+    print(f"[Out] Inconsistent flows: {OUTPUT_INCONSISTENT}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
-
