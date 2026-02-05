@@ -1,0 +1,265 @@
+import os
+import pandas as pd
+
+
+def merge_three_validation_results(
+        base_file,
+        file_cooc,
+        file_comp,
+        file_reinf,
+        output_file,
+        confidence_rule=None
+):
+    """
+    Consolidation (Component-level attributes -> backfill into base rows)
+
+    - base_file: 4.2.Clusters_Final_Latent_.csv (基准表，行级可能是 component 或 flow，都可以)
+    - file_cooc / file_comp / file_reinf: 三个验证结果文件（通常 flow-level）
+    - output_file: 合并后的总表（保持 base 行数）
+
+    关键点：对每个验证文件，先按 Component_ID 抽取/去重为“组件级一行”，再 left join 回 base。
+    """
+
+    print("=" * 80)
+    print("[-] Consolidation: Merge Cooccurrence / Composite / Reinforcement into Base")
+    print("=" * 80)
+
+    # ------------------------------------------------------------------------------
+    # 0) Load base
+    # ------------------------------------------------------------------------------
+    if not os.path.exists(base_file):
+        raise FileNotFoundError(f"Base file not found: {base_file}")
+
+    df_base = pd.read_csv(base_file)
+    if 'Component_ID' not in df_base.columns:
+        raise ValueError("Base file must contain column: Component_ID")
+
+    print(f"[-] Base: {os.path.basename(base_file)}")
+    print(f"    > Rows: {len(df_base)}, Unique Components: {df_base['Component_ID'].nunique()}")
+
+    # ------------------------------------------------------------------------------
+    # 1) helper: load validation file and extract component-level columns
+    # ------------------------------------------------------------------------------
+    def load_and_extract_component_level(filepath, cols_to_extract, rename_map, dedup_policy="first"):
+        """
+        Return component-level df: one row per Component_ID.
+        dedup_policy:
+          - "first": drop_duplicates keep first
+          - "max": for numeric cols take max; for bool take any; for str take first non-empty
+        """
+        if not os.path.exists(filepath):
+            print(f"[!] Warning: file not found, skip: {filepath}")
+            return None
+
+        print(f"[-] Loading validation: {os.path.basename(filepath)}")
+        df = pd.read_csv(filepath)
+
+        if 'Component_ID' not in df.columns:
+            print(f"[!] Warning: {os.path.basename(filepath)} missing Component_ID, skip.")
+            return None
+
+        # keep only needed cols (if exist)
+        cols = ['Component_ID'] + [c for c in cols_to_extract if c in df.columns]
+        df = df[cols].copy()
+
+        # normalize Component_ID to str
+        df['Component_ID'] = df['Component_ID'].astype(str)
+
+        if dedup_policy == "first":
+            df_comp_level = df.drop_duplicates(subset=['Component_ID'], keep='first')
+
+        elif dedup_policy == "max":
+            # component-level aggregation:
+            # - numeric -> max
+            # - bool -> any(True)
+            # - string/object -> first non-empty
+            def agg_series(s):
+                if s.dtype == bool:
+                    return bool(s.fillna(False).any())
+                if pd.api.types.is_numeric_dtype(s):
+                    return float(pd.to_numeric(s, errors='coerce').fillna(0).max())
+                # object-like
+                vals = [v for v in s.astype(str).tolist() if v and v.lower() not in ['nan', 'none', '']]
+                return vals[0] if vals else ""
+
+            agg_map = {}
+            for c in df.columns:
+                if c == 'Component_ID':
+                    continue
+                agg_map[c] = agg_series
+
+            df_comp_level = df.groupby('Component_ID', as_index=False).agg(agg_map)
+
+        else:
+            raise ValueError("dedup_policy must be 'first' or 'max'")
+
+        # rename columns to avoid collisions
+        df_comp_level = df_comp_level.rename(columns=rename_map)
+
+        print(f"    > Component-level rows: {len(df_comp_level)}")
+        return df_comp_level
+
+    # ------------------------------------------------------------------------------
+    # 2) Extract fields from three validations
+    #    你可以按你真实输出文件的列名微调 cols_to_extract / rename_map
+    # ------------------------------------------------------------------------------
+
+    # A) Co-occurrence
+    # 期望列：Is_Validated, Co_occurrence_Count, Related_Clusters
+    df_cooc = load_and_extract_component_level(
+        file_cooc,
+        cols_to_extract=['Is_Validated', 'Co_occurrence_Count', 'Related_Clusters'],
+        rename_map={
+            'Is_Validated': 'Val_Cooccur_Status',
+            'Co_occurrence_Count': 'Val_Cooccur_Count',
+            'Related_Clusters': 'Evid_Cooccur_Clusters'
+        },
+        # 如果同组件在 flow-level 表里可能多行且不一致，建议用 max 聚合更稳健
+        dedup_policy="max"
+    )
+
+    # B) Composite (FLOWLEVEL)
+    # 期望列：Is_Composite_Suite, Reconstruction_Ratio, Constituent_Clusters
+    df_comp = load_and_extract_component_level(
+        file_comp,
+        cols_to_extract=['Is_Composite_Suite', 'Reconstruction_Ratio', 'Constituent_Clusters'],
+        rename_map={
+            'Is_Composite_Suite': 'Val_Composite_Status',
+            'Reconstruction_Ratio': 'Val_Composite_Ratio',
+            'Constituent_Clusters': 'Evid_Composite_Subs'
+        },
+        dedup_policy="max"
+    )
+
+    # C) Reinforcement
+    # 期望列：Reinforcement_Ratio, Matched_Pairs, Total_Pairs, Match_Detail
+    df_reinf = load_and_extract_component_level(
+        file_reinf,
+        cols_to_extract=['Reinforcement_Ratio', 'Matched_Pairs', 'Total_Pairs', 'Match_Detail'],
+        rename_map={
+            'Reinforcement_Ratio': 'Val_Reinforce_Score',
+            'Match_Detail': 'Evid_Reinforce_Detail',
+            'Matched_Pairs': 'Info_Reinforce_Matched',
+            'Total_Pairs': 'Info_Reinforce_Total'
+        },
+        dedup_policy="max"
+    )
+
+    # ------------------------------------------------------------------------------
+    # 3) Merge into base
+    # ------------------------------------------------------------------------------
+    df_final = df_base.copy()
+    df_final['Component_ID'] = df_final['Component_ID'].astype(str)
+
+    if df_cooc is not None:
+        df_final = pd.merge(df_final, df_cooc, on='Component_ID', how='left')
+    if df_comp is not None:
+        df_final = pd.merge(df_final, df_comp, on='Component_ID', how='left')
+    if df_reinf is not None:
+        df_final = pd.merge(df_final, df_reinf, on='Component_ID', how='left')
+
+    # ------------------------------------------------------------------------------
+    # 4) Fill defaults for missing validations
+    # ------------------------------------------------------------------------------
+    fill_values = {
+        'Val_Cooccur_Status': False,
+        'Val_Cooccur_Count': 0,
+        'Evid_Cooccur_Clusters': '',
+
+        'Val_Composite_Status': False,
+        'Val_Composite_Ratio': 0.0,
+        'Evid_Composite_Subs': '',
+
+        'Val_Reinforce_Score': 0.0,
+        'Info_Reinforce_Matched': 0,
+        'Info_Reinforce_Total': 0,
+        'Evid_Reinforce_Detail': ''
+    }
+    df_final = df_final.fillna(value={k: v for k, v in fill_values.items() if k in df_final.columns})
+
+    # 强制类型更稳（避免 bool/str 混）
+    if 'Val_Cooccur_Status' in df_final.columns:
+        df_final['Val_Cooccur_Status'] = df_final['Val_Cooccur_Status'].astype(bool)
+    if 'Val_Composite_Status' in df_final.columns:
+        df_final['Val_Composite_Status'] = df_final['Val_Composite_Status'].astype(bool)
+
+    # ------------------------------------------------------------------------------
+    # 5) Confidence_Tags (component-level rule, backfilled into every base row)
+    # ------------------------------------------------------------------------------
+    if confidence_rule is None:
+        # 默认规则（你可以按论文需要改阈值）
+        # - Cooccur: True
+        # - Composite: True
+        # - Reinforce: > 0.7
+        def confidence_rule(row):
+            tags = []
+            if row.get('Val_Cooccur_Status') is True:
+                tags.append('Cooccur')
+            if row.get('Val_Composite_Status') is True:
+                tags.append('Composite')
+            if float(row.get('Val_Reinforce_Score', 0.0) or 0.0) > 0.7:
+                tags.append('Reinforce')
+            return "|".join(tags) if tags else "None"
+
+    print("[-] Computing Confidence_Tags ...")
+    df_final['Confidence_Tags'] = df_final.apply(confidence_rule, axis=1)
+
+    # ------------------------------------------------------------------------------
+    # 6) Reorder columns (put validation fields in front)
+    # ------------------------------------------------------------------------------
+    meta_cols = []
+    # 如果 base 里有这些字段，就放前面
+    for c in ['Super_Group_ID', 'Component_ID', 'Device_Count', 'Device_List', 'Confidence_Tags']:
+        if c in df_final.columns and c not in meta_cols:
+            meta_cols.append(c)
+    if 'Component_ID' not in meta_cols:
+        meta_cols.insert(0, 'Component_ID')
+    if 'Confidence_Tags' not in meta_cols:
+        meta_cols.append('Confidence_Tags')
+
+    val_cols = [c for c in df_final.columns if c.startswith('Val_')]
+    evid_cols = [c for c in df_final.columns if c.startswith('Evid_')]
+    info_cols = [c for c in df_final.columns if c.startswith('Info_')]
+
+    other_cols = [c for c in df_final.columns if c not in meta_cols + val_cols + evid_cols + info_cols]
+    final_cols = meta_cols + val_cols + evid_cols + info_cols + other_cols
+    final_cols = [c for c in final_cols if c in df_final.columns]
+    df_final = df_final[final_cols]
+
+    # ------------------------------------------------------------------------------
+    # 7) Save + simple stats
+    # ------------------------------------------------------------------------------
+    os.makedirs(os.path.dirname(output_file) or ".", exist_ok=True)
+    df_final.to_csv(output_file, index=False, encoding='utf-8-sig')
+
+    print("-" * 80)
+    print(f"[OK] Saved: {output_file}")
+    print(f"     Rows: {len(df_final)}")
+
+    # 注意：base 是啥粒度就统计啥粒度；这里额外给组件口径
+    uniq = df_final.drop_duplicates('Component_ID')
+    high_conf_clusters = (uniq['Confidence_Tags'] != 'None').sum()
+    print(f"     Unique Components: {len(uniq)}")
+    print(f"     Components with Any Tag: {high_conf_clusters} ({high_conf_clusters / max(len(uniq), 1) * 100:.2f}%)")
+    print("-" * 80)
+
+
+if __name__ == "__main__":
+    # -----------------------
+    # 你的输入文件
+    # -----------------------
+    f_base = "./4.2.Clusters_Final_Latent_.csv"
+    f_cooc = "./5.1.Network_Flows_Validated_Cooccurrence_v2.4.csv"
+    f_comp = "./5.2.Network_Flows_Validated_Composite_MultiSource_FLOWLEVEL.csv"
+    f_reinf = "./5.3.Network_Flows_Validated_Reinforcement_v2.4.csv"
+
+    # 输出文件
+    f_out = "./6_FINAL.Consolidated_from_4.2_with_5.1_5.2_5.3_v2.4.csv"
+
+    merge_three_validation_results(
+        base_file=f_base,
+        file_cooc=f_cooc,
+        file_comp=f_comp,
+        file_reinf=f_reinf,
+        output_file=f_out
+    )
