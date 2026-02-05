@@ -143,9 +143,9 @@ def main():
     llm_cache = load_cache()
 
     # 3. Group clusters and prepare for processing
-    # Assuming 'vendor_name' is the correct column. If not, change it.
+    # Assuming 'device_vendor' is the correct column. If not, change it.
     if 'vendor_name' not in df_flows.columns:
-        print("[!] Error: 'vendor_name' column not found in CSV.")
+        print("[!] Error: 'device_vendor' column not found in CSV.")
         return
 
     clusters = df_flows.groupby('Component_ID')['device_vendor'].unique().apply(list).to_dict()
@@ -220,4 +220,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
