@@ -3,14 +3,12 @@ import pickle
 import numpy as np
 import ipaddress
 import gc
-import sys
-import csv
+import resource
 from collections import defaultdict
 from tqdm import tqdm
 from concurrent.futures import ProcessPoolExecutor, as_completed
 import multiprocessing
-import resource
-import scipy.spatial.distance as ssd
+
 from scipy.cluster.hierarchy import linkage, fcluster
 
 # ==============================================================================
@@ -18,21 +16,16 @@ from scipy.cluster.hierarchy import linkage, fcluster
 # ==============================================================================
 try:
     from numba import jit, prange
-
     HAS_NUMBA = True
     print("✅ Numba detected! High-speed acceleration enabled.")
 except ImportError:
     HAS_NUMBA = False
     print("⚠️ Numba not found. Running in slow mode. Install via 'pip install numba'")
 
-
-    # Dummy decorators for compatibility
     def jit(nopython=True, parallel=False):
         def decorator(func):
             return func
-
         return decorator
-
 
     def prange(n):
         return range(n)
@@ -41,43 +34,46 @@ except ImportError:
 # 1. 参数配置区域
 # ==============================================================================
 
-# --- 过滤参数 ---
-MIN_PACKET_COUNT = 5  # 最小包数量
-# [关键限制] 单设备参与聚类的最大流数量 (防止全连接 O(N^2) 爆内存)
-MAX_TOTAL_FLOWS_PER_DEVICE = 100000
-
-# --- DTW 算法核心参数 (1.9.1 版) ---
-DTW_TOP_N = 20
-
-# 1.9.1 版参数：固定权重 + MTU 分区
-DTW_SMALL_THRESH = 100.0
-DTW_SMALL_WEIGHT = 10.0  # 严打小包：控制类包必须精准 (Diff * 20)
-
-DTW_MTU_THRESH = 1400.0  # [1.9.1] MTU 阈值
-DTW_MTU_WEIGHT = 1.0  # [1.9.1] MTU 权重：不予优惠，精准区分 (Diff / 1.0)
-
-DTW_BIG_THRESH = 350.0  # 大包阈值：普通载荷
-DTW_BIG_WEIGHT = 8.0  # [1.9.1] 大包优惠：容忍载荷波动 (Diff / 5.0)
-
-DTW_CROSS_WEIGHT = 3.0  # 结构性惩罚：小包 vs 非小包
-
-DTW_SIGMA = 35.0  # [1.9.1] Sigma 更新
-
+# --- 输入/输出路径 ---
+INPUT_PICKLE_PATH = "../Flow_Preprocessing/Traffic_Cleaned_v3_Final.pkl"
+DTW_SIGMA = 35.0
 SIMILARITY_THRESHOLD = 0.90
-# 距离阈值 (用于 Complete Linkage)
 DISTANCE_THRESHOLD = 1.0 - SIMILARITY_THRESHOLD
 
-# --- 输入/输出路径 ---
-INPUT_PICKLE_PATH = "../ALL_Flow_Adjust_DTW/traffic_features_total_signed.pkl"
-OUTPUT_PICKLE_PATH = f"../DTW_1_12/1.In_Device_Complete_{DTW_SIGMA}_{SIMILARITY_THRESHOLD:.2f}_v1.12.pkl"
-CHECKPOINT_PATH = f"../DTW_1_12/checkpoint_complete_{DTW_SIGMA}_{SIMILARITY_THRESHOLD:.2f}_v1.12.pkl"
-DEVICE_TYPE_CSV_PATH = "../Data/device_type.csv"
+OUTPUT_PICKLE_PATH = f"./1.In_Device_Complete_from_v3Final_{DTW_SIGMA}_{SIMILARITY_THRESHOLD:.2f}_nopad.pkl"
+CHECKPOINT_PATH = f"./checkpoint_in_device_from_v3Final_{DTW_SIGMA}_{SIMILARITY_THRESHOLD:.2f}_nopad.pkl"
+
+# --- 设备规模控制 ---
+# 单设备参与聚类的最大流数量（防止全连接 O(N^2) 爆炸）
+MAX_FLOWS_PER_DEVICE = 1000000
+
+# --- DTW 序列长度上限（完全无 padding） ---
+# up/down 分别最多保留前 MAX_SEQ_LEN 个（保持原顺序）
+MAX_SEQ_LEN = 100
+
+# --- DTW 参数 (1.9.1 风格) ---
+DTW_SMALL_THRESH = 100.0
+DTW_SMALL_WEIGHT = 10.0
+
+DTW_MTU_THRESH = 1400.0
+DTW_MTU_WEIGHT = 1.0
+
+DTW_BIG_THRESH = 350.0
+DTW_BIG_WEIGHT = 8.0
+
+DTW_CROSS_WEIGHT = 3.0
 
 # --- 并行配置 ---
-NUM_WORKERS = 32  # 根据 CPU 核数调整
-TASK_BATCH_SIZE = 100
+NUM_WORKERS = 32
+TASK_BATCH_SIZE = 50
 
-# --- 排除列表 ---
+# --- 可选：轻量校验（不建议再做重过滤） ---
+# 如果你确认 v3_final 已彻底清洗，可把 ENABLE_LIGHT_CHECK 设为 False
+ENABLE_LIGHT_CHECK = True
+MIN_PACKET_COUNT = 5  # 仅用于轻量校验（up/down 最小包数）
+DROP_PRIVATE_IP = False  # v2 已做过；这里默认不丢弃
+DROP_DNS_FLOW = False    # v2 已做过；这里默认不丢弃
+
 KNOWN_PUBLIC_DNS_IPS = {
     '8.8.8.8', '8.8.4.4', '1.1.1.1', '1.0.0.1',
     '208.67.222.222', '208.67.220.220', '9.9.9.9', '149.112.112.112',
@@ -86,96 +82,114 @@ KNOWN_PUBLIC_DNS_IPS = {
     '64.6.64.6', '64.6.65.6'
 }
 
-
 # ==============================================================================
 # 2. 基础工具函数
 # ==============================================================================
 
-def limit_memory(maxsize_gb):
+def limit_memory(maxsize_gb: int):
     try:
         soft, hard = resource.getrlimit(resource.RLIMIT_AS)
-        maxsize_bytes = maxsize_gb * 1024 * 1024 * 1024
+        maxsize_bytes = int(maxsize_gb) * 1024 * 1024 * 1024
         resource.setrlimit(resource.RLIMIT_AS, (maxsize_bytes, hard))
     except Exception:
         pass
 
 
 def is_private_ip(ip_str):
-    if not ip_str: return False
+    if not ip_str:
+        return False
     try:
-        clean_ip = ip_str.split(':')[0]
+        clean_ip = str(ip_str).split(':')[0]
         ip_obj = ipaddress.ip_address(clean_ip)
         return ip_obj.is_private
-    except ValueError:
+    except Exception:
         return False
 
 
 def is_dns_flow(remote_ip, protocol):
-    if protocol != 'UDP': return False
-    if remote_ip in KNOWN_PUBLIC_DNS_IPS: return True
-    return False
+    if protocol != 'UDP':
+        return False
+    if not remote_ip:
+        return False
+    clean_ip = str(remote_ip).split(':')[0]
+    return clean_ip in KNOWN_PUBLIC_DNS_IPS
 
 
-def load_device_type_map(csv_path):
-    mapping = {}
-    if not os.path.exists(csv_path):
-        return mapping
-    try:
-        with open(csv_path, 'r', encoding='utf-8') as f:
-            reader = csv.DictReader(f)
-            if reader.fieldnames and reader.fieldnames[0].startswith('\ufeff'):
-                reader.fieldnames[0] = reader.fieldnames[0].replace('\ufeff', '')
-            if 'Device_Name' in reader.fieldnames and 'Type' in reader.fieldnames:
-                for row in reader:
-                    mapping[row['Device_Name'].strip()] = row['Type'].strip()
-    except Exception:
-        pass
-    return mapping
-
-
-def extract_dtw_features(signed_seq):
+def extract_dtw_features(signed_seq, max_seq_len=None):
+    """
+    signed_seq: Payload_Sequence（带符号）
+    max_seq_len:
+      - None: 不截断
+      - int : up/down 分别最多取 max_seq_len 个（按原顺序）
+    """
     if not signed_seq:
         return {'up': np.array([], dtype=np.float64), 'down': np.array([], dtype=np.float64)}
-    up = np.array([abs(x) for x in signed_seq if x > 0][:DTW_TOP_N], dtype=np.float64)
-    down = np.array([abs(x) for x in signed_seq if x < 0][:DTW_TOP_N], dtype=np.float64)
-    return {'up': up, 'down': down}
+
+    if max_seq_len is None:
+        up = np.array([abs(x) for x in signed_seq if x > 0], dtype=np.float64)
+        down = np.array([abs(x) for x in signed_seq if x < 0], dtype=np.float64)
+        return {'up': up, 'down': down}
+
+    up_list = []
+    down_list = []
+    for x in signed_seq:
+        if x > 0:
+            if len(up_list) < max_seq_len:
+                up_list.append(abs(x))
+        elif x < 0:
+            if len(down_list) < max_seq_len:
+                down_list.append(abs(x))
+        if len(up_list) >= max_seq_len and len(down_list) >= max_seq_len:
+            break
+
+    return {
+        'up': np.array(up_list, dtype=np.float64),
+        'down': np.array(down_list, dtype=np.float64),
+    }
 
 
-def convert_feats_to_matrix(feats_list, max_len=DTW_TOP_N):
+def pack_variable_length_sequences(feats_list):
+    """
+    将变长序列拼成 1D 大数组 + offsets/lengths，实现 0 padding。
+    """
     n = len(feats_list)
-    matrix = np.zeros((n, max_len), dtype=np.float64)
-    lengths = np.zeros(n, dtype=np.int32)
+    lengths = np.empty(n, dtype=np.int32)
+    offsets = np.empty(n, dtype=np.int64)
 
-    for i, seq in enumerate(feats_list):
-        l = len(seq)
-        if l > max_len: l = max_len
-        if l > 0:
-            matrix[i, :l] = seq[:l]
+    total = 0
+    for i, arr in enumerate(feats_list):
+        l = int(arr.size)
         lengths[i] = l
+        offsets[i] = total
+        total += l
 
-    return matrix, lengths
+    flat = np.empty(total, dtype=np.float64)
+    pos = 0
+    for arr in feats_list:
+        l = int(arr.size)
+        if l > 0:
+            flat[pos:pos + l] = arr
+        pos += l
+
+    return flat, offsets, lengths
 
 
 # ==============================================================================
-# 3. DTW 核心计算 (1.9.1 版 - Numba 优化)
+# 3. DTW 核心计算 (1.9.1 风格 - Numba 优化)
 # ==============================================================================
 
 @jit(nopython=True)
 def calculate_weighted_dtw_numba(seq_a, seq_b,
                                  small_thresh, small_weight,
-                                 mtu_thresh, mtu_weight,  # 新增 MTU 参数
+                                 mtu_thresh, mtu_weight,
                                  big_thresh, big_weight,
                                  cross_weight):
-    """
-    1.9.1版 DTW 算法：
-    - 固定权重 (无自适应比率)
-    - 引入 MTU 区域 (>1400) 区分 VPN/隧道
-    - 优先级: 小包 > MTU > 大包 > 跨区 > 其他
-    """
     n = len(seq_a)
     m = len(seq_b)
-    if n == 0 and m == 0: return 0.0
-    if n == 0 or m == 0: return 1e15
+    if n == 0 and m == 0:
+        return 0.0
+    if n == 0 or m == 0:
+        return 1e15
 
     prev_row = np.empty(m + 1, dtype=np.float64)
     curr_row = np.empty(m + 1, dtype=np.float64)
@@ -186,7 +200,6 @@ def calculate_weighted_dtw_numba(seq_a, seq_b,
         curr_row[:] = 1e15
         val_a = seq_a[i - 1]
 
-        # 预计算属性
         is_small_a = val_a < small_thresh
         is_big_a = val_a > big_thresh
         is_mtu_a = val_a > mtu_thresh
@@ -199,28 +212,26 @@ def calculate_weighted_dtw_numba(seq_a, seq_b,
             is_big_b = val_b > big_thresh
             is_mtu_b = val_b > mtu_thresh
 
-            # --- 核心权重逻辑 1.9.1 ---
-            # 1. 【双小包】
             if is_small_a and is_small_b:
                 cost = base_diff * small_weight
-            # 2. 【双 MTU 包】 (优先于普通大包判断)
             elif is_mtu_a and is_mtu_b:
                 cost = base_diff / mtu_weight
-            # 3. 【双大包】
             elif is_big_a and is_big_b:
                 cost = base_diff / big_weight
-            # 4. 【结构错位】 (小包 vs 非小包)
             elif is_small_a != is_small_b:
                 cost = base_diff * cross_weight
-            # 5. 【中包 或 大包vsMTU包】
             else:
                 cost = base_diff
-            # ---------------------------
 
-            v_diag, v_up, v_left = prev_row[j - 1], prev_row[j], curr_row[j - 1]
+            v_diag = prev_row[j - 1]
+            v_up = prev_row[j]
+            v_left = curr_row[j - 1]
             min_val = v_diag
-            if v_up < min_val: min_val = v_up
-            if v_left < min_val: min_val = v_left
+            if v_up < min_val:
+                min_val = v_up
+            if v_left < min_val:
+                min_val = v_left
+
             curr_row[j] = cost + min_val
 
         for k in range(m + 1):
@@ -229,22 +240,18 @@ def calculate_weighted_dtw_numba(seq_a, seq_b,
     return prev_row[m]
 
 
-# ==============================================================================
-# 4. 全连接距离矩阵计算 (Numba Parallel + Matrix Input)
-# ==============================================================================
-
 @jit(nopython=True, parallel=True)
-def compute_condensed_distance_matrix_numba(
-        matrix_up, lengths_up,
-        matrix_down, lengths_down,
+def compute_condensed_distance_matrix_numba_varlen(
+        flat_up, offsets_up, lengths_up,
+        flat_down, offsets_down, lengths_down,
         n,
         small_thresh, small_weight,
-        mtu_thresh, mtu_weight,  # New
+        mtu_thresh, mtu_weight,
         big_thresh, big_weight,
         cross_weight, sigma
 ):
     """
-    计算压缩距离矩阵 (1D array)
+    输入为 flat + offsets + lengths，完全无 padding，输出 condensed 距离矩阵。
     """
     dist_len = n * (n - 1) // 2
     dist_array = np.empty(dist_len, dtype=np.float64)
@@ -252,17 +259,23 @@ def compute_condensed_distance_matrix_numba(
     for i in prange(n):
         len_u_a = lengths_up[i]
         len_d_a = lengths_down[i]
-        up_a = matrix_up[i, :len_u_a]
-        down_a = matrix_down[i, :len_d_a]
+        off_u_a = offsets_up[i]
+        off_d_a = offsets_down[i]
+
+        up_a = flat_up[off_u_a:off_u_a + len_u_a]
+        down_a = flat_down[off_d_a:off_d_a + len_d_a]
+
         row_offset = i * n - (i * (i + 1)) // 2
 
         for j in range(i + 1, n):
             len_u_b = lengths_up[j]
             len_d_b = lengths_down[j]
-            up_b = matrix_up[j, :len_u_b]
-            down_b = matrix_down[j, :len_d_b]
+            off_u_b = offsets_up[j]
+            off_d_b = offsets_down[j]
 
-            # --- DTW Calculation (1.9.1) ---
+            up_b = flat_up[off_u_b:off_u_b + len_u_b]
+            down_b = flat_down[off_d_b:off_d_b + len_d_b]
+
             dist_up = calculate_weighted_dtw_numba(
                 up_a, up_b,
                 small_thresh, small_weight,
@@ -278,16 +291,19 @@ def compute_condensed_distance_matrix_numba(
                 cross_weight
             )
 
-            # 归一化
             mean_len_up = (len_u_a + len_u_b) / 2.0
             mean_len_down = (len_d_a + len_d_b) / 2.0
+
             norm_up = dist_up / mean_len_up if mean_len_up > 0 else 1e9
             norm_down = dist_down / mean_len_down if mean_len_down > 0 else 1e9
+
             sim_up = np.exp(-norm_up / sigma) if mean_len_up > 0 else 0.0
             sim_down = np.exp(-norm_down / sigma) if mean_len_down > 0 else 0.0
+
             final_sim = np.sqrt(sim_up * sim_down)
             d = 1.0 - final_sim
-            if d < 0: d = 0.0
+            if d < 0.0:
+                d = 0.0
 
             k = row_offset + (j - i - 1)
             dist_array[k] = d
@@ -296,34 +312,75 @@ def compute_condensed_distance_matrix_numba(
 
 
 # ==============================================================================
-# 5. 单设备全连接聚类逻辑 (无分治, 确定性)
+# 4. 单设备聚类逻辑（Complete linkage）
 # ==============================================================================
 
-def process_device_complete_clustering(device_name, flow_list_wrapper):
-    flow_list_wrapper.sort(key=lambda x: len(x['raw'].get('Payload_Sequence', [])), reverse=True)
-    if len(flow_list_wrapper) > MAX_TOTAL_FLOWS_PER_DEVICE:
-        flow_list_wrapper = flow_list_wrapper[:MAX_TOTAL_FLOWS_PER_DEVICE]
+def light_check(flow):
+    """
+    可选：轻量校验（不做强过滤）
+    """
+    if not ENABLE_LIGHT_CHECK:
+        return True
 
-    n = len(flow_list_wrapper)
-    if n == 0: return []
-    if n == 1: return [flow_list_wrapper[0]['raw']]
+    seq = flow.get('Payload_Sequence', [])
+    up_cnt = 0
+    down_cnt = 0
+    for x in seq:
+        if x > 0:
+            up_cnt += 1
+        elif x < 0:
+            down_cnt += 1
+    if up_cnt < MIN_PACKET_COUNT or down_cnt < MIN_PACKET_COUNT:
+        return False
 
+    if DROP_PRIVATE_IP and is_private_ip(flow.get('Remote_IP')):
+        return False
+
+    if DROP_DNS_FLOW and is_dns_flow(flow.get('Remote_IP'), flow.get('Protocol')):
+        return False
+
+    return True
+
+
+def process_device_complete_clustering(device_name, flows_for_device):
+    """
+    输入：某个 device 的 flows list（原 flow dict）
+    输出：每个簇一个 representative（原 flow dict，保留 Domain_A / Domain_PTR 等字段）
+    """
+    # 可选轻量校验
+    if ENABLE_LIGHT_CHECK:
+        flows_for_device = [f for f in flows_for_device if light_check(f)]
+
+    # 按序列长度排序，优先保留信息量更大的流
+    flows_for_device.sort(key=lambda x: len(x.get('Payload_Sequence', [])), reverse=True)
+
+    # 设备内流太多则截断
+    if len(flows_for_device) > MAX_FLOWS_PER_DEVICE:
+        flows_for_device = flows_for_device[:MAX_FLOWS_PER_DEVICE]
+
+    n = len(flows_for_device)
+    if n == 0:
+        return []
+    if n == 1:
+        return [flows_for_device[0]]
+
+    # 提取 DTW 特征（up/down 变长，cap 到 MAX_SEQ_LEN）
     feats_up_list = []
     feats_down_list = []
-    for item in flow_list_wrapper:
-        if 'feats' not in item:
-            item['feats'] = extract_dtw_features(item['raw'].get('Payload_Sequence', []))
-        feats_up_list.append(item['feats']['up'])
-        feats_down_list.append(item['feats']['down'])
+    for flow in flows_for_device:
+        feats = extract_dtw_features(flow.get('Payload_Sequence', []), max_seq_len=MAX_SEQ_LEN)
+        feats_up_list.append(feats['up'])
+        feats_down_list.append(feats['down'])
 
-    mat_up, len_up = convert_feats_to_matrix(feats_up_list, max_len=DTW_TOP_N)
-    mat_down, len_down = convert_feats_to_matrix(feats_down_list, max_len=DTW_TOP_N)
+    # 完全无 padding 打包
+    flat_up, offsets_up, lengths_up = pack_variable_length_sequences(feats_up_list)
+    flat_down, offsets_down, lengths_down = pack_variable_length_sequences(feats_down_list)
 
+    # condensed 距离矩阵
     try:
-        # [修改] 传入 1.9.1 版参数
-        condensed_matrix = compute_condensed_distance_matrix_numba(
-            mat_up, len_up,
-            mat_down, len_down,
+        condensed = compute_condensed_distance_matrix_numba_varlen(
+            flat_up, offsets_up, lengths_up,
+            flat_down, offsets_down, lengths_down,
             n,
             DTW_SMALL_THRESH, DTW_SMALL_WEIGHT,
             DTW_MTU_THRESH, DTW_MTU_WEIGHT,
@@ -331,30 +388,33 @@ def process_device_complete_clustering(device_name, flow_list_wrapper):
             DTW_CROSS_WEIGHT, DTW_SIGMA
         )
     except Exception as e:
-        print(f"❌ Matrix calc error ({device_name}): {e}")
-        return []
+        print(f"❌ DTW matrix error ({device_name}): {e}")
+        # 回退：不聚类，全部返回（保字段）
+        return flows_for_device
 
+    # complete linkage 聚类
     try:
-        Z = linkage(condensed_matrix, method='complete')
+        Z = linkage(condensed, method='complete')
         labels = fcluster(Z, t=DISTANCE_THRESHOLD, criterion='distance')
     except Exception as e:
         print(f"⚠️ Linkage error ({device_name}): {e}")
-        return [f['raw'] for f in flow_list_wrapper]
+        return flows_for_device
 
+    # 按簇选 representative：取 Payload_Sequence 最长者
     cluster_groups = defaultdict(list)
-    for idx, label in enumerate(labels):
-        cluster_groups[label].append(flow_list_wrapper[idx])
+    for idx, lab in enumerate(labels):
+        cluster_groups[lab].append(flows_for_device[idx])
 
     representatives = []
     for members in cluster_groups.values():
-        best_rep = max(members, key=lambda x: len(x['raw'].get('Payload_Sequence', [])))
-        representatives.append(best_rep['raw'])
+        best = max(members, key=lambda x: len(x.get('Payload_Sequence', [])))
+        representatives.append(best)
 
     return representatives
 
 
 # ==============================================================================
-# 6. 主程序
+# 5. checkpoint（断点续跑）
 # ==============================================================================
 
 def load_checkpoint(path):
@@ -362,113 +422,154 @@ def load_checkpoint(path):
         try:
             with open(path, 'rb') as f:
                 return pickle.load(f)
-        except:
+        except Exception:
             return {}
     return {}
 
 
 def save_checkpoint(path, data):
-    temp = path + ".tmp"
-    with open(temp, 'wb') as f: pickle.dump(data, f)
-    if os.path.exists(path): os.remove(path)
-    os.rename(temp, path)
+    tmp = path + ".tmp"
+    with open(tmp, 'wb') as f:
+        pickle.dump(data, f)
+    if os.path.exists(path):
+        os.remove(path)
+    os.rename(tmp, path)
 
+
+# ==============================================================================
+# 6. 主程序
+# ==============================================================================
 
 def main():
     if not os.path.exists(INPUT_PICKLE_PATH):
-        print("❌ 输入文件不存在")
+        print(f"❌ Input file not found: {INPUT_PICKLE_PATH}")
         return
 
-    device_type_map = load_device_type_map(DEVICE_TYPE_CSV_PATH)
+    print("⏳ Loading v3 final data...")
+    raw_data = pd_read_pickle_compatible(INPUT_PICKLE_PATH)
+    if raw_data is None:
+        return
 
-    print("⏳ 加载数据中...")
-    with open(INPUT_PICKLE_PATH, 'rb') as f:
-        all_flows = pickle.load(f)
-    if isinstance(all_flows, dict):
-        temp = []
-        for v in all_flows.values():
+    # raw_data 统一成 list[dict]
+    if isinstance(raw_data, list):
+        all_flows = raw_data
+    elif isinstance(raw_data, dict):
+        # 如果是 dict，拍平
+        tmp = []
+        for v in raw_data.values():
             if isinstance(v, list):
-                temp.extend(v)
+                tmp.extend(v)
             else:
-                temp.append(v)
-        all_flows = temp
+                tmp.append(v)
+        all_flows = tmp
+    else:
+        # 如果是 DataFrame，转 dict list
+        try:
+            import pandas as pd
+            if hasattr(raw_data, "to_dict"):
+                all_flows = raw_data.to_dict(orient="records")
+            else:
+                print("❌ Unsupported data format from pickle.")
+                return
+        except Exception:
+            print("❌ Unsupported data format from pickle.")
+            return
 
-    print("🔍 预处理 (Filter & Group)...")
+    print(f"📊 Total flows loaded: {len(all_flows)}")
+
+    # 分组：Device -> flows
     device_groups = defaultdict(list)
-    stats = {'total': 0, 'drop': 0, 'kept': 0, 'hub_dropped': 0}
+    missing_device = 0
+    for flow in all_flows:
+        dev = flow.get('Device', None)
+        if dev is None:
+            missing_device += 1
+            dev = "Unknown"
+        device_groups[str(dev)].append(flow)
 
-    for flow in tqdm(all_flows, desc="Filtering"):
-        stats['total'] += 1
-        seq = flow.get('Payload_Sequence', [])
-        up_cnt = sum(1 for x in seq if x > 0)
-        down_cnt = sum(1 for x in seq if x < 0)
-        device_name = flow.get('Device', 'Unknown')
+    print(f"🧩 Devices: {len(device_groups)} (missing Device field: {missing_device})")
 
-        if device_type_map.get(device_name) == 'Hub':
-            stats['drop'] += 1
-            stats['hub_dropped'] += 1
-            continue
-        if up_cnt < MIN_PACKET_COUNT or down_cnt < MIN_PACKET_COUNT:
-            stats['drop'] += 1
-            continue
-        if is_private_ip(flow.get('Remote_IP')) or is_dns_flow(flow.get('Remote_IP'), flow.get('Protocol')):
-            stats['drop'] += 1
-            continue
-        device_groups[device_name].append({'raw': flow})
-        stats['kept'] += 1
-
-    print("\n" + "=" * 40)
-    print(f"设备总数: {len(device_groups)}")
-    print(f"保留总流: {stats['kept']}")
-    print(f"HUB丢弃 : {stats['hub_dropped']}")
-    print("=" * 40 + "\n")
-
+    # 释放内存
     del all_flows
     gc.collect()
 
-    processed_results = load_checkpoint(CHECKPOINT_PATH)
+    processed = load_checkpoint(CHECKPOINT_PATH)
     all_devs = list(device_groups.keys())
-    tasks = [d for d in all_devs if d not in processed_results]
+    tasks = [d for d in all_devs if d not in processed]
 
+    # 仅保留待处理设备的数据，减少内存
     for d in all_devs:
-        if d not in tasks: del device_groups[d]
+        if d not in tasks:
+            del device_groups[d]
     gc.collect()
 
-    print(f"📋 任务: {len(tasks)} 个设备待处理 (Mode: Complete Linkage, DTW v1.9.1)")
+    print(f"📋 Pending devices: {len(tasks)} (Complete linkage, DTW nopad, cap={MAX_SEQ_LEN}, max_flows/dev={MAX_FLOWS_PER_DEVICE})")
 
     if tasks:
         batches = [tasks[i:i + TASK_BATCH_SIZE] for i in range(0, len(tasks), TASK_BATCH_SIZE)]
-        for i, batch in enumerate(batches):
-            print(f"\n🚀 批次 {i + 1}/{len(batches)} (本批 {len(batch)} 设备)...")
-            with ProcessPoolExecutor(max_workers=NUM_WORKERS) as executor:
-                future_to_dev = {
-                    executor.submit(process_device_complete_clustering, dev, device_groups[dev]): dev
-                    for dev in batch
-                }
-                for future in tqdm(as_completed(future_to_dev), total=len(batch)):
-                    dev_name = future_to_dev[future]
+        for bi, batch in enumerate(batches, 1):
+            print(f"\n🚀 Batch {bi}/{len(batches)} (devices={len(batch)})")
+            with ProcessPoolExecutor(max_workers=NUM_WORKERS) as ex:
+                future_to_dev = {ex.submit(process_device_complete_clustering, dev, device_groups[dev]): dev for dev in batch}
+                for fut in tqdm(as_completed(future_to_dev), total=len(batch), desc="Device Clustering"):
+                    dev = future_to_dev[fut]
                     try:
-                        res = future.result()
-                        processed_results[dev_name] = res
+                        reps = fut.result()
+                        processed[dev] = reps
                     except Exception as e:
-                        print(f"❌ 错误 ({dev_name}): {e}")
-            save_checkpoint(CHECKPOINT_PATH, processed_results)
-            for dev in batch: del device_groups[dev]
+                        print(f"❌ Error ({dev}): {e}")
+
+            # 保存 checkpoint
+            save_checkpoint(CHECKPOINT_PATH, processed)
+
+            # 释放本批设备数据
+            for dev in batch:
+                if dev in device_groups:
+                    del device_groups[dev]
             gc.collect()
 
-    print("📦 合并并保存结果...")
-    final_data = []
-    for flows in processed_results.values():
-        final_data.extend(flows)
-    os.makedirs(os.path.dirname(OUTPUT_PICKLE_PATH), exist_ok=True)
+    # 合并输出：所有设备的 representatives 合在一个 list
+    print("📦 Merging representatives and saving...")
+    final_reps = []
+    for reps in processed.values():
+        final_reps.extend(reps)
+
+    # 核心保证：原 flow dict 原样输出（包含 Domain_A / Domain_PTR）
+    # 这里给一个小检查输出（不影响数据）
+    sample = None
+    for x in final_reps:
+        if isinstance(x, dict):
+            sample = x
+            break
+    if sample is not None:
+        print("🔎 Output sample keys include:", [k for k in ["Domain_A", "Domain_PTR", "Device", "Remote_IP"] if k in sample])
+
+    os.makedirs(os.path.dirname(OUTPUT_PICKLE_PATH) or ".", exist_ok=True)
     with open(OUTPUT_PICKLE_PATH, 'wb') as f:
-        pickle.dump(final_data, f)
-    print(f"✅ 完成! 最终流数量: {len(final_data)}")
+        pickle.dump(final_reps, f)
+
+    print(f"✅ Done! Output reps: {len(final_reps)}")
+    print(f"✅ Saved to: {OUTPUT_PICKLE_PATH}")
+
+
+def pd_read_pickle_compatible(path):
+    """
+    兼容：pickle 可能是 list/dict/df
+    """
+    try:
+        # 优先 pandas（若可用）
+        import pandas as pd
+        return pd.read_pickle(path)
+    except Exception:
+        try:
+            with open(path, 'rb') as f:
+                return pickle.load(f)
+        except Exception as e:
+            print(f"❌ Failed to load pickle: {e}")
+            return None
 
 
 if __name__ == '__main__':
     multiprocessing.freeze_support()
-    limit_memory(200)  # 内存限制 200GB
-
+    limit_memory(200)  # 内存限制 200GB（按需改）
     main()
-
