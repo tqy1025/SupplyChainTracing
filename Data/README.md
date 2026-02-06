@@ -20,7 +20,7 @@ To ensure the reproducibility of our measurements, we utilize seven publicly ava
 
 5.  **IoT\_Sentinel [21]** (TU Darmstadt)
     *   **Description:** Device-type identification traces for 31 devices.
-    *   **Source:** [IoT Sentinel Repository](https://github.com/mmiettiner/IoT-Sentinel)
+    *   **Source:** [IoT Sentinel Repository](https://github.com/andypitcher/IoT_Sentinel)
 
 6.  **IoTLS [25]** (Northeastern University)
     *   **Description:** A large-scale study of TLS usage in 40 consumer IoT devices over 2 years.
