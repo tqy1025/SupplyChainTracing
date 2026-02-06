@@ -19,7 +19,7 @@ This directory implements the behavioral analysis pipeline using our proposed **
    - **`5.3.known_relationship.py`**: Reinforces behavioral findings using known explicit/implicit ties.
 
 ### IV. Results Generation
-6. **`6.pattern_matching_statistics.py`**: Calculates final validation yields and generates statistics corresponding to **Table 3** in the paper.
+6. **`6.rule_matching_statistics.py`**: Calculates final validation yields and generates statistics corresponding to **Table 3** in the paper.
 
 ## Core Algorithm
 **PS-DTW**: A customized DTW algorithm that assigns penalties and discounts based on packet semantic zones (Control signaling, General payload, and MTU signatures).
