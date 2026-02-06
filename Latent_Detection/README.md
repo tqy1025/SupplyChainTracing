@@ -12,8 +12,8 @@ This directory implements the behavioral analysis pipeline using our proposed **
 3. **`3.Exclude_implicit_Generic.py`**: Prunes candidate clusters that are either already explained by implicit relationships or correspond to generic public services (using the curated blocklist discussed in **Section 3.3.5**).
 
 ### III. Candidate Verification (Section 3.4.4)
-4. **`4.Brand_Corroboration.py`**: Cross-references clusters with documented business relationships (OEM agreements, strategic partnerships).
-5. **Validation Patterns**:
+4. **`4.Brand_Corroboration.py`**: Cross-references clusters with documented business relationships (OEM agreements, strategic partnerships). （An LLM version is provided here; in the experiment, this was done manually.）
+5. **Validation Rules**:
    - **`5.1.multi_cluster_cooccurrence.py`**: Checks if the same set of devices recur in multiple distinct functional clusters.
    - **`5.2.composite_pattern.py`**: Identifies "suite" clusters that can be reconstructed by smaller, validated functional units.
    - **`5.3.known_relationship.py`**: Reinforces behavioral findings using known explicit/implicit ties.
