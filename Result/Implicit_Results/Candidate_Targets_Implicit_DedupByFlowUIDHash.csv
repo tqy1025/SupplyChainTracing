@@ -1,0 +1,672 @@
+﻿Layer,Target,Num_Devices,Device_List,Num_Vendors,Vendors,Is_Implicit,FlowUID_Count,FlowSet_Hash,Dedup_Group_ID,Dedup_Group_Size
+IP,60.29.153.35,9,Konka Camera_selfdata|Lenovo Camera_selfdata|Pisen Camera_selfdata|Qiaoan Camera_selfdata|Shuixing Camera_selfdata|TP-Link Doorbell_selfdata|Tenda Camera_selfdata|Xiaobai Y2camera_selfdata|Yibang Camera_selfdata,9,konka|lenovo|pisen|qiaoan|shuixing|tenda|tp-link|xiaobai|yibang,TRUE,62,c248341ba01edba34ef302579d0426ae564d9067,SET_000142,1
+IP,223.104.228.31,9,Lenovo Camera_selfdata|Pisen Camera_selfdata|Shuixing Camera_selfdata|TP-Link Doorbell_selfdata|Tenda Camera_selfdata|Xiaobai Camera_selfdata|Xiaopai Camera_selfdata|Xiaotun Camera_selfdata|Yingshi Camera_selfdata,9,lenovo|pisen|shuixing|tenda|tp-link|xiaobai|xiaopai|xiaotun|yingshi,TRUE,49,985014f4e6ec2dca95cb6637b66bf335370cf50b,SET_000153,1
+IP,155.33.33.75,9,Amazon Fire TV_Mon(us)|Blink Camera_Mon(us)|LG Smart TV_Mon(us)|Magic Home Strip_Mon(us)|Nest Tstat_Mon(us)|Ring Doorbell_Mon(us)|Roku TV_Mon(us)|T-wemo Plug_Mon(us)|Wemo Plug_IoTLS,8,amazon|belkin|blink|home-assistant|lg|nest|ring|roku,TRUE,44,51630483fa331d37bc2572e069cdecde078b6abb,SET_000012,2
+Infrastructure,nb9619.neu.edu,9,Amazon Fire TV_Mon(us)|Blink Camera_Mon(us)|LG Smart TV_Mon(us)|Magic Home Strip_Mon(us)|Nest Tstat_Mon(us)|Ring Doorbell_Mon(us)|Roku TV_Mon(us)|T-wemo Plug_Mon(us)|Wemo Plug_IoTLS,8,amazon|belkin|blink|home-assistant|lg|nest|ring|roku,TRUE,44,51630483fa331d37bc2572e069cdecde078b6abb,SET_000012,2
+Service,vpc-sh-prod.mqtt.iotgds.aliyuncs.com.gds.alibabadns.com,7,Bull Plug_selfdata|Lenovo Camera_selfdata|Pisen Camera_selfdata|Tenda Camera_selfdata|Xiaobai Camera_selfdata|Xiaopai Camera_selfdata|deebot_cleaner,7,bull|deebot|lenovo|pisen|tenda|xiaobai|xiaopai,TRUE,28,8041b7bce8a2f964da49dde50d68d94de23eee10,SET_000572,1
+IP,155.198.142.7,6,Blink Camera_Mon(uk)|Magic Home Strip_Mon(uk)|Nest Tstat_Mon(uk)|Ring Doorbell_Mon(uk)|Roku TV_Mon(uk)|T-wemo Plug_Mon(uk),6,belkin|blink|home-assistant|nest|ring|roku,TRUE,31,e9a09d4987e6db8eb8657cd84d74b740146e3254,SET_000014,2
+Infrastructure,dns0.ic.ac.uk,6,Blink Camera_Mon(uk)|Magic Home Strip_Mon(uk)|Nest Tstat_Mon(uk)|Ring Doorbell_Mon(uk)|Roku TV_Mon(uk)|T-wemo Plug_Mon(uk),6,belkin|blink|home-assistant|nest|ring|roku,TRUE,31,e9a09d4987e6db8eb8657cd84d74b740146e3254,SET_000014,2
+IP,172.217.0.142,7,Amazon Fire TV_YT|Google Home Mini_YT|Google Home_YT|Nest CamIQ_YT|Nest Guard_YT|Samsung Smart TV_YT|nVidia Shield_YT,5,amazon|google|nest|nvidia|samsung,TRUE,1261,2f3c1cd16f89020bb7cb32eaf2d00e82f3627dbe,SET_000001,1
+IP,74.125.136.139,6,Amazon Fire TV_YT|Google Home Mini_YT|Google Home_YT|Nest CamIQ_YT|Samsung Smart TV_YT|nVidia Shield_YT,5,amazon|google|nest|nvidia|samsung,TRUE,303,cf249e131f62d9badde80b13869571c8081a34f4,SET_000006,1
+Service,api-global.us-east-1.prodaa.netflix.com,9,Amazon Echo Gen2_Our|Amazon Fire TV_Mon(us)|LG Smart TV_Mon(us)|Roku TV_Mon(uk)|Roku TV_Mon(us)|Roku TV_YT|Roku4_YT|Samsung Smart TV_YT|nVidia Shield_YT,5,amazon|lg|nvidia|roku|samsung,TRUE,820,f5a3664c15688a65d3b9b555667783cd046acfcb,SET_000566,1
+Service,link-vision-picture-sh.oss-cn-shanghai.aliyuncs.com.gds.alibabadns.com,5,Lenovo Camera_selfdata|Pisen Camera_selfdata|Tenda Camera_selfdata|Xiaobai Camera_selfdata|Xiaopai Camera_selfdata,5,lenovo|pisen|tenda|xiaobai|xiaopai,TRUE,210,f89c00db27fdaa3028a9511e00f1afce842ff744,SET_000575,1
+Infrastructure,hn.kd.ny.adsl,5,360 Camera_selfdata|Cubetoou Camera_selfdata|Honorxiaotun Camera_selfdata|Xiaodu Clock_selfdata|Xiaotun Camera_selfdata,5,360|cubetoou|honorxiaotun|xiaodu|xiaotun,TRUE,44,0860134d4e14d3f5f07337a9f91ec4f679a90898,SET_000638,1
+IP,74.125.136.138,6,Amazon Fire TV_YT|Google Home Mini_YT|Google Home_YT|Nest CamIQ_YT|Nest Guard_YT|nVidia Shield_YT,4,amazon|google|nest|nvidia,TRUE,347,063e2af1ab3764d178debc1acaff081f52f5da56,SET_000005,1
+IP,74.125.136.100,5,Google Home Mini_YT|Google Home_YT|Nest Guard_YT|Samsung Smart TV_YT|nVidia Shield_YT,4,google|nest|nvidia|samsung,TRUE,378,b74176ae4f2ae287e08a2525e3a7a198a3b522ce,SET_000009,1
+IP,172.217.2.46,5,Amazon Fire TV_YT|Google Home Mini_YT|Google Home_YT|Nest Guard_YT|nVidia Shield_YT,4,amazon|google|nest|nvidia,TRUE,276,16efd6d334408328c25df6aee6f6c09c7a775213,SET_000010,1
+IP,74.125.21.101,5,Amazon Fire TV_YT|Google Home Mini_YT|Google Home_YT|Samsung Smart TV_YT|nVidia Shield_YT,4,amazon|google|nvidia|samsung,TRUE,665,81bf136911b61dc0d4074a74c9eb2bd737164ea6,SET_000016,1
+IP,47.101.88.38,4,Lenovo Camera_selfdata|Pisen Camera_selfdata|Tenda Camera_selfdata|Xiaopai Camera_selfdata,4,lenovo|pisen|tenda|xiaopai,TRUE,144,8e95e67652353d33509eff1b407d167567339af9,SET_000145,1
+IP,106.15.241.244,4,Pisen Camera_selfdata|Tenda Camera_selfdata|Xiaobai Camera_selfdata|Xiaopai Camera_selfdata,4,pisen|tenda|xiaobai|xiaopai,TRUE,13,850523cad4e0115cb4e5061b5856f6b1fcff65b4,SET_000162,1
+IP,221.238.245.30,4,Konka Camera_selfdata|Qiaoan Camera_selfdata|Shuixing Camera_selfdata|Yibang Camera_selfdata,4,konka|qiaoan|shuixing|yibang,TRUE,25,b9c6fa6d519994a17768b32d4d2ef9070211681e,SET_000164,1
+IP,204.79.197.200,4,Amazon Echo Gen2_Our|Harmon Kardon Invoke_YT|Invoke_Mon(us)|Samsung Smart TV_YT,4,amazon|harman kardon|samsung|unknown,TRUE,65,e3e3379fe0cc08a8a491092d045ccbeb1f730f1d,SET_000392,2
+Service,www.google.com,9,Google Home Mini_Mon(uk)|Google Home Mini_Mon(us)|Google Home Mini_YT|Google Home_Mon(uk)|Google Home_YT|Samsung Smart TV_Mon(us)|Samsung Smart TV_YT|Securifi Almond_YT|nVidia Shield_YT,4,google|nvidia|samsung|securifi,TRUE,295,4988bb23b2e9493b18c5f9cd96a7f87247e21ee6,SET_000567,1
+Service,iotx-vision-business.cn-shanghai.log.aliyuncs.com,4,Pisen Camera_selfdata|Tenda Camera_selfdata|Xiaobai Camera_selfdata|Xiaopai Camera_selfdata,4,pisen|tenda|xiaobai|xiaopai,TRUE,55,d6950e84f03f7c863cdd0200b88f7cefe3bf6e97,SET_000573,1
+Service,appboot.us-east-1.prodaa.netflix.com,6,Amazon Fire TV_Mon(us)|LG Smart TV_Mon(us)|Roku TV_Mon(us)|Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,4,amazon|lg|roku|samsung,TRUE,54,ce3ab920b19b2196986b1259504532fe9bc1eee2,SET_000580,1
+Service,e9471.dscd.akamaiedge.net,7,Amazon Fire TV_Mon(us)|LG Smart TV_Mon(us)|Roku TV_Mon(uk)|Roku TV_Mon(us)|Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,4,amazon|lg|roku|samsung,TRUE,67,b58b1c45071af412b993dc038ecc97d275d93ab7,SET_000582,1
+Service,ichnaea.us-east-1.prodaa.netflix.com,5,Amazon Fire TV_Mon(us)|LG Smart TV_Mon(us)|Roku TV_Mon(us)|Roku TV_YT|Samsung Smart TV_YT,4,amazon|lg|roku|samsung,TRUE,208,40bf12d61ac607199dc3617fa3cfcb6525b8fce2,SET_000583,1
+Service,customerevents.us-east-1.prodaa.netflix.com,5,Amazon Fire TV_Mon(us)|LG Smart TV_Mon(us)|Roku TV_Mon(us)|Roku TV_YT|Samsung Smart TV_YT,4,amazon|lg|roku|samsung,TRUE,37,757e5ae631c7164b8ca79308f726f30ff21eecc6,SET_000584,1
+Service,uiboot.us-east-1.prodaa.netflix.com,6,Amazon Fire TV_Mon(us)|LG Smart TV_Mon(us)|Roku TV_Mon(us)|Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,4,amazon|lg|roku|samsung,TRUE,75,cadb18a8e94442ca5ee4e6d2341b789c77409d74,SET_000586,1
+Service,api.amazon.com,18,Allure Speaker_Mon(uk)|Amazon Echo Gen1_Mon(uk)|Amazon Echo Gen1_Mon(us)|Amazon Echo Gen1_Our|Amazon Echo Gen1_Our2|Amazon Echo Gen2_Mon(uk)|Amazon Echo Gen2_Mon(us)|Amazon Echo Gen2_Our|Amazon Echo Gen3_Mon(uk)|Amazon Echo Gen3_Mon(us)|Amazon Echo Look_Our|Amazon Echodot3a_IoTLS|Amazon Fire TV_IoTLS|Amazon Fire TV_Mon(uk)|Amazon Fire TV_Mon(us)|Amazon Fire TV_YT|Cloud Camera_Mon(us)|Samsung Smart TV_YT,4,amazon|harman kardon|samsung|unknown,TRUE,735,0b89383ea4225ddb727cdebfe69add8856786ac0,SET_000606,1
+Infrastructure,a-0001.a-msedge.net,4,Amazon Echo Gen2_Our|Harmon Kardon Invoke_YT|Invoke_Mon(us)|Samsung Smart TV_YT,4,amazon|harman kardon|samsung|unknown,TRUE,65,e3e3379fe0cc08a8a491092d045ccbeb1f730f1d,SET_000392,2
+IP,173.194.219.101,4,Google Home Mini_YT|Google Home_YT|Nest CamIQ_YT|nVidia Shield_YT,3,google|nest|nvidia,TRUE,2105,4d495cebbc556e502c858f15bd1ae3b6014d2d70,SET_000004,1
+IP,64.233.177.102,4,Google Home Mini_YT|Google Home_YT|Nest Guard_YT|nVidia Shield_YT,3,google|nest|nvidia,TRUE,55,9677b7980e6e0d4ecadf7acaac78eb0debda507f,SET_000007,1
+IP,64.233.177.101,4,Google Home Mini_YT|Google Home_YT|Nest Guard_YT|nVidia Shield_YT,3,google|nest|nvidia,TRUE,79,dfe8075621e6fd5f11af26df9c7e51b730e43c3c,SET_000008,1
+IP,74.125.21.139,4,Google Home Mini_YT|Google Home_YT|Samsung Smart TV_YT|nVidia Shield_YT,3,google|nvidia|samsung,TRUE,688,44d706665793a5ab438c9772e6cc6b1dbd85146a,SET_000019,1
+IP,74.125.21.138,4,Amazon Fire TV_YT|Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,3,amazon|google|nvidia,TRUE,603,4c4554c2b949dd6f512e73c2e01dbf84352e204a,SET_000024,1
+IP,34.237.109.106,3,Roku TV_YT|Samsung Smart TV_YT|nVidia Shield_YT,3,nvidia|roku|samsung,TRUE,4,070fc89004633065671163984ad71b0fe056c94a,SET_000046,1
+IP,64.233.177.95,4,Google Home Mini_YT|Google Home_YT|Samsung Smart TV_YT|nVidia Shield_YT,3,google|nvidia|samsung,TRUE,51,759641747ea2692d532adea635117b22448d555a,SET_000053,1
+IP,52.7.184.66,3,Roku TV_YT|Samsung Smart TV_YT|nVidia Shield_YT,3,nvidia|roku|samsung,TRUE,3,c35e23ce98cc689af2994b5bfbcf9321829c1f00,SET_000054,1
+IP,172.217.164.78,4,Google Home Mini_YT|Google Home_YT|Samsung Smart TV_YT|nVidia Shield_YT,3,google|nvidia|samsung,TRUE,436,2e43cfc0ac4dff87495e6a7b320825f0d7ce1540,SET_000062,1
+IP,64.233.177.139,4,Google Home Mini_YT|Google Home_YT|Samsung Smart TV_YT|nVidia Shield_YT,3,google|nvidia|samsung,TRUE,62,4b2f057e041bd7d37da83bf449c0ebef055318c9,SET_000071,1
+IP,64.233.177.100,4,Google Home Mini_YT|Google Home_YT|Samsung Smart TV_YT|nVidia Shield_YT,3,google|nvidia|samsung,TRUE,54,bff05d7dd8b27d54974fd6a1481673cb3601d89c,SET_000072,1
+IP,64.233.177.94,4,Google Home Mini_YT|Google Home_YT|Samsung Smart TV_YT|nVidia Shield_YT,3,google|nvidia|samsung,TRUE,8,4af890f68e9219c3a062842db69e9fd3d974d184,SET_000073,1
+IP,64.233.177.104,3,Google Home_YT|Samsung Smart TV_YT|nVidia Shield_YT,3,google|nvidia|samsung,TRUE,5,c2d5f282c5342ad9d2152c3cb74e4bb7bfd40eb1,SET_000074,1
+IP,74.125.136.101,4,Amazon Fire TV_YT|Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,3,amazon|google|nvidia,TRUE,333,134d9a020ee7f33702c4e1a73415c7b39791b0d6,SET_000089,1
+IP,74.125.136.102,4,Google Home Mini_YT|Google Home_YT|Samsung Smart TV_YT|nVidia Shield_YT,3,google|nvidia|samsung,TRUE,321,deebc09f6dea664e2eb7efb8eb924f52d5523f82,SET_000090,1
+IP,52.4.166.237,3,Roku TV_YT|Samsung Smart TV_YT|nVidia Shield_YT,3,nvidia|roku|samsung,TRUE,3,eb7f89c5212f85e6bfb88189de42db891ac8156e,SET_000091,1
+IP,74.125.136.113,4,Google Home Mini_YT|Google Home_YT|Samsung Smart TV_YT|nVidia Shield_YT,3,google|nvidia|samsung,TRUE,313,5b0cb1507a84dacb0fa260e5b63a5d9833436a2d,SET_000092,1
+IP,34.206.91.215,3,Roku TV_YT|Samsung Smart TV_YT|nVidia Shield_YT,3,nvidia|roku|samsung,TRUE,7,c1333f0105fd764e497ad14eb4a16772668ac635,SET_000106,1
+IP,54.164.223.190,3,Roku TV_Mon(uk)|Samsung Smart TV_YT|nVidia Shield_YT,3,nvidia|roku|samsung,TRUE,3,ff75489e3027503fd7b737c1f67c379cf95dec15,SET_000116,1
+IP,34.233.176.133,4,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT|nVidia Shield_YT,3,nvidia|roku|samsung,TRUE,7,22f303b3fbd44859fa42a097b14d2cdc0e5cef75,SET_000122,1
+IP,74.125.136.94,4,Google Home Mini_YT|Google Home_YT|Samsung Smart TV_YT|nVidia Shield_YT,3,google|nvidia|samsung,TRUE,43,6282aff85b4b64f9220c7f7eb8f29f9ca468eba5,SET_000130,1
+IP,54.80.66.19,3,Roku4_YT|Samsung Smart TV_YT|nVidia Shield_YT,3,nvidia|roku|samsung,TRUE,4,7a90bc4e7f108bc05ecece2a0561a90bc5c56b0d,SET_000135,1
+IP,216.58.195.14,4,Google Home Mini_YT|Google Home_YT|Samsung Smart TV_YT|nVidia Shield_YT,3,google|nvidia|samsung,TRUE,110,157800591b69b04f6467f6836a57b1beed788b26,SET_000137,1
+IP,123.60.6.202,3,Konka Camera_selfdata|Pisen Camera_selfdata|Qiaoan Camera_selfdata,3,konka|pisen|qiaoan,TRUE,81,32db217516cf64c8e8b0f49ded1480dbefeacdc3,SET_000140,2
+IP,106.15.229.25,3,Pisen Camera_selfdata|Xiaobai Camera_selfdata|Xiaopai Camera_selfdata,3,pisen|xiaobai|xiaopai,TRUE,4,208da6d4ffaa95dec107a426da4048718c7b1020,SET_000141,1
+IP,47.101.100.1,3,Pisen Camera_selfdata|Tenda Camera_selfdata|Xiaopai Camera_selfdata,3,pisen|tenda|xiaopai,TRUE,3,627417302cf1bb73953d3f454aa82432cdbf5409,SET_000143,1
+IP,47.102.73.197,3,Konka Camera_selfdata|Pisen Camera_selfdata|Qiaoan Camera_selfdata,3,konka|pisen|qiaoan,TRUE,15,206cbe8f9a571115a748c21d97700fe7e136da93,SET_000144,1
+IP,106.15.147.173,3,Pisen Camera_selfdata|Xiaobai Camera_selfdata|Xiaopai Camera_selfdata,3,pisen|xiaobai|xiaopai,TRUE,5,f792ae851451c59878ea84a2440d21a60c53495d,SET_000146,1
+IP,139.224.42.2,3,Lenovo Camera_selfdata|Pisen Camera_selfdata|Xiaobai Camera_selfdata,3,lenovo|pisen|xiaobai,TRUE,3,ff81537944e962c8a7641d30f800d2cb4f0180e4,SET_000147,1
+IP,47.102.32.245,3,Pisen Camera_selfdata|Tenda Camera_selfdata|Xiaopai Camera_selfdata,3,pisen|tenda|xiaopai,TRUE,10,62e9807fa11df7e549312b60abf8930143c1eee7,SET_000150,1
+IP,223.109.185.187,3,Lenovo Camera_selfdata|Pisen Camera_selfdata|Xiaopai Camera_selfdata,3,lenovo|pisen|xiaopai,TRUE,3,b310bf7d9f7ec4f3417da52c0792c0ef64b06adc,SET_000152,1
+IP,106.14.67.204,3,Lenovo Camera_selfdata|Pisen Camera_selfdata|Xiaobai Camera_selfdata,3,lenovo|pisen|xiaobai,TRUE,3,44c6a9c2a3d1eb21a9fde40555871ee16de0a553,SET_000156,2
+IP,106.14.207.159,3,Pisen Camera_selfdata|Xiaobai Camera_selfdata|Xiaopai Camera_selfdata,3,pisen|xiaobai|xiaopai,TRUE,6,5e966307240fcce6f2e9747d528b222fd07c6fdc,SET_000161,1
+IP,223.109.185.25,3,Pisen Camera_selfdata|Xiaobai Camera_selfdata|Xiaopai Camera_selfdata,3,pisen|xiaobai|xiaopai,TRUE,5,298147641b44536f0fd5816ca9d3dd31d4ec63a0,SET_000163,1
+IP,34.225.72.208,3,Amazon Fire TV_Mon(us)|Roku TV_YT|Samsung Smart TV_YT,3,amazon|roku|samsung,TRUE,7,23b06dbe991f0930a76ca2f4e7e8f8e880e5f37c,SET_000173,1
+IP,54.152.52.119,3,Amazon Fire TV_Mon(us)|Roku TV_YT|Samsung Smart TV_YT,3,amazon|roku|samsung,TRUE,3,9ba81c15b24b5a4a583b0bafb8daa6d36c1d422c,SET_000179,1
+IP,52.207.62.186,4,LG Smart TV_Mon(us)|Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,3,lg|roku|samsung,TRUE,8,914589265c3b9262244ca879c359bb9aaed67da9,SET_000180,1
+IP,52.5.31.211,4,Amazon Fire TV_Mon(us)|Roku TV_Mon(us)|Roku TV_YT|Samsung Smart TV_YT,3,amazon|roku|samsung,TRUE,9,c4e91923198a24958a2403beb9a25e290ec76281,SET_000183,1
+IP,34.231.48.114,5,Amazon Fire TV_Mon(us)|Roku TV_Mon(uk)|Roku TV_Mon(us)|Roku TV_YT|Samsung Smart TV_YT,3,amazon|roku|samsung,TRUE,8,99f30d3c0f908cd9fef1ff1c82e2914980e77f19,SET_000207,1
+IP,52.3.175.140,4,Amazon Fire TV_Mon(us)|Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,3,amazon|roku|samsung,TRUE,9,95e0f279feefa21f2cdb0ccc2f163f7c8a50e90b,SET_000212,1
+IP,34.232.39.195,4,Amazon Fire TV_Mon(us)|Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,3,amazon|roku|samsung,TRUE,6,da25f8df4d57f8e74f8dbb976b5c5a00c88f309c,SET_000214,1
+IP,54.164.225.9,4,Amazon Fire TV_Mon(us)|Roku TV_Mon(us)|Roku TV_YT|Samsung Smart TV_YT,3,amazon|roku|samsung,TRUE,17,e9ef9c4ebd3f13006d0b506eb6453082060f04b6,SET_000215,1
+IP,23.211.100.249,5,Amazon Fire TV_Mon(us)|Roku TV_Mon(us)|Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,3,amazon|roku|samsung,TRUE,11,97b6a957919d805523e8da493041934e48832982,SET_000221,1
+IP,52.54.206.138,4,Amazon Fire TV_Mon(us)|LG Smart TV_Mon(us)|Roku TV_Mon(us)|Roku4_YT,3,amazon|lg|roku,TRUE,6,8d23ac3bdd768a64221d1e974f39628824ed53a0,SET_000224,1
+IP,23.196.104.31,4,LG Smart TV_Mon(us)|Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,3,lg|roku|samsung,TRUE,12,34bc9eb114b65bb6ab89cc6008d5b6775ba1e6fa,SET_000238,1
+IP,143.215.203.16,3,Apple Home Pod_YT|Roku TV_YT|Samsung Smart TV_YT,3,apple|roku|samsung,TRUE,375,7056db8c522454bb293c0080a17441ac23cbf101,SET_000240,1
+IP,52.207.205.49,4,LG Smart TV_Our|Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,3,lg|roku|samsung,TRUE,5,325a704bcc03466d77a91027acda3b225b9db1c1,SET_000249,1
+IP,52.7.241.140,3,Amazon Fire TV_Mon(us)|Roku TV_YT|Samsung Smart TV_YT,3,amazon|roku|samsung,TRUE,6,281a8abac2ecb38b13f1fe8a3b5a7427e9a62aa1,SET_000270,1
+IP,34.225.247.65,3,LG Smart TV_Mon(us)|Roku TV_YT|Samsung Smart TV_YT,3,lg|roku|samsung,TRUE,4,123fc88be4a792371bc16d27235260e878655024,SET_000296,1
+IP,54.165.252.77,3,Amazon Fire TV_Mon(us)|Roku TV_YT|Samsung Smart TV_YT,3,amazon|roku|samsung,TRUE,5,7d12f1a3e37c7fee8bd9e4d10c337922c1ab8dcc,SET_000308,1
+IP,143.215.203.23,4,Apple Home Pod_YT|Apple TV(4thGen)_YT|Roku4_YT|Samsung Smart TV_YT,3,apple|roku|samsung,TRUE,21,3ade0a917ff364d3e4fdcc2b68012dfea1ee067c,SET_000354,1
+IP,52.119.164.214,14,Amazon Echo Gen1_Mon(uk)|Amazon Echo Gen1_Our|Amazon Echo Gen1_Our2|Amazon Echo Gen2_Mon(uk)|Amazon Echo Gen2_Our|Amazon Echo Gen3_Mon(uk)|Amazon Echo Gen3_Mon(us)|Amazon Echo Look_Our|Amazon Echo Look_Our2|Amazon Fire TV_IoTLS|Amazon Fire TV_Mon(uk)|Amazon Fire TV_YT|Cloud Camera_Mon(us)|Samsung Dryer_IoTLS,3,amazon|samsung|unknown,TRUE,275,aaab7e15180f4de3b02e522820e9e98a151bee59,SET_000367,1
+IP,52.94.232.206,15,Amazon Echo Gen1_Mon(uk)|Amazon Echo Gen1_Our|Amazon Echo Gen1_Our2|Amazon Echo Gen1_YT|Amazon Echo Gen2_Mon(uk)|Amazon Echo Gen2_Mon(us)|Amazon Echo Gen2_Our|Amazon Echo Gen3_Mon(uk)|Amazon Echo Gen3_Mon(us)|Amazon Echo Look_Our|Amazon Fire TV_Mon(uk)|Amazon Fire TV_Mon(us)|Amazon Fire TV_YT|Cloud Camera_Mon(us)|Samsung Dryer_IoTLS,3,amazon|samsung|unknown,TRUE,226,8934a3f56b98e3a1fae607779397251d909a834e,SET_000371,1
+IP,143.215.203.17,3,Amazon Fire TV_YT|Apple TV(4thGen)_YT|Samsung Smart TV_YT,3,amazon|apple|samsung,TRUE,362,c27843114dc4390178c47da2cac4ebec58867d35,SET_000373,1
+IP,54.239.26.244,10,Allure Speaker_Mon(uk)|Amazon Echo Gen1_Our|Amazon Echo Gen1_Our2|Amazon Echo Gen2_Mon(us)|Amazon Echo Gen2_Our|Amazon Echo Look_Our|Amazon Fire TV_Mon(uk)|Amazon Fire TV_Mon(us)|Amazon Fire TV_YT|Samsung Smart TV_YT,3,amazon|harman kardon|samsung,TRUE,99,1c866db3ec1579f279b4e1dbe655a48996d2bdf5,SET_000388,1
+IP,104.154.127.47,3,Amazon Echo Gen1_YT|Harmon Kardon Invoke_YT|Sonos_YT,3,amazon|harman kardon|sonos,TRUE,14,d0c9ebed1d73ea10aab967b7f1190bb3089662a5,SET_000402,2
+IP,47.100.127.192,3,Lenovo Camera_selfdata|Tenda Camera_selfdata|Xiaopai Camera_selfdata,3,lenovo|tenda|xiaopai,TRUE,5,5669e877cd93cc8dccfd6704b0a22bf0253de422,SET_000403,2
+IP,47.101.88.5,3,Tenda Camera_selfdata|Xiaobai Camera_selfdata|Xiaopai Camera_selfdata,3,tenda|xiaobai|xiaopai,TRUE,3,49fda1871018b6edf1d1f5e33757c41f4772c3d7,SET_000404,2
+IP,47.102.32.249,3,Tenda Camera_selfdata|Xiaobai Camera_selfdata|Xiaopai Camera_selfdata,3,tenda|xiaobai|xiaopai,TRUE,7,64a396fe95b5b517816581e4d0e9e688d3fde3f3,SET_000414,1
+IP,106.15.147.56,3,Tenda Camera_selfdata|Xiaobai Camera_selfdata|Xiaopai Camera_selfdata,3,tenda|xiaobai|xiaopai,TRUE,12,d0da747eddde413da8272e27796dc72f65e7e628,SET_000415,1
+IP,183.192.206.25,3,Tenda Camera_selfdata|Xiaobai Camera_selfdata|Xiaopai Camera_selfdata,3,tenda|xiaobai|xiaopai,TRUE,59,774e888227d727b47d8fe4c9d1bb1405b07a4c02,SET_000416,1
+IP,139.196.67.2,3,Bull Plug_selfdata|Xiaobai Camera_selfdata|Xiaopai Camera_selfdata,3,bull|xiaobai|xiaopai,TRUE,4,96d2074c129c783a4ffd7300a30eb2df06596f73,SET_000422,2
+IP,120.92.96.155,5,Mijia Humidifier_selfdata|Mijia Plugtwo_selfdata|Xiaobai Doorbell_selfdata|Xiaobai Y2camera_selfdata|Xiaomi Sound_selfdata,3,mijia|xiaobai|xiaomi,TRUE,12,bbb18108e6054e59fc02d4e5b9b8784df54381d2,SET_000426,1
+IP,110.43.0.83,4,Xiaobai Y2camera_selfdata|Xiaomao Camera_selfdata|Xiaomi Camera_selfdata|xiaomitv_speaker,3,xiaobai|xiaomao|xiaomi,TRUE,9,40446683eac5f09c621a0fced0375147de3a5e5d,SET_000427,1
+IP,221.238.245.26,4,Cubetoou Camera_selfdata|Xiaobai Camera_selfdata|Yingshi Camera_selfdata|xiaobaismart_camera,3,cubetoou|xiaobai|yingshi,TRUE,28,e2405f7ccc9380eb6652121c756b2197127f66fb,SET_000430,1
+IP,120.52.181.48,3,Xiaobai Doorbell_selfdata|Xiaomao Camera_selfdata|Xiaomi Camera_selfdata,3,xiaobai|xiaomao|xiaomi,TRUE,4,fed9b247af13e1b365c7af33d66f43700d8c9cd3,SET_000434,1
+IP,111.202.0.48,4,Xiaobai Doorbell_selfdata|Xiaobai Y2camera_selfdata|Xiaomao Camera_selfdata|Xiaomi Camera_selfdata,3,xiaobai|xiaomao|xiaomi,TRUE,5,cdd691ef3dcbd6e94c0a2431dedb6fbdfb408e56,SET_000435,1
+IP,39.156.66.18,3,Lenovo Camera_selfdata|Midea Speaker_selfdata|Xiaodu Clock_selfdata,3,lenovo|midea|xiaodu,TRUE,427,e337b5923d59f0ea289337c6050722e9d05433c8,SET_000437,1
+IP,110.43.87.243,3,Aqara Light_selfdata|Mijia Plug_selfdata|Xiaomi Camera_selfdata,3,aqara|mijia|xiaomi,TRUE,3,776b0e47baa16794fd4571c91e2a3f43ef838791,SET_000445,1
+IP,118.194.33.124,4,Dalen Light_selfdata|Huawei Sound_selfdata|Huaweizhengtai Plug_selfdata|Xiaotun Camera_selfdata,3,dalen|huawei|xiaotun,TRUE,6,78a75a4649375a9ed46b5a34c25116c0eac7a9c8,SET_000455,1
+Service,www.gstatic.com,6,Google Home Mini3_IoTLS|Google Home Mini_Mon(us)|Google Home Mini_YT|Google Home_YT|Samsung Smart TV_YT|nVidia Shield_YT,3,google|nvidia|samsung,TRUE,66,5228ae3cf91904be6e55c9b28a1391b9f7dbde66,SET_000570,1
+Service,qacloudapi.jooancloud.com,3,Konka Camera_selfdata|Pisen Camera_selfdata|Qiaoan Camera_selfdata,3,konka|pisen|qiaoan,TRUE,81,32db217516cf64c8e8b0f49ded1480dbefeacdc3,SET_000140,2
+Service,qalink-cloud-log.oss-cn-shanghai.aliyuncs.com.gds.alibabadns.com,3,Konka Camera_selfdata|Pisen Camera_selfdata|Qiaoan Camera_selfdata,3,konka|pisen|qiaoan,TRUE,22,8f5d7c8d9c297870389913ebba2e4bd279757f1f,SET_000574,1
+Service,dp-gw-na.amazon.com,18,Amazon Echo Gen1_Mon(uk)|Amazon Echo Gen1_Mon(us)|Amazon Echo Gen1_Our|Amazon Echo Gen1_Our2|Amazon Echo Gen2_Mon(uk)|Amazon Echo Gen2_Mon(us)|Amazon Echo Gen2_Our|Amazon Echo Gen3_Mon(uk)|Amazon Echo Gen3_Mon(us)|Amazon Echo Look_Our|Amazon Echo Look_Our2|Amazon Fire TV_IoTLS|Amazon Fire TV_Mon(uk)|Amazon Fire TV_Mon(us)|Amazon Fire TV_YT|Amazon T-echodot_IoTLS|Cloud Camera_Mon(us)|Samsung Dryer_IoTLS,3,amazon|samsung|unknown,TRUE,833,0509b988e8b5cc6344c2f4aa579087a88ac0a74f,SET_000594,1
+Service,arcus-uswest.amazon.com,18,Amazon Echo Gen1_Mon(uk)|Amazon Echo Gen1_Mon(us)|Amazon Echo Gen1_Our|Amazon Echo Gen1_Our2|Amazon Echo Gen2_Mon(uk)|Amazon Echo Gen2_Mon(us)|Amazon Echo Gen2_Our|Amazon Echo Gen3_Mon(uk)|Amazon Echo Gen3_Mon(us)|Amazon Echo Look_Our|Amazon Echo Look_Our2|Amazon Fire TV_IoTLS|Amazon Fire TV_Mon(uk)|Amazon Fire TV_Mon(us)|Amazon Fire TV_YT|Amazon T-echodot_IoTLS|Cloud Camera_Mon(us)|Samsung Dryer_IoTLS,3,amazon|samsung|unknown,TRUE,824,6f410ef8a7da80f2be78e1665b74d409dae2f496,SET_000595,1
+Service,dcape-na.amazon.com,19,Amazon Echo Gen1_Mon(uk)|Amazon Echo Gen1_Mon(us)|Amazon Echo Gen1_Our|Amazon Echo Gen1_Our2|Amazon Echo Gen1_YT|Amazon Echo Gen2_Mon(uk)|Amazon Echo Gen2_Mon(us)|Amazon Echo Gen2_Our|Amazon Echo Gen3_Mon(uk)|Amazon Echo Gen3_Mon(us)|Amazon Echo Look_Our|Amazon Echodot3a_IoTLS|Amazon Fire TV_IoTLS|Amazon Fire TV_Mon(uk)|Amazon Fire TV_Mon(us)|Amazon Fire TV_YT|Amazon T-echodot_IoTLS|Cloud Camera_Mon(us)|Samsung Dryer_IoTLS,3,amazon|samsung|unknown,TRUE,331,3fa165ffea9c2b741796845e790421a031eaec47,SET_000598,1
+Service,device-metrics-us.amazon.com,19,Amazon Echo Gen1_Mon(uk)|Amazon Echo Gen1_Mon(us)|Amazon Echo Gen1_Our|Amazon Echo Gen1_Our2|Amazon Echo Gen1_UNSW|Amazon Echo Gen1_YT|Amazon Echo Gen2_Mon(uk)|Amazon Echo Gen2_Mon(us)|Amazon Echo Gen2_Our|Amazon Echo Gen3_Mon(uk)|Amazon Echo Gen3_Mon(us)|Amazon Echo Look_Our|Amazon Fire TV_IoTLS|Amazon Fire TV_Mon(uk)|Amazon Fire TV_Mon(us)|Amazon Fire TV_YT|Amazon T-echodot_IoTLS|Cloud Camera_Mon(us)|Samsung Dryer_IoTLS,3,amazon|samsung|unknown,TRUE,5715,1816be0af96c6aae6cd91e778db2447f0cc5a6d3,SET_000600,1
+Service,c.media-amazon.com,6,Amazon Echo Gen3_Mon(uk)|Amazon Fire TV_Mon(uk)|Amazon Fire TV_Mon(us)|Amazon Fire TV_YT|LG Smart TV_Mon(us)|Samsung Smart TV_YT,3,amazon|lg|samsung,TRUE,116,6592377cfeea5e33cd5a1fb3cc0c8ba53ad98e5d,SET_000605,1
+Service,ot.io.mi.com,4,Smartmi Humidifier_selfdata|Xiaomi Camera_Mon(uk)|Xiaomi Strip_Mon(us)|xiaobaismart_camera,3,smartmi|xiaobai|xiaomi,TRUE,24,22b334f30348b0d816318b04b6aff192642adc95,SET_000609,1
+Service,weblb-wg.dual-gslb.spotify.com,3,Amazon Echo Gen1_YT|Harmon Kardon Invoke_YT|Sonos_YT,3,amazon|harman kardon|sonos,TRUE,14,d0c9ebed1d73ea10aab967b7f1190bb3089662a5,SET_000402,2
+Service,iotx-ota.oss-cn-shanghai.aliyuncs.com.gds.alibabadns.com,3,Tenda Camera_selfdata|Xiaobai Camera_selfdata|Xiaopai Camera_selfdata,3,tenda|xiaobai|xiaopai,TRUE,3,49fda1871018b6edf1d1f5e33757c41f4772c3d7,SET_000404,2
+Service,iot-auth-global.cn-shanghai.aliyuncs.com,3,Bull Plug_selfdata|Xiaobai Camera_selfdata|Xiaopai Camera_selfdata,3,bull|xiaobai|xiaopai,TRUE,4,96d2074c129c783a4ffd7300a30eb2df06596f73,SET_000422,2
+Service,business.smartcamera.api.io.mi.com,5,Xiaobai Doorbell_selfdata|Xiaobai Y2camera_selfdata|Xiaomao Camera_selfdata|Xiaomi Camera_selfdata|xiaobaismart_camera,3,xiaobai|xiaomao|xiaomi,TRUE,31,a4cd2980e86fb1512a20dc486b828df4a126ba37,SET_000612,1
+Service,www.a.shifen.com,3,Lenovo Camera_selfdata|Midea Speaker_selfdata|Xiaodu Clock_selfdata,3,lenovo|midea|xiaodu,TRUE,869,e9439f60410f2d83c44ef92b72e37e1175618442,SET_000614,1
+Service,data.hicloud.com,4,Dalen Light_selfdata|Huawei Sound_selfdata|Huaweizhengtai Plug_selfdata|Xiaotun Camera_selfdata,3,dalen|huawei|xiaotun,TRUE,10,860881e93eccd791e0bc59da808ed8b029de9df5,SET_000618,1
+Infrastructure,xiaosache.com,3,Lenovo Camera_selfdata|Pisen Camera_selfdata|Xiaobai Camera_selfdata,3,lenovo|pisen|xiaobai,TRUE,3,44c6a9c2a3d1eb21a9fde40555871ee16de0a553,SET_000156,2
+Infrastructure,vpc-sh-prod.mqtt.iotgds.aliyuncs.com.gds.alibabadns.com,3,Lenovo Camera_selfdata|Tenda Camera_selfdata|Xiaopai Camera_selfdata,3,lenovo|tenda|xiaopai,TRUE,5,5669e877cd93cc8dccfd6704b0a22bf0253de422,SET_000403,2
+IP,212.227.81.55,3,Canary_YT|Nest CamIQ_YT|Nest Guard_YT,2,canary|nest,TRUE,10,c633bac5110017f26aaa29ef8d375224d82d318e,SET_000002,1
+IP,172.217.0.78,3,Google Home Mini_YT|Google Home_YT|Nest CamIQ_YT,2,google|nest,TRUE,6540,05c76f5a1fbba45a8bb736faec0921425d3c4e2c,SET_000003,1
+IP,173.194.175.138,2,Google Home_YT|Nest Guard_YT,2,google|nest,TRUE,4,e21f462d71a356538afbcb287ca257b8464e0e80,SET_000011,1
+IP,155.33.33.70,2,LG Smart TV_Mon(us)|Nest Tstat_Mon(us),2,lg|nest,TRUE,10,fe40c737c8af91f214257795bcd0856732662709,SET_000013,2
+IP,74.125.21.188,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,447,e38341218ebb80739b49ea9686ee2c8f7236468c,SET_000015,1
+IP,74.125.21.113,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,692,f3945a1e62a1b89bcf1b6a0a2576c2e62ffd12d8,SET_000017,1
+IP,74.125.21.102,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,712,ef22b0c3c31fb57ce35427f21d854178895de76a,SET_000018,1
+IP,74.125.21.95,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,169,69feaf3a39d337e20fe382082e098d0bda231b12,SET_000020,1
+IP,172.217.4.10,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,69,7e6630b51959bfcc32ef6315c69fbe343b9b6c03,SET_000021,1
+IP,172.217.2.42,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,72,74a1fedb62dcba549b7cd01203a9b35e75320e71,SET_000022,1
+IP,74.125.21.100,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,590,bdbe98b709a9282feeeba615bbe0e647cec144cd,SET_000023,1
+IP,54.209.200.219,3,Roku TV_Mon(uk)|Roku4_YT|nVidia Shield_YT,2,nvidia|roku,TRUE,5,85386f811e82e389735012657ab1382d08dfc36f,SET_000025,1
+IP,69.28.157.182,2,Samsung Smart TV_YT|nVidia Shield_YT,2,nvidia|samsung,TRUE,659,6af9b232eab9b2e4c3426f9e9ebea1f366719da4,SET_000026,1
+IP,172.217.164.74,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,91,ee4bfcf6379e8cf8ed454213ac5e5360c5b2f31b,SET_000027,1
+IP,172.217.0.74,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,73,d577d3ae2952eda7bbdeac5a92c25b4cec4e3b6e,SET_000028,1
+IP,74.125.21.99,2,Google Home Mini_YT|nVidia Shield_YT,2,google|nvidia,TRUE,6,67343e9776db6c85b84657d05c30fbb013dc3bb3,SET_000029,1
+IP,173.194.219.95,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,75,44fbd06422b30b7acb7cd5329d8bd6d015593c2d,SET_000030,1
+IP,173.194.219.138,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,2160,c5eca3e27d5c94ae575713fc2b1fea3ec48407c8,SET_000031,1
+IP,173.194.219.113,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,2096,86a6158822ba709239046887ed6389eea322d075,SET_000032,1
+IP,74.125.138.95,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,50,0acb65037e791c948685b7fe385ab777cbea7eed,SET_000033,1
+IP,172.217.12.106,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,60,346b1ef633308dedb21c4c379d5b91b9cba6c1a6,SET_000034,1
+IP,74.125.21.94,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,72,76ca6e86241551c56626fec6e0241c5d1556c838,SET_000035,1
+IP,74.125.138.188,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,299,65c914b25906255a207e132f5093ed6268eae659,SET_000036,1
+IP,172.217.3.234,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,54,342ffa6b35314fd1c30c6f04c8634226a6707040,SET_000037,1
+IP,52.20.246.12,2,Roku TV_YT|nVidia Shield_YT,2,nvidia|roku,TRUE,2,6a7435abc75d1d093b725964f26b648b08c0682c,SET_000038,1
+IP,216.58.193.170,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,52,f5796f64f91073d835991be530b9930d95db116d,SET_000039,1
+IP,74.125.136.95,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,88,9b79c05eaca1977ff4464d532edc72a01a250c05,SET_000040,1
+IP,74.125.21.147,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,6,11775edc18ad2f8f3f9d22863984b70b7e451bac,SET_000041,1
+IP,64.233.176.95,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,9,84ae43cbfebf3defb7736c6b8a5d5217ea2b55b4,SET_000042,1
+IP,172.217.0.138,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,74,a0d59e1000803c6236f164ccfa60a19578149eaf,SET_000043,1
+IP,74.125.196.95,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,106,6b9bfafd956e53101cbb0c282f24f9424ca4b649,SET_000044,1
+IP,172.217.10.202,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,23,d3177205f64b40213a36fc7a84f572b7e3116282,SET_000045,1
+IP,173.194.219.99,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,8,b7cb80a255d57592d9cda4300f3e7fa8a4235de9,SET_000047,1
+IP,216.58.195.138,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,32,b5239120fbf4b20037958606bf1c90b5a8d72b8b,SET_000048,1
+IP,173.194.219.100,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,2022,cb9008987f65302a950ab777dcf53699133875fc,SET_000049,1
+IP,173.194.219.139,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,2077,5c92c0af5d6e33cf98e729793600b7a6a1402cb9,SET_000050,1
+IP,173.194.219.102,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,2055,c736aa3f4a8f13e5808547cd56a65766e0eeb31e,SET_000051,1
+IP,173.194.219.147,2,Google Home Mini_YT|nVidia Shield_YT,2,google|nvidia,TRUE,3,c4836c0814e7dda1ab0c062bc456b0768b5728c9,SET_000052,1
+IP,216.58.195.10,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,27,dd2882226e5a9c42ffbf3b2bedeebd46002220b6,SET_000055,1
+IP,52.1.221.71,2,Roku4_YT|nVidia Shield_YT,2,nvidia|roku,TRUE,9,2e1276d086aaac02f3e4b53e4f301279409328f6,SET_000056,1
+IP,172.217.11.138,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,75,386f075c326e5d0b14060ef48a4431d6de1cbc28,SET_000057,1
+IP,172.217.10.170,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,11,8e8339a20357b3008b7581319c215f61895f012d,SET_000058,1
+IP,108.177.122.95,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,30,e0ab7bead297ca812048a42c71198afdd5273bfd,SET_000059,1
+IP,74.125.29.113,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,4,d18d6a3fa21355e5bdedc5499fa32227b038edd3,SET_000060,1
+IP,34.232.81.127,2,Roku4_YT|nVidia Shield_YT,2,nvidia|roku,TRUE,3,649b3f0c3bd08533708a031bdf3a0ff32a3d6fd5,SET_000061,1
+IP,74.125.29.100,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,3,539297f86ed05d8e12ba8610d9ac1b13d21d9a44,SET_000063,1
+IP,173.194.207.113,2,Google Home Mini_YT|nVidia Shield_YT,2,google|nvidia,TRUE,6,1ee0eedc1b4483268c7f08d5a454842ca6e534c2,SET_000064,1
+IP,172.217.10.206,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,73,0e11f414f24bffb5672348357197c0d4b7f3e78a,SET_000065,1
+IP,172.217.0.132,2,Securifi Almond_YT|nVidia Shield_YT,2,nvidia|securifi,TRUE,36,2cdfd376c3e34154867f9565be97db9c0e0e5c02,SET_000066,1
+IP,173.194.206.95,2,Google Home Mini_YT|nVidia Shield_YT,2,google|nvidia,TRUE,7,0a31d0e22aa6b72dccca17492d6bed6115088bbf,SET_000067,1
+IP,54.152.58.131,2,Roku TV_YT|nVidia Shield_YT,2,nvidia|roku,TRUE,3,6ff6d1151047a2010148d30ad77d13036f67a7da,SET_000068,1
+IP,34.196.1.65,2,Samsung Smart TV_YT|nVidia Shield_YT,2,nvidia|samsung,TRUE,2,5c8544a827d5ae98c4488cd61dad6901806bbbe4,SET_000069,1
+IP,216.58.218.10,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,17,26b788f9e504b91529f365f591a581ea7ce87a17,SET_000070,1
+IP,173.194.219.188,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,651,1f86dc607f0b2e0a0b454be5dec030765ce44e77,SET_000075,1
+IP,64.233.177.138,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,52,7b4c0c7ed67fb39435314f17a7b7dde1fe0336ab,SET_000076,1
+IP,64.233.177.113,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,45,4a8f3584f9314f533f934c318e08bcc816f12959,SET_000077,1
+IP,34.233.10.88,2,Roku TV_YT|nVidia Shield_YT,2,nvidia|roku,TRUE,3,f6e45b7c1475b7ef7d50d3fc0fc7db2bbc37119d,SET_000078,1
+IP,64.233.176.139,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,19,eb7972570a3a509650e595c2f56be9a17460f546,SET_000079,1
+IP,64.233.176.138,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,22,c4d7f4f7c6da09f8116e57def9db192c6e072bf7,SET_000080,1
+IP,64.233.177.103,2,Samsung Smart TV_YT|nVidia Shield_YT,2,nvidia|samsung,TRUE,2,7a338ead5c036a339d730dff14410e12c4b11b61,SET_000081,1
+IP,64.233.176.100,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,18,d2c7f92a0a2292ec200731f61d7760f3d0f861b2,SET_000082,1
+IP,64.233.176.101,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,12,e72f9d080dc7276d95260cfa6de55471d1ea6e35,SET_000083,1
+IP,64.233.176.113,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,13,909c67073a1db27a1810f0714ad943079a538d44,SET_000084,1
+IP,64.233.176.102,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,12,6155d4b50cdd08fa768bd6bb5b7b47b5c5bcbe89,SET_000085,1
+IP,172.217.164.42,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,11,2ac11c9eb0d719aa13fc80ca15e5cb3ae2ba0709,SET_000086,1
+IP,34.192.136.50,3,Roku TV_YT|Roku4_YT|nVidia Shield_YT,2,nvidia|roku,TRUE,3,c7b1c73a8195dcf82c00215b9db495914b3a99cd,SET_000087,1
+IP,173.194.206.101,2,Google Home Mini_YT|nVidia Shield_YT,2,google|nvidia,TRUE,2,1141a229c5e678d6185c75fbef37abae09b7607a,SET_000088,1
+IP,74.125.136.106,2,Samsung Smart TV_YT|nVidia Shield_YT,2,nvidia|samsung,TRUE,3,0c080371ab62e367374ae7f84369f5775c2d3d39,SET_000093,1
+IP,74.125.138.113,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,112,ae308997ee76a660492f61f4c06801527d144127,SET_000094,1
+IP,173.194.206.102,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,7,d4d297cfba1e4ed2c73e2647ef630e74ea489d3f,SET_000095,1
+IP,173.194.66.95,2,Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,4,d2f4345654fca5466ba0059d372e37578e7d5e91,SET_000096,1
+IP,34.235.30.66,3,Roku TV_YT|Roku4_YT|nVidia Shield_YT,2,nvidia|roku,TRUE,5,3fa4c99e7849e5558c744e0d08dad4d21d3ce4e8,SET_000097,1
+IP,64.233.185.188,2,Google Home Mini_YT|nVidia Shield_YT,2,google|nvidia,TRUE,54,2fdce3a737175bf4e7b8b8a8dde649d7f9dc9cdd,SET_000098,1
+IP,172.217.4.14,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,37,a91b4ad6cb01416e67b56170f49afb362b54bfe0,SET_000099,1
+IP,172.217.13.10,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,12,198d111f1a4d1b52c04a584df11437d4c5919027,SET_000100,1
+IP,34.233.137.75,2,Roku4_YT|nVidia Shield_YT,2,nvidia|roku,TRUE,2,82f6146272dc3ea2758157266434ddf60a62ac34,SET_000101,1
+IP,173.194.175.100,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,6,c5bfa4b17e8f05f2af370e027e9596adf2d92862,SET_000102,1
+IP,74.125.192.95,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,4,746e9a5ff87ea0330478af9f42c025c9b239905b,SET_000103,1
+IP,50.19.205.119,2,Roku TV_YT|nVidia Shield_YT,2,nvidia|roku,TRUE,3,26d2f58a125300147e90961d63e3f8f5b023ae40,SET_000104,1
+IP,172.217.3.238,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,77,8db415ac8ffeaf9883f1ddf316c0db276f392ca9,SET_000105,1
+IP,64.233.185.95,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,24,bf7a1ec87a1f9d0a8bcd3be9220819e292f20644,SET_000107,1
+IP,173.194.175.113,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,10,1667feea8545526484f4b2c02ce987de976dbebf,SET_000108,1
+IP,216.58.217.234,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,26,4ad6252b164bd40aece46b96a35074a8739f8d1a,SET_000109,1
+IP,52.207.115.251,2,Amazon Fire TV_Mon(us)|nVidia Shield_YT,2,amazon|nvidia,TRUE,2,a935ef9675812a687f960613697e29eaf75a56f1,SET_000110,1
+IP,74.125.196.188,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,201,5500aa06641da026d49a7ca777766b263642cb1c,SET_000111,1
+IP,54.86.15.147,2,Roku TV_YT|nVidia Shield_YT,2,nvidia|roku,TRUE,5,c3e43bf524010373a1f46fbc8dab8558c6f9bf1b,SET_000112,1
+IP,172.217.10.174,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,31,05205c4dbadd5da9624c0e878731c536fd82f24e,SET_000113,1
+IP,173.194.68.100,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,6,7f34a358c27e25a2acecf2830ec35f3199c6bf36,SET_000114,1
+IP,34.232.132.191,3,Roku TV_YT|Roku4_YT|nVidia Shield_YT,2,nvidia|roku,TRUE,5,e5f07319e9e83391d0e758b60edc882c84ae243d,SET_000115,1
+IP,172.217.2.35,2,Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,6,66acae0b4d7830b2bd6e879e6f3703bc58bbf235,SET_000117,1
+IP,74.125.196.138,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,540,f7d12b7c8eeed7dcfd264a551427c8156f89648d,SET_000118,1
+IP,64.233.177.97,2,Samsung Smart TV_YT|nVidia Shield_YT,2,nvidia|samsung,TRUE,2,73b3a09d5f39f457941ecc66f761df73e3ec846e,SET_000119,1
+IP,52.1.201.22,2,Roku4_YT|nVidia Shield_YT,2,nvidia|roku,TRUE,3,8d806f94d9905651099445a68d19af0660989605,SET_000120,1
+IP,34.206.137.106,2,Roku4_YT|nVidia Shield_YT,2,nvidia|roku,TRUE,5,02b6a550e45cd06b138cb895fff32b21bf6088d1,SET_000121,1
+IP,173.194.204.113,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,5,d3da045182f5cb68c1dff3ff253eeb18f69561cb,SET_000123,1
+IP,173.194.204.138,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,7,758828fc686226b9ed13fa436149d383184473d2,SET_000124,1
+IP,74.125.196.113,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,465,a7b56e7773787e5c79b04c90c4b2eb82bb487da0,SET_000125,1
+IP,52.205.160.89,3,Roku TV_YT|Roku4_YT|nVidia Shield_YT,2,nvidia|roku,TRUE,4,2da8021ae86cab39b5d696dfee8c724b4a0865b0,SET_000126,1
+IP,74.125.136.99,2,Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,8,64b4d5649de1631de8f953d1a2444f9fd6a3665e,SET_000127,1
+IP,173.194.207.139,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,4,0ff21e4a3a29c280ef4d63085fa8c987c57291ce,SET_000128,1
+IP,173.194.204.101,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,5,501bb6d7b62eb41b2a4c2d7002d69acf1586812c,SET_000129,1
+IP,108.177.122.188,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,163,9fe35ce39091600add8fd2064b2e71724a3ad15b,SET_000131,1
+IP,74.125.136.147,2,Samsung Smart TV_YT|nVidia Shield_YT,2,nvidia|samsung,TRUE,7,afef6c8f7a89ddb019fdee3ca344e8ab5c8dbfbc,SET_000132,1
+IP,172.217.164.46,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,4,2853e422bcaf8690dcaa246e6b5256450ab4c5d7,SET_000133,1
+IP,52.22.161.82,3,Roku TV_YT|Roku4_YT|nVidia Shield_YT,2,nvidia|roku,TRUE,4,2aa6370e48a0da0c043806f52fa38a3e8140f0c9,SET_000134,1
+IP,74.125.21.106,3,Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,5,b49394c8a929889a53dc689f2badbed323b150db,SET_000136,1
+IP,52.81.14.33,2,Philips Light_selfdata|Wiz Light_selfdata,2,philips|wiz,TRUE,10,9a6fee8fce2bb3cb5b5fb502718fb888475d6439,SET_000138,1
+IP,52.80.242.139,2,Philips Light_selfdata|Wiz Light_selfdata,2,philips|wiz,TRUE,5,ca6d7f5923e13b18e087d25660adcbd9cdbcd6c7,SET_000139,1
+IP,223.109.185.204,2,Lenovo Camera_selfdata|Pisen Camera_selfdata,2,lenovo|pisen,TRUE,2,2cbe26b56820f865db60467d1bb30f8cb69779fe,SET_000148,1
+IP,223.109.147.63,2,Pisen Camera_selfdata|Xiaopai Camera_selfdata,2,pisen|xiaopai,TRUE,3,7d8d923a88972cc2521a677e380d9a8cff5ea09a,SET_000149,1
+IP,223.109.149.110,2,Lenovo Camera_selfdata|Pisen Camera_selfdata,2,lenovo|pisen,TRUE,3,82d05c856290bf1155848bbc315378860523e1ba,SET_000151,1
+IP,223.109.185.251,2,Pisen Camera_selfdata|Xiaobai Camera_selfdata,2,pisen|xiaobai,TRUE,2,b0f6e20d3a04ffa2e87883ec4e101c6d43339452,SET_000154,1
+IP,101.132.32.139,2,Pisen Camera_selfdata|Tenda Camera_selfdata,2,pisen|tenda,TRUE,3,5787ab5a1aeef8b36f2dff098474f42a2c1680d6,SET_000155,1
+IP,223.109.186.181,2,Lenovo Camera_selfdata|Pisen Camera_selfdata,2,lenovo|pisen,TRUE,2,d3576a27b3777223be1334aa5b3d56c57ebeb16f,SET_000157,1
+IP,223.109.149.44,2,Pisen Camera_selfdata|Xiaobai Camera_selfdata,2,pisen|xiaobai,TRUE,2,0f8de2184d2d094cccef49e14fd6423be863c859,SET_000158,1
+IP,223.109.149.62,2,Pisen Camera_selfdata|Xiaobai Camera_selfdata,2,pisen|xiaobai,TRUE,2,f0e5caf9349032616df0b83c311d2dc210300523,SET_000159,1
+IP,223.109.149.9,2,Pisen Camera_selfdata|Xiaobai Camera_selfdata,2,pisen|xiaobai,TRUE,3,0952132bb2bcde45858ee8b02fca149112986133,SET_000160,1
+IP,47.88.59.209,3,Roku TV_IoTLS|Yi Camera_Mon(uk)|Yi Camera_Mon(us),2,roku|yi,TRUE,183,ec0cd737a6e247c9fef992f5d57d5f7376ad2cdf,SET_000165,1
+IP,47.90.240.160,3,Roku TV_IoTLS|Yi Camera_Mon(uk)|Yi Camera_Mon(us),2,roku|yi,TRUE,223,6afe51fd964dce0db5d38f8474c055e52ea07963,SET_000166,1
+IP,47.74.255.9,3,Roku TV_IoTLS|Yi Camera_Mon(uk)|Yi Camera_Mon(us),2,roku|yi,TRUE,74,8494fbcc7fae258fe607c70166d1512a862ed02c,SET_000167,1
+IP,47.254.14.172,2,Roku TV_IoTLS|Yi Camera_Mon(us),2,roku|yi,TRUE,22,7146e16a90ace2128757608473be0ab7d5d554ca,SET_000168,2
+IP,54.165.117.251,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,2,e6b7f491ea6d5a6f91dd9a29e0ba3be391d32eb0,SET_000169,1
+IP,34.234.209.251,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,10,c5d7e74dfeffd4264c0f975c35d59d5c90343e22,SET_000170,1
+IP,74.125.21.132,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,90,1d56ae7b769bf5fff64a686e7a69e3c7e1eb5679,SET_000171,1
+IP,52.203.196.7,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,7,43af8630809da326ecda6e0ec6774a30a0e26d24,SET_000172,1
+IP,52.205.74.181,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,4,1c3cd63a5207ed5e83c0ce4a8f4e37603dffa524,SET_000174,1
+IP,34.230.120.150,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,3,8f64dff83089bd44555ea6a5be85c9fb3916f098,SET_000175,1
+IP,34.237.170.150,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,9,c7dbcc7b15085a792bd0e67748d3f4d0f96cfe2d,SET_000176,1
+IP,52.72.188.171,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,4,38b0aeb72a965371b67c62f67c1587f485926353,SET_000177,1
+IP,52.22.185.151,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,6,5693c8088b3144febb93ea2461b4d9e1a32410c0,SET_000178,1
+IP,23.44.86.42,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,6,048caba4586d285d13e68095267d41435505648c,SET_000181,1
+IP,52.22.126.152,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,6,3b4a2dc3bfa3219677a2514c9bdccb850dae1ae4,SET_000182,1
+IP,52.5.189.72,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,6,311e162f167b5201f2f425dd21b920196f2075e8,SET_000184,1
+IP,54.164.207.213,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,4,49aef40ff120c15c85bfb0ca623bf96346cad224,SET_000185,1
+IP,52.2.249.117,2,Amazon Fire TV_Mon(us)|Roku TV_YT,2,amazon|roku,TRUE,2,9ffaf54ab6cd21493bd7d2498169889dc6a24801,SET_000186,1
+IP,54.239.172.126,2,Roku TV_YT|TP-Link SmartWiFi LED Bulb_YT,2,roku|tp-link,TRUE,3,3ddd70050d0f8713edbbb7c613acb595841ca3ab,SET_000187,1
+IP,34.237.159.104,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,2,6dbda41f8c0c677da0cfb5a210de2824994a3fd0,SET_000188,1
+IP,143.215.193.107,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,52,3be21eb2d7773995cf7f42480c0c6b5000e38b25,SET_000189,2
+IP,34.231.208.206,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,2,3684cad9cb0b0c3aba13093f538891e86ce56de5,SET_000190,1
+IP,34.235.98.8,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,9,c4d97356a3caf95f6f9be504f0a9172edbabcb7e,SET_000191,1
+IP,52.54.201.142,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,2,8bab6a2515733ef9ae8124aeaf0bf274369f7c85,SET_000192,1
+IP,52.31.218.104,2,Roku TV_Mon(uk)|Samsung Smart TV_YT,2,roku|samsung,TRUE,2,a423aa42db451a9f15dbb130a6d746a83d7826a1,SET_000193,1
+IP,143.204.192.111,2,Roku TV_Mon(uk)|TP-Link Bulb_Mon(uk),2,roku|tp-link,TRUE,5,5dd9f2e328a6e399447918309fcfaa56a9861c23,SET_000194,1
+IP,34.226.149.227,5,Roku TV_Mon(uk)|Roku TV_Mon(us)|Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,8,d352c3bd879bbab31c47d387ed4a953def3309d6,SET_000195,1
+IP,52.201.149.179,3,Roku TV_Mon(uk)|Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,3,0d14e65670babc4eea4ea980221a26614fa0dd52,SET_000196,1
+IP,52.72.50.217,4,Roku TV_Mon(uk)|Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,6,88f81fbcfa624ea3b3eb8ed70fde21ce9997bf56,SET_000197,1
+IP,52.44.220.231,3,LG Smart TV_Mon(us)|Roku TV_Mon(uk)|Roku TV_YT,2,lg|roku,TRUE,15,767e613d254a56b867504bfe4510a926ca5ccc0b,SET_000198,1
+IP,52.44.167.208,2,LG Smart TV_Mon(us)|Roku TV_Mon(uk),2,lg|roku,TRUE,3,4dca2ad7c435d1e1bd6949814f825c0eba5e7832,SET_000199,1
+IP,52.2.73.101,3,LG Smart TV_Mon(us)|Roku TV_Mon(uk)|Roku TV_Mon(us),2,lg|roku,TRUE,6,abfc57806443bbf1fc6d9c45546989e70e42741f,SET_000200,1
+IP,52.72.50.135,3,Roku TV_Mon(uk)|Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,4,3576a110ef60d23396f23c23c64aec9ff8d1ba7a,SET_000201,1
+IP,34.194.133.14,3,Amazon Fire TV_Mon(us)|Roku TV_Mon(uk)|Roku TV_Mon(us),2,amazon|roku,TRUE,3,a0481aa26e054acd2165c3a4d9bcfe1ff9d9a67d,SET_000202,1
+IP,34.233.70.233,3,Roku TV_Mon(uk)|Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,4,5a0effb5a22786a6be3d38d6fc2215390e1a0809,SET_000203,1
+IP,52.0.38.79,4,Roku TV_Mon(uk)|Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,4,2f16662b94dc1e6094fd98fb24d5d7a1608f6ab0,SET_000204,1
+IP,107.23.113.69,4,Roku TV_Mon(uk)|Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,6,9bf88b7eb02bb68691cf6fa054f3ffa12e8880f8,SET_000205,1
+IP,52.70.88.252,3,LG Smart TV_Mon(us)|Roku TV_Mon(uk)|Roku TV_YT,2,lg|roku,TRUE,3,8a876a1163195e5a09ecacd6f13fb05299792b99,SET_000206,1
+IP,34.204.22.118,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,12,7052253c90bebb1e88ae9f5de324f593f29b0a59,SET_000208,1
+IP,52.23.109.11,3,Amazon Fire TV_Mon(us)|Roku TV_YT|Roku4_YT,2,amazon|roku,TRUE,4,e660735c87f8595ef4cd62204209a140f80fed09,SET_000209,1
+IP,34.230.143.55,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,2,00ea613057aecf748ee78e72b022a8c9f79f0b65,SET_000210,1
+IP,54.164.224.30,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,6,7212b6bb7218ef7901185b44bb462c0c04f02248,SET_000211,1
+IP,52.44.61.142,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,4,571bbb8e0e4e804a2e274d80446018fb9ae8661c,SET_000213,1
+IP,52.44.230.64,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,4,f8735d2541d9e146360e8fc03a33eb89df8f0a5f,SET_000216,1
+IP,52.72.97.1,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,6,03df6c8385219614c517451b0dfe08787306a0cd,SET_000217,1
+IP,52.5.119.51,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,5,c18ed680438ea810af39d4ac1fc6ec34d5f3615e,SET_000218,1
+IP,34.237.157.76,3,Roku TV_Mon(us)|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,5,54d1d821db80127d0a1683bd1160dd1ce54184a9,SET_000219,1
+IP,54.210.28.152,3,Amazon Fire TV_Mon(us)|Roku TV_Mon(us)|Roku TV_YT,2,amazon|roku,TRUE,4,c150c1cc30caaf6d7b9d3abece587eb8e016b876,SET_000220,1
+IP,104.100.93.16,2,Apple TV_Mon(us)|Roku TV_Mon(us),2,apple|roku,TRUE,4,ffe64cc0fcbc82c649d39e0167b6755c688f9ad8,SET_000222,1
+IP,52.85.138.226,2,Amazon Echo Gen1_Mon(us)|Roku TV_Mon(us),2,amazon|roku,TRUE,2,13e53b6555d152d464672c749102d5001bbcb264,SET_000223,1
+IP,52.73.224.7,3,Roku TV_Mon(us)|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,3,ebf5faf3e4eec81504e58089ed9d0072d1729e76,SET_000225,1
+IP,54.175.238.199,2,Roku TV_Mon(us)|Samsung Smart TV_YT,2,roku|samsung,TRUE,4,1c65f1dac6a679c65cb990cab32312facb031e87,SET_000226,1
+IP,52.20.26.155,2,Amazon Fire TV_Mon(us)|Roku TV_Mon(us),2,amazon|roku,TRUE,6,62379b3fa5524761512b27ba8355a45991c3d191,SET_000227,1
+IP,34.230.169.118,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,2,4fb364381744c9e3807d66817f8c5f3221c34159,SET_000228,1
+IP,23.1.130.190,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,5,604ee055927957cea59696c7e0260548e2dbf048,SET_000229,1
+IP,52.207.57.195,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,3,6e15bc5dbde11b35b532ac97e8e8fad1e2f5671d,SET_000230,1
+IP,34.234.53.168,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,4,0b4ee6baa5621d29a89c3a74ff64f060856ea933,SET_000231,1
+IP,34.228.48.51,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,7,d3de897da20811bc3b99d63812ac83eee5cb65c0,SET_000232,1
+IP,52.200.232.25,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,7,9f82e89d564121d97f53e45542cf2316e0d2e0d7,SET_000233,1
+IP,34.230.237.199,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,4,cbaa4997d3c6f156a20ff7fd54e4ade30465c44c,SET_000234,1
+IP,54.164.96.158,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,7,77a93c6fd9ce733fb02e1421fa1cf898f7e5a48c,SET_000235,1
+IP,107.23.209.173,2,LG Smart TV_Mon(us)|Roku TV_YT,2,lg|roku,TRUE,3,6491f11f07d864b37fb6d1d9ec6d73de8b399296,SET_000236,1
+IP,54.236.135.19,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,3,21c659095bdd7fd7b3428b3d13dc66d0975e8977,SET_000237,1
+IP,52.200.112.96,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,8,bfb97bc912eb57096c1473d4c71876452855c659,SET_000239,1
+IP,52.6.204.43,2,Amazon Fire TV_Mon(us)|Roku TV_YT,2,amazon|roku,TRUE,2,49d23acd23db1c0283c934c1afede1579c18ee2b,SET_000241,1
+IP,52.21.158.86,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,5,cf0c6251fe089391b0153775e03ccc7d75ae9e3d,SET_000242,1
+IP,184.29.166.29,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,13,6228c1fa18d0f04ae0d4ee5f76e7dc26a685460e,SET_000243,1
+IP,34.226.180.126,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,4,991b62d24866cfaf64c0b184cc0c0ec757f160b8,SET_000244,1
+IP,54.173.117.194,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,3,ade62d6488a5ff5d2c128292019e406fa933fcf0,SET_000245,1
+IP,34.234.126.101,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,4,765a34c9ba529049677b12dfcffc677c45396948,SET_000246,1
+IP,54.209.169.201,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,8,7669cb1e9593edb0bc789d483a13c075b9b936bd,SET_000247,1
+IP,52.70.16.138,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,8,421b366e732061b663a41b1dd5ac2f28e519c00f,SET_000248,1
+IP,34.242.190.16,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,3,f59e809e57363e5ae4051c70f622deb0d37d4f09,SET_000250,1
+IP,52.71.144.255,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,4,abbe9a9cf27192198d5769748564e9fff28f9db2,SET_000251,1
+IP,52.6.98.78,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,3,6d3f12e60f396f2ae46e4a050404afdd3b112596,SET_000252,1
+IP,52.44.161.201,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,8,dce7cd46344489d2d0f91eae4aac43375e7bea9e,SET_000253,1
+IP,64.233.177.132,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,20,eb1261c3264e15198f818f0a55141943af388dbf,SET_000254,1
+IP,64.233.177.157,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,12,6f6820178334e76df8cf7e64bce223fc6173f21a,SET_000255,1
+IP,52.201.105.17,2,LG Smart TV_Our|Roku TV_YT,2,lg|roku,TRUE,3,ed01d4070f1b450aa69636929bc7f686094381e2,SET_000256,1
+IP,34.228.51.40,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,5,dbe9fe74f4a010231f76a15284b199c6b8ce1649,SET_000257,1
+IP,52.71.43.251,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,7,55ccf877c2e7570f1f076e6aab2d5356dfff8e16,SET_000258,1
+IP,64.233.177.156,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,7,056ae9cdc4a365d8a791fea63e86231a5512e42e,SET_000259,1
+IP,54.208.154.79,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,4,c9c98eafd6f8d8311ad2cffb1e2df1242c5f5516,SET_000260,1
+IP,52.84.133.123,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,2,97b0e589c172b6e9b2a935178fced3e79a1278ee,SET_000261,1
+IP,184.29.170.195,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,38,f00a55efedc17853888ff070d76bb994fbe7273d,SET_000262,1
+IP,34.197.53.168,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,5,3914ebd8c14a7f85673c704d0b2c33652e4e7d3a,SET_000263,1
+IP,52.20.126.149,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,2,cc255a3be2ff5f770c91572c2753445ecc65f697,SET_000264,1
+IP,74.125.136.132,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,52,af1310f416bec4b442f236f35b8ec341ddc2bf77,SET_000265,1
+IP,74.125.136.154,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,19,524c1a5e9cfd8b8f57af6ccc96c1aaf2ed4c9a28,SET_000266,1
+IP,52.1.44.140,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,4,e040671ce75ceb2c3fec914afbc42c6b172e8cf9,SET_000267,1
+IP,52.54.15.52,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,3,d0a32a3ec80e48c75c1e1baac68ad46dfc809219,SET_000268,1
+IP,23.7.36.9,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,9,63d9e8ebedbde99d2b3929fba12283b11abc5852,SET_000269,1
+IP,54.87.182.219,2,Amazon Fire TV_Mon(us)|Roku TV_YT,2,amazon|roku,TRUE,6,1b4340b2b8a0670116a776406d7ea54ca22cb210,SET_000271,1
+IP,23.20.94.126,2,Amazon Fire TV_Mon(us)|Roku TV_YT,2,amazon|roku,TRUE,2,f14b182ccc484acd1c82aa52ae03cc4c35ac993a,SET_000272,1
+IP,54.85.134.97,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,2,9d4ef7780cfbced7e54d07a02a7b223aa116854a,SET_000273,1
+IP,52.55.162.107,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,5,65434595ff1727d16367885849bbe1c456899e59,SET_000274,1
+IP,34.227.139.59,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,8,4c0816f9bada8214c216901b7ff6fb99a1073561,SET_000275,1
+IP,34.236.11.217,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,8,2b190295656bd3852fd78948672f23bc4eb8b3d3,SET_000276,1
+IP,52.201.139.15,3,LG Smart TV_Our2|Roku TV_YT|Roku4_YT,2,lg|roku,TRUE,8,f125d8faa46736f96cc0f2a93acb10d13fa89871,SET_000277,1
+IP,52.20.179.126,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,5,98eaf0e3da0985533ac93b599b799568d9f21a9d,SET_000278,1
+IP,34.206.219.215,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,7,c5b3dfafda7bfce41f1f77c734eaa99871a1da1f,SET_000279,1
+IP,52.71.110.84,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,3,8c2ad52f604b7298880105a6eca52e3ffcf864a6,SET_000280,1
+IP,34.203.138.40,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,7,2d37044ee75038d2837152c2baf1bc42b6852fda,SET_000281,1
+IP,34.194.110.235,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,2,04220c3bc7fc97ca2b8e20f2dc14d2e581d4caa8,SET_000282,1
+IP,54.239.172.247,2,August Doorbell Camera_YT|Roku TV_YT,2,august|roku,TRUE,2,7ec3bfc6879dc256de338984deba79afd9b344e0,SET_000283,1
+IP,54.164.123.59,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,4,0825c234e655c170a2661a7b62c3e57a076b0ecb,SET_000284,1
+IP,54.165.230.173,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,12,d6470a370ddc2e4695517951117215e2298c9991,SET_000285,1
+IP,52.7.130.136,4,Amazon Echo Gen2_Our|Amazon Fire TV_Mon(us)|Roku TV_YT|Roku4_YT,2,amazon|roku,TRUE,7,c44ea3ad7c747b0e8840303326f6c9c9d81f714e,SET_000286,1
+IP,52.22.215.45,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,4,f16620a571ef88258df438756513d8418b4ee92a,SET_000287,1
+IP,52.200.140.10,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,2,135025bb4ebf146c314a2a5bb12a01a50038e47a,SET_000288,1
+IP,34.230.207.5,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,12,56ca3447e5a4f353e025e0ef203b10ca446e4b2f,SET_000289,1
+IP,54.201.244.95,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,5,d2e300a477965e0ec452ce78514d48f395a8f38b,SET_000290,1
+IP,52.5.98.227,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,5,75d4deed6d0f93f6c51f5a85b11b2fce49520cc2,SET_000291,1
+IP,143.215.203.33,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,52,5468cc35bac9402bc9d63f2a902d506bc39db8bf,SET_000292,1
+IP,34.232.84.133,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,6,13487f2b0c8c34cdada52519624b4a3ec1b5f32a,SET_000293,1
+IP,34.206.28.96,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,4,672b55b5afa401a545ac0e94547b0aa29a08464f,SET_000294,1
+IP,34.231.248.103,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,7,f462cdc415306dc46881c7878c41fca58f0b4a7e,SET_000295,1
+IP,54.172.30.162,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,6,b66c500c60477e6962b6e0f07d85c84bef71b3d7,SET_000297,1
+IP,52.45.36.90,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,2,c31b7427b73709992728f93bc3e908a98e31c9d1,SET_000298,1
+IP,52.21.60.102,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,2,0dd1c69cca89b7636e937908dda08bbb973c9521,SET_000299,1
+IP,54.80.113.155,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,4,72cd8dd9818142374932d68cba515e2e7f8ceb0c,SET_000300,1
+IP,52.200.173.10,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,2,5d58c269b30943bbd80d9155cf7248a146d7a21f,SET_000301,1
+IP,52.5.249.234,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,2,97b7b2711dcc352e9754cda78301bcb55ea4354c,SET_000302,1
+IP,34.202.250.167,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,2,fed7df0b74185313dff53c8c59b08450caed1b73,SET_000303,1
+IP,52.2.58.99,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,7,20da60b9edf59bc3a24d43d928d11c9465553710,SET_000304,1
+IP,34.236.98.74,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,3,da0797d614763a34f197d761ac3ff4f5642bdbb1,SET_000305,1
+IP,52.72.221.179,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,8,8b0100d9c37a950b584d56f650af0fea6bbc412e,SET_000306,1
+IP,52.6.88.255,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,5,0edd85adefc4c8c8de1b066fc84f01692de1878d,SET_000307,1
+IP,34.233.61.4,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,5,87e858348e77ede1533179f699ed423755394dcc,SET_000309,1
+IP,54.236.87.27,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,6,61731678e4381223f64d0c18f4620949fc3ace4c,SET_000310,1
+IP,52.72.183.131,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,5,57919454b16b4d14c472d6c3faeeec377518760b,SET_000311,1
+IP,143.215.193.106,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,53,e35edb6ed60a6ad45e8541454c1707d899523768,SET_000312,2
+IP,52.86.73.177,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,3,302a945813abafee9f361b911ea0f3960236e21e,SET_000313,1
+IP,52.201.117.39,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,6,c2f23c417c940275155ec5fcf7ba55987162514f,SET_000314,1
+IP,34.238.64.24,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,7,702b5f1c5688224e8934abe3bc72799e45cf1944,SET_000315,1
+IP,34.228.46.107,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,2,6a06ba1f9f514f456ae6b1d381b4d1e04e04bd35,SET_000316,1
+IP,34.202.116.46,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,8,b075b6e15ab0ef4954f5886906ce35eb97ec380a,SET_000317,1
+IP,52.33.42.200,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,7,2638ff3597ed6a56a6fc9d00ef405635537db4b0,SET_000318,1
+IP,54.175.149.99,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,4,a711a227f5db05e69a7bea967563fc1794554d00,SET_000319,1
+IP,52.201.130.145,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,6,0174f9eaadd804638dfdc4a09068624168beb7da,SET_000320,1
+IP,52.201.4.61,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,2,85f8f683c806566e9a74ddd6dc2bddb04a1949cb,SET_000321,1
+IP,52.207.177.211,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,4,886acc6b33656858b6d4f732c51e532701f173dc,SET_000322,1
+IP,34.194.4.124,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,4,f5c8a89600425b9e205930945b0454ae7f095c38,SET_000323,1
+IP,52.26.59.193,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,2,42959347bf94a0256faffac4841ab67a81bf59e6,SET_000324,1
+IP,52.5.171.20,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,3,177e3118a815aab1aa49ac060481d6c432956fc8,SET_000325,1
+IP,52.88.36.198,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,3,a3941019f90e16e693dd734bffdff500f35f6861,SET_000326,1
+IP,52.40.47.226,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,2,3fcf0ec8ec8fde6b4caff103a74f5ee1e0e2eb03,SET_000327,1
+IP,54.165.29.112,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,4,b4763e512c0d1f63e11b67c8553b6ef5c195df17,SET_000328,1
+IP,52.1.60.58,2,Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,8,ab8148b33aec2d3828841ad6d5457363dda395ac,SET_000329,1
+IP,54.175.103.109,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,2,ad72992d354a1b63f4841fe34084a6e08ae6b956,SET_000330,1
+IP,34.236.220.111,2,Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,6,906278efbe66efb040f65fa542af32f4181b2de2,SET_000331,1
+IP,52.22.88.218,2,Amazon Fire TV_Mon(us)|Roku4_YT,2,amazon|roku,TRUE,4,f1d02fd8dae2001c4cb9fb6c84e5d6b8bd1751dc,SET_000332,1
+IP,52.21.112.4,2,Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,5,6b3b28c89ccd93c9d93346abbfdff2ba68b3c540,SET_000333,1
+IP,52.21.1.20,2,LG Smart TV_Mon(us)|Roku4_YT,2,lg|roku,TRUE,4,0dd73589ef3dcca86ef8d0eb88197caefed623ce,SET_000334,1
+IP,54.164.216.123,2,Amazon Fire TV_Mon(us)|Roku4_YT,2,amazon|roku,TRUE,3,941c83e9785b3e283f883bfce7bc2e79a3e8e159,SET_000335,1
+IP,64.233.177.154,2,Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,3,0af308770ca299f4cf9a39be9536f24a71ab175e,SET_000336,1
+IP,54.208.206.93,2,Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,4,fca3f36a6182c4f0715f957f3378a8afa15a42a4,SET_000337,1
+IP,52.55.13.122,2,Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,3,2344cd6537752ed8649b46bdbf40b82211889427,SET_000338,1
+IP,52.204.217.0,2,Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,4,023c9d07298add3ad00f21275af6a5e4268f45bb,SET_000339,1
+IP,52.84.133.182,2,August Doorbell Camera_YT|Roku4_YT,2,august|roku,TRUE,2,7d9169d1330ed61eb8dc1fe8cab059081b1203c2,SET_000340,1
+IP,52.86.215.195,2,LG Smart TV_Our|Roku4_YT,2,lg|roku,TRUE,6,4bf5cc123f78e7ac2e3a6c3a662449e81cd59e9f,SET_000341,1
+IP,34.230.201.128,2,Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,3,19086ac9f18f30c8a9e504fa8d105c159c99dd51,SET_000342,1
+IP,52.21.167.43,2,Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,2,76311cf09b2acaf7fa4b537c1d05f6ae94eb2007,SET_000343,1
+IP,54.208.220.178,2,Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,3,4eb198f3177b0e017b6339ea5c9139fd7f1fc883,SET_000344,1
+IP,34.205.248.36,2,Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,8,92152f3984800369b92ca82e5fce9aa5f7e5e4a6,SET_000345,1
+IP,54.88.253.197,2,LG Smart TV_Mon(us)|Roku4_YT,2,lg|roku,TRUE,5,c890173250f39ceb5c3588501a78d07422f038fe,SET_000346,1
+IP,34.236.115.41,2,Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,2,70ccc395341cb49655b247ac144df5b4133ac42f,SET_000347,1
+IP,52.1.124.170,2,Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,3,b4ec63208319b3e90b8b7258fbe011e1e763e229,SET_000348,1
+IP,52.207.91.135,2,Amazon Fire TV_Mon(us)|Roku4_YT,2,amazon|roku,TRUE,2,78abd826d8e5434b9201642f8cbc99d0e16cfa49,SET_000349,1
+IP,52.21.45.48,2,Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,3,027b1c954f0d2b4f1e0c64be7b366097f22fe15b,SET_000350,1
+IP,34.231.232.204,2,Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,3,8da2e868eceab549a4c06a26540207727c6bc11c,SET_000351,1
+IP,54.165.138.52,2,Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,2,2314aee5653ca42372712f6e5438ae944a268dc9,SET_000352,1
+IP,54.152.94.157,2,Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,2,d3c5b5ab1e6e6c83f2d0c833ac8aac0c43ceb039,SET_000353,1
+IP,23.198.7.174,2,Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,2,64e8c82c9eca684818a02c3715ff4b9b0b7b6291,SET_000355,1
+IP,54.239.172.179,2,Roku4_YT|TP-Link WiFi Plug_YT,2,roku|tp-link,TRUE,3,49cacb247822420eabdce414cc53f3c675d0df3e,SET_000356,1
+IP,34.230.98.108,2,Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,4,d936d69da4e9247bb8f060d0ec4a71c76b4efa81,SET_000357,1
+IP,34.225.210.36,2,Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,3,166683bce3d3fcfe71fd48f046d0a308dd03c3d1,SET_000358,1
+IP,52.201.152.21,2,Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,3,48abfb689fcb680dbdc82a6a279f0f79fdbe3d39,SET_000359,1
+IP,34.237.208.216,2,Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,3,23d97e4b64ae82de1bc3140d6cea9df7efa2fa5b,SET_000360,1
+IP,52.38.111.33,2,Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,2,3a562697837cd905899ac4db20fea3d5db2e44cc,SET_000361,1
+IP,52.20.113.99,2,LG Smart TV_Our2|Roku4_YT,2,lg|roku,TRUE,3,b5e86e694df05294b028d966301ba294eafafa73,SET_000362,1
+IP,34.204.33.117,2,Bose Sound Touch10_YT|Roomba_YT,2,bose|roomba,TRUE,20,5f526e73036d953f35d557c8bfaa3236fac2c118,SET_000363,1
+IP,52.201.206.6,2,Bose Sound Touch10_YT|Roomba_YT,2,bose|roomba,TRUE,123,00a725f80478b67efae4cc7efe53ac588cb1fb8e,SET_000364,1
+IP,52.217.10.180,2,Amazon Echo Gen2_Our|Samsung Dryer_IoTLS,2,amazon|samsung,TRUE,2,6fc90ffed84edd2668f89efa9261e5aea8cf2169,SET_000365,1
+IP,176.32.101.52,8,Amazon Echo Gen1_Our|Amazon Echo Gen1_Our2|Amazon Echo Gen2_Mon(us)|Amazon Echo Gen2_Our|Amazon Echo Gen3_Mon(us)|Amazon Echo Look_Our|Amazon Fire TV_Mon(us)|Samsung Dryer_IoTLS,2,amazon|samsung,TRUE,55,c209f658a8a72a5f857e0a56dc090785a18c69a5,SET_000366,1
+IP,52.119.197.96,8,Amazon Echo Gen1_Our|Amazon Echo Gen1_Our2|Amazon Echo Gen2_Mon(us)|Amazon Echo Gen2_Our|Amazon Echo Gen3_Mon(us)|Amazon Echo Look_Our|Amazon Echodot3a_IoTLS|Samsung Dryer_IoTLS,2,amazon|samsung,TRUE,62,c4820aa076cfc858b21c0a43c51b0cb770fe3ff3,SET_000368,1
+IP,176.32.99.246,7,Amazon Echo Gen1_Our2|Amazon Echo Gen1_UNSW|Amazon Echo Gen1_YT|Amazon Echo Gen2_Our|Amazon Echo Look_Our|Amazon Fire TV_YT|Samsung Dryer_IoTLS,2,amazon|samsung,TRUE,23,42d087db14b0584f801fbd24225ae8d2909f9106,SET_000369,1
+IP,54.239.27.116,12,Amazon Echo Gen1_Mon(us)|Amazon Echo Gen1_Our|Amazon Echo Gen1_Our2|Amazon Echo Gen1_YT|Amazon Echo Gen2_Mon(uk)|Amazon Echo Gen2_Mon(us)|Amazon Echo Gen2_Our|Amazon Echo Gen3_Mon(us)|Amazon Echo Look_Our|Amazon Fire TV_Mon(us)|Amazon Fire TV_YT|Samsung Dryer_IoTLS,2,amazon|samsung,TRUE,107,bf92cb7cc91259ad51b47dd642e6b3de787ede7a,SET_000370,1
+IP,52.216.233.35,3,Amazon Echo Gen1_Our|Amazon Echo Gen2_Our|Samsung Smart TV_Mon(uk),2,amazon|samsung,TRUE,4,a15c8c2aac04bda74041a982c63dffe1651953cc,SET_000372,1
+IP,52.85.236.220,2,Amazon Fire TV_YT|Samsung Smart TV_YT,2,amazon|samsung,TRUE,46,deb7257445bd49112fd68eee7f987cbc15a72bf6,SET_000374,1
+IP,52.85.236.72,2,Amazon Fire TV_YT|Samsung Smart TV_YT,2,amazon|samsung,TRUE,79,9e2a5b21b3a538e8a5aa8087ecd38c75dfd8822e,SET_000375,1
+IP,172.217.10.142,2,Google Home Mini3_IoTLS|Samsung Smart TV_Mon(us),2,google|samsung,TRUE,5,61cba8e42d8349252b468cf49de1c89c9450edd7,SET_000376,1
+IP,172.217.12.174,2,Google Home Mini_Mon(us)|Samsung Smart TV_Mon(us),2,google|samsung,TRUE,8,8c98c561f07d37568c9e296aab7874a639016a47,SET_000377,1
+IP,172.217.10.14,3,Google Home Mini3_IoTLS|Google Home Mini_Mon(us)|Samsung Smart TV_Mon(us),2,google|samsung,TRUE,4,ab91b505945c2f8c8e09195840f50952b22c4d20,SET_000378,1
+IP,52.85.138.61,2,Amazon Fire TV_YT|Samsung Smart TV_Mon(us),2,amazon|samsung,TRUE,4,823d567e685f10f0045899f511f49839810ebbf9,SET_000379,1
+IP,172.217.10.110,2,Google Home Mini_Mon(us)|Samsung Smart TV_Mon(us),2,google|samsung,TRUE,5,91d3ea6eb4fa16851d9e980a52475a4bb03c1c6a,SET_000380,1
+IP,18.32.197.78,2,Apple TV_Mon(us)|Samsung Smart TV_Mon(us),2,apple|samsung,TRUE,2,c2bae47d215c271cfbe8edb3816e658a619936dd,SET_000381,1
+IP,34.202.133.11,2,Amazon Fire TV_Mon(us)|Samsung Smart TV_YT,2,amazon|samsung,TRUE,4,b754d482ef724c4b78a71ac2be5a3b02755248e0,SET_000382,1
+IP,34.228.124.30,2,Amazon Fire TV_Mon(us)|Samsung Smart TV_YT,2,amazon|samsung,TRUE,4,1c4df87d0c5c81a225a4625a45d1e9b81137baa5,SET_000383,1
+IP,143.215.203.39,3,Apple Home Pod_YT|Apple TV(4thGen)_YT|Samsung Smart TV_YT,2,apple|samsung,TRUE,29,bfd130c2d2263052358a6889a72a44088d2a4e55,SET_000384,1
+IP,52.207.119.102,2,Amazon Fire TV_Mon(us)|Samsung Smart TV_YT,2,amazon|samsung,TRUE,2,7e8e475353e88fc7babf978d9e3b126366646e4b,SET_000385,1
+IP,52.94.225.50,2,Amazon Fire TV_YT|Samsung Smart TV_YT,2,amazon|samsung,TRUE,2,d6bb6a91b1f6cc4373035a53db8557acdf8a27b4,SET_000386,1
+IP,52.84.132.124,2,Amazon Fire TV_YT|Samsung Smart TV_YT,2,amazon|samsung,TRUE,15,b496454109a3f4be2ffd9b3a36c0ce2dc9b06425,SET_000387,1
+IP,52.94.225.8,3,Amazon Fire TV_Mon(us)|Amazon Fire TV_YT|Samsung Smart TV_YT,2,amazon|samsung,TRUE,7,b1a9491f56a57fa6e53f8a55998636e363d6aa70,SET_000389,1
+IP,52.119.196.28,6,Amazon Echo Gen1_Our|Amazon Echo Gen2_Our|Amazon Echo Gen3_Mon(uk)|Amazon Echo Gen3_Mon(us)|Amazon Fire TV_YT|Samsung Smart TV_YT,2,amazon|samsung,TRUE,18,0810b5efc24c4d3a4abdde84e77ae0a7d071eb0a,SET_000390,1
+IP,143.215.203.32,3,Apple Home Pod_YT|Apple TV(4thGen)_YT|Samsung Smart TV_YT,2,apple|samsung,TRUE,52,637d1997546a78b1a41c3c14d38ae5a93ab58c89,SET_000391,1
+IP,108.177.122.139,3,Google Home Mini_YT|Google Home_YT|Samsung Smart TV_YT,2,google|samsung,TRUE,44,b2e1c2486d2f73333a85e1f552cef006de349cfe,SET_000393,1
+IP,216.58.195.132,3,Google Home Mini_YT|Google Home_YT|Samsung Smart TV_YT,2,google|samsung,TRUE,5,09f10ed535a11b1195fd8252c261cfe23f58ca2b,SET_000394,1
+IP,52.84.74.119,2,Amazon Fire TV_YT|Samsung Smart TV_YT,2,amazon|samsung,TRUE,3,706a5e7cbddb2919b607eaa7e3fb6307857ebfbf,SET_000395,1
+IP,129.94.5.88,2,Samsung SmartCam_UNSW|TP-Link Day Night Cloud camera_UNSW,2,samsung|tp-link,TRUE,19,1d5d3b574f011c10feaabbdc65de6a032db9597b,SET_000396,1
+IP,52.84.74.217,2,Amazon Fire TV_YT|Samsung Smart TV_YT,2,amazon|samsung,TRUE,28,aab241c8647dc42f69a13d6a0d66de6ac43703a9,SET_000397,1
+IP,52.85.236.140,2,Amazon Fire TV_YT|Samsung Smart TV_YT,2,amazon|samsung,TRUE,5,18b8c3a5c581262c38a58a2121e59e61f6e2aa22,SET_000398,1
+IP,54.148.195.111,2,Flux Bulb_Mon(us)|Smart WiFi Plug01_Our2,2,flux|unknown,TRUE,17,bbe647a458302164f32ae2fdf0ad2af9db57b99a,SET_000399,1
+IP,120.52.181.238,2,Smartmi Humidifier_selfdata|xiaobaismart_camera,2,smartmi|xiaobai,TRUE,3,c781484333e9cf31eda47e659f8b089438a5fce3,SET_000400,1
+IP,111.202.1.237,2,Smartmi Humidifier_selfdata|xiaobaismart_camera,2,smartmi|xiaobai,TRUE,2,b5773e702345c509e501d2ec7a834479a53fc8d6,SET_000401,1
+IP,106.15.241.149,2,Tenda Camera_selfdata|Xiaobai Camera_selfdata,2,tenda|xiaobai,TRUE,3,cd393f10312b0e5819422f5a0849d4f6466a73f7,SET_000405,1
+IP,47.114.236.51,2,Tianmao Speaker_selfdata|midea_mirror,2,midea|tianmao,TRUE,11,5dd71b1bbc9c9c506211089ef861cb1524f80ba5,SET_000406,1
+IP,47.96.32.142,2,Tianmao Speaker_selfdata|midea_mirror,2,midea|tianmao,TRUE,3,b7b121d26c06c33f7387d21f769768f98360ae0e,SET_000407,1
+IP,47.98.2.203,2,Tianmao Speaker_selfdata|midea_mirror,2,midea|tianmao,TRUE,4,f929d1802bb086e280d83d76be37c178d9f248f2,SET_000408,1
+IP,47.96.32.228,2,Tianmao Speaker_selfdata|midea_mirror,2,midea|tianmao,TRUE,3,4178338760f975232d677bb7281776211ec30dbd,SET_000409,1
+IP,47.111.48.239,2,Tianmao Speaker_selfdata|midea_mirror,2,midea|tianmao,TRUE,10,edefed43528ba0396d546883aa73eae368c9d9b9,SET_000410,1
+IP,47.98.0.183,2,Tianmao Speaker_selfdata|midea_mirror,2,midea|tianmao,TRUE,3,dffb3b48b279c3b4780adae44f9ab980eadc7e69,SET_000411,1
+IP,47.97.242.6,2,Tianmao Speaker_selfdata|midea_mirror,2,midea|tianmao,TRUE,5,a5b10460471a59e2459eb116c023676a9c170e1a,SET_000412,1
+IP,47.97.247.71,2,Tianmao Speaker_selfdata|midea_mirror,2,midea|tianmao,TRUE,8,9d67b4e0f1023eeaf01f3b4755c6bf84b19488e7,SET_000413,1
+IP,52.84.133.65,2,Bose Sound Touch10_YT|TP-Link SmartWiFi LED Bulb_YT,2,bose|tp-link,TRUE,5,510351c2855251448a0deb3630f8da74e2574173,SET_000417,1
+IP,54.239.172.70,2,Amazon Fire TV_YT|TP-Link SmartWiFi LED Bulb_YT,2,amazon|tp-link,TRUE,2,7eb97f9e2c78a8e9fb677098fd4655a942afd951,SET_000418,1
+IP,81.69.183.170,3,Hongyar Plug_selfdata|Tuya Plug_selfdata|Tuya Sensor_selfdata,2,hongyar|tuya,TRUE,79,4f1dc9bc60521e01e47199bd1292133f9699ce8b,SET_000419,1
+IP,121.5.96.167,3,Hongyar Plug_selfdata|Tuya Plug_selfdata|Tuya Sensor_selfdata,2,hongyar|tuya,TRUE,7,12c6aed189ace8799fcbbbc4482f37e4e2306bb8,SET_000420,1
+IP,42.192.31.13,2,Hongyar Plug_selfdata|Tuya Plug_selfdata,2,hongyar|tuya,TRUE,2,c24acba2b1ae18a8fe68b27b1ba55f79a867f69a,SET_000421,1
+IP,223.109.185.46,2,Lenovo Camera_selfdata|Xiaobai Camera_selfdata,2,lenovo|xiaobai,TRUE,2,a516734ff9c61aa10242a8da8490a4029db886ef,SET_000423,1
+IP,223.109.147.36,2,Xiaobai Camera_selfdata|Xiaopai Camera_selfdata,2,xiaobai|xiaopai,TRUE,2,b42a2103e68c44b9254c933603377843e6183d85,SET_000424,1
+IP,47.103.101.80,2,Xiaobai Camera_selfdata|Xiaopai Camera_selfdata,2,xiaobai|xiaopai,TRUE,3,215c5bab9375c5049af9b61686a825ce1dc2baba,SET_000425,1
+IP,120.92.65.240,2,Xiaobai Y2camera_selfdata|xiaomitv_speaker,2,xiaobai|xiaomi,TRUE,3,02a3e84d0b5d0e21390c5f41034f9d985f3cd7c3,SET_000428,1
+IP,180.163.55.29,2,Lenovo Camera_selfdata|Xiaobai Camera_selfdata,2,lenovo|xiaobai,TRUE,2,c061c511856d2547e62dc04a33333bb41e5dbd2f,SET_000429,1
+IP,180.163.71.207,2,Xiaobai Camera_selfdata|Xiaopai Camera_selfdata,2,xiaobai|xiaopai,TRUE,2,4e8977065a180c4cffa761101efd59250ea55275,SET_000431,1
+IP,180.163.56.83,2,Lenovo Camera_selfdata|Xiaobai Camera_selfdata,2,lenovo|xiaobai,TRUE,2,1ac382fe5f56896632da0968d1572769ebfb3e30,SET_000432,1
+IP,180.163.202.38,2,Xiaobai Camera_selfdata|Xiaopai Camera_selfdata,2,xiaobai|xiaopai,TRUE,2,6bffa6a84096f269751e37e85727f7e35d702255,SET_000433,1
+IP,111.206.101.16,2,Xiaobai Doorbell_selfdata|Xiaomi Camera_selfdata,2,xiaobai|xiaomi,TRUE,2,e82e413680d1c1d56ea058074bdd94af682e568b,SET_000436,1
+IP,110.43.68.95,3,Xiaomao Camera_selfdata|Xiaomi Camera3_selfdata|xiaomitv_speaker,2,xiaomao|xiaomi,TRUE,176,057c60277ffe9e232ad591764a44804fd5ddc090,SET_000438,1
+IP,42.157.165.161,3,Xiaomao Camera_selfdata|Xiaomi Camera3_selfdata|xiaomitv_speaker,2,xiaomao|xiaomi,TRUE,176,1b9aeb92e92b208d094e7483f2329b86c847b1a5,SET_000439,2
+IP,110.43.39.72,3,Xiaomao Camera_selfdata|Xiaomi Camera3_selfdata|xiaomitv_speaker,2,xiaomao|xiaomi,TRUE,169,ba22a0f70018c1c7a7e98b9213b4b5c9b9191147,SET_000440,2
+IP,182.40.120.203,2,Xiaojingyu Clock_selfdata|Xiaomi Speaker_selfdata,2,xiaojingyu|xiaomi,TRUE,4,870a015a06f924f1a3d093e101ea5b7ef07d608a,SET_000441,1
+IP,42.157.163.119,2,Xiaobai Y2camera_selfdata|Xiaomi Camera_selfdata,2,xiaobai|xiaomi,TRUE,2,8656f9e48dfcb8cd2de89a84bac64e1ed4142851,SET_000442,1
+IP,221.204.14.109,2,Xiaojingyu Clock_selfdata|Xiaomi Sound_selfdata,2,xiaojingyu|xiaomi,TRUE,5,fe9187e92f84eff2bf2e9f20323e8af7c89747f1,SET_000443,2
+IP,183.84.6.23,2,Xiaomao Camera_selfdata|xiaobaismart_camera,2,xiaobai|xiaomao,TRUE,4,130d8704395188c62ad34f65dc4725cd91819134,SET_000444,1
+IP,223.109.149.136,2,Lenovo Camera_selfdata|Xiaopai Camera_selfdata,2,lenovo|xiaopai,TRUE,2,0380094c4d70a4ee45c0c72653f68d9df4666561,SET_000446,1
+IP,220.181.106.197,2,Mijia Plug_selfdata|Xiaomi Camera_selfdata,2,mijia|xiaomi,TRUE,3,0cdee3586e30cc1d95166f0bd430198acd6ce746,SET_000447,1
+IP,47.100.75.119,2,Lenovo Camera_selfdata|Xiaopai Camera_selfdata,2,lenovo|xiaopai,TRUE,2,2301300f481b9d685c9f6e20bd5352a1c5d6abfc,SET_000448,1
+IP,47.103.184.125,2,Xiaopai Camera_selfdata|deebot_cleaner,2,deebot|xiaopai,TRUE,2,41ab92b073b95ce15e909376461360414ffc55ff,SET_000449,1
+IP,223.109.147.174,2,Lenovo Camera_selfdata|Xiaopai Camera_selfdata,2,lenovo|xiaopai,TRUE,2,56298e95f05996d6f69fa9ce2e85bbba8a2caeb5,SET_000450,1
+IP,121.36.118.198,2,Dalen Light_selfdata|Xiaotun Camera_selfdata,2,dalen|xiaotun,TRUE,3,cddc47598fb98c5ac1d527f8fced6512b39db1ea,SET_000451,1
+IP,49.4.38.90,2,Huawei Sound_selfdata|Xiaotun Camera_selfdata,2,huawei|xiaotun,TRUE,4,d974ffb3a42e61c112052cc4ad681afc38453f56,SET_000452,1
+IP,49.4.17.196,2,Dalen Light_selfdata|Xiaotun Camera_selfdata,2,dalen|xiaotun,TRUE,4,47c5de586dba1bfbecf4d15b192d7b3940e7d1d3,SET_000453,1
+IP,49.4.45.21,2,Dalen Light_selfdata|Xiaotun Camera_selfdata,2,dalen|xiaotun,TRUE,4,a69bfe006ecfb9b532c8d2707a2dc769018f5025,SET_000454,1
+IP,123.6.106.233,2,Cubetoou Camera_selfdata|Xiaotun Camera_selfdata,2,cubetoou|xiaotun,TRUE,2,ac8bb88f23507c827ed394bc9b93198b4ec9be18,SET_000456,1
+IP,221.234.43.157,2,Cubetoou Camera_selfdata|Xiaotun Camera_selfdata,2,cubetoou|xiaotun,TRUE,3,c4945017a9000096ec4a85b541b01c47eb450a56,SET_000457,1
+IP,128.138.141.172,2,Fos Camera_Our2|Wansview Camera Wired_Mon(uk),2,foscam|wansview,TRUE,31,dab18eeb3f50d11de418771e64398b7744b818c8,SET_000458,1
+IP,69.164.202.202,2,Amazon Echo Gen1_YT|Logitech Logi Circle_YT,2,amazon|logitech,TRUE,4,92351c8fec0ea8bfc63adccd733288bf3ebbeefc,SET_000459,2
+IP,45.127.112.2,2,Amazon Echo Gen1_YT|Logitech Logi Circle_YT,2,amazon|logitech,TRUE,3,ba4c879b5d6d3cec0e6867453760103abf8da5ab,SET_000460,2
+IP,204.9.54.119,2,Amazon Echo Gen1_UNSW|Logitech Logi Circle_YT,2,amazon|logitech,TRUE,13,acdd5025dc3a41426b62f7d8cb0782ca88d39caf,SET_000461,2
+IP,162.210.111.4,2,Amazon Echo Gen1_YT|Logitech Logi Circle_YT,2,amazon|logitech,TRUE,7,67f23739c1a2dfa8b7193236e60e57246b545967,SET_000462,2
+IP,108.61.73.244,2,Amazon Echo Gen1_YT|Logitech Logi Circle_YT,2,amazon|logitech,TRUE,3,968c2c655031e900b8e04740e2bc2319e8e90063,SET_000463,1
+IP,96.126.100.203,2,Amazon Echo Gen1_YT|Logitech Logi Circle_YT,2,amazon|logitech,TRUE,3,689e1ddcdd3a42baa681ee0804909e0383f24f52,SET_000464,1
+IP,4.53.160.75,2,Amazon Echo Gen1_YT|Logitech Logi Circle_YT,2,amazon|logitech,TRUE,6,08e9916884f02d6cb33574b727b4f62391bd86b1,SET_000465,2
+IP,96.244.96.19,2,Amazon Echo Gen1_UNSW|Logitech Logi Circle_YT,2,amazon|logitech,TRUE,40,354dd16316652894fa3d601777b2a3a7a9f68cc1,SET_000466,2
+IP,72.5.72.15,2,Amazon Echo Gen1_YT|Logitech Logi Circle_YT,2,amazon|logitech,TRUE,3,99adcbc67c80ecb8b0654e83f79b24d1e3eb7190,SET_000467,2
+IP,129.6.15.28,2,Fos Camera_Our2|Logitech Logi Circle_YT,2,foscam|logitech,TRUE,2329,b0d5f751f721eeb37219cd83807a8b679286ed77,SET_000468,2
+IP,34.225.6.20,2,Amazon Echo Gen1_YT|Logitech Logi Circle_YT,2,amazon|logitech,TRUE,4,099dae384a1ad47d86a4b9003069b723c3906483,SET_000469,1
+IP,205.251.243.55,14,Amazon Echo Gen1_Mon(uk)|Amazon Echo Gen1_Mon(us)|Amazon Echo Gen1_Our|Amazon Echo Gen1_Our2|Amazon Echo Gen2_Mon(uk)|Amazon Echo Gen2_Mon(us)|Amazon Echo Gen2_Our|Amazon Echo Gen3_Mon(uk)|Amazon Echo Gen3_Mon(us)|Amazon Echo Look_Our|Amazon Fire TV_Mon(uk)|Amazon Fire TV_Mon(us)|Amazon Fire TV_YT|Cloud Camera_Mon(us),2,amazon|unknown,TRUE,80,7bf623fb6289dcbbd2954011152f1077cdd21dda,SET_000470,1
+IP,72.21.207.142,5,Allure Speaker_Mon(uk)|Amazon Echo Gen1_Mon(uk)|Amazon Echo Gen2_Mon(us)|Amazon Echo Gen3_Mon(us)|Amazon Fire TV_YT,2,amazon|harman kardon,TRUE,22,bf032b166baf51b271b410e82448a396012c03b7,SET_000471,1
+IP,52.46.156.47,13,Amazon Echo Gen1_Mon(uk)|Amazon Echo Gen1_Our|Amazon Echo Gen1_Our2|Amazon Echo Gen1_YT|Amazon Echo Gen2_Mon(uk)|Amazon Echo Gen2_Mon(us)|Amazon Echo Gen2_Our|Amazon Echo Gen3_Mon(uk)|Amazon Echo Gen3_Mon(us)|Amazon Echo Look_Our|Amazon Fire TV_Mon(us)|Amazon Fire TV_YT|Cloud Camera_Mon(us),2,amazon|unknown,TRUE,177,5327f3c5c9b865455c8d893c759629e62ecf3397,SET_000472,1
+IP,143.204.199.246,4,Allure Speaker_Mon(uk)|Amazon Echo Gen1_Mon(uk)|Amazon Echo Gen2_Mon(uk)|Amazon Echo Gen3_Mon(uk),2,amazon|harman kardon,TRUE,24,f5f6d99e80a1f44a431ed247c15e18187eaeb221,SET_000473,1
+IP,52.94.240.240,10,Allure Speaker_Mon(uk)|Amazon Echo Gen1_Mon(uk)|Amazon Echo Gen1_Our|Amazon Echo Gen1_Our2|Amazon Echo Gen2_Mon(us)|Amazon Echo Gen2_Our|Amazon Echo Gen3_Mon(uk)|Amazon Echo Gen3_Mon(us)|Amazon Echo Look_Our|Amazon Fire TV_YT,2,amazon|harman kardon,TRUE,61,bf50d915b9a7cb35a3f728f785602e570af93310,SET_000474,1
+IP,52.119.168.148,15,Amazon Echo Gen1_Mon(uk)|Amazon Echo Gen1_Mon(us)|Amazon Echo Gen1_Our|Amazon Echo Gen1_Our2|Amazon Echo Gen2_Mon(uk)|Amazon Echo Gen2_Mon(us)|Amazon Echo Gen2_Our|Amazon Echo Gen3_Mon(uk)|Amazon Echo Gen3_Mon(us)|Amazon Echo Look_Our|Amazon Echo Look_Our2|Amazon Fire TV_Mon(us)|Amazon Fire TV_YT|Amazon T-echodot_IoTLS|Cloud Camera_Mon(us),2,amazon|unknown,TRUE,308,056149da2e186fce707daaa6c821a6b69d8c7b14,SET_000475,1
+IP,72.21.195.82,15,Amazon Echo Gen1_Mon(uk)|Amazon Echo Gen1_Mon(us)|Amazon Echo Gen1_Our|Amazon Echo Gen1_Our2|Amazon Echo Gen1_YT|Amazon Echo Gen2_Mon(uk)|Amazon Echo Gen2_Mon(us)|Amazon Echo Gen2_Our|Amazon Echo Gen3_Mon(uk)|Amazon Echo Gen3_Mon(us)|Amazon Echo Look_Our|Amazon Fire TV_Mon(uk)|Amazon Fire TV_Mon(us)|Amazon T-echodot_IoTLS|Cloud Camera_Mon(us),2,amazon|unknown,TRUE,117,fd635f9c4af2e39802745448fdf74757e8c690c4,SET_000476,1
+IP,52.46.157.6,11,Amazon Echo Gen1_Mon(uk)|Amazon Echo Gen1_Our|Amazon Echo Gen1_Our2|Amazon Echo Gen2_Mon(uk)|Amazon Echo Gen2_Our|Amazon Echo Gen3_Mon(uk)|Amazon Echo Look_Our|Amazon Echodot3a_IoTLS|Amazon Fire TV_IoTLS|Amazon Fire TV_Mon(uk)|Cloud Camera_Mon(us),2,amazon|unknown,TRUE,30,9f570736e68d1981f7580bab39e1c03e9c2209a8,SET_000477,1
+IP,52.119.162.179,12,Amazon Echo Gen1_Mon(us)|Amazon Echo Gen1_Our|Amazon Echo Gen1_Our2|Amazon Echo Gen2_Mon(us)|Amazon Echo Gen2_Our|Amazon Echo Gen3_Mon(uk)|Amazon Echo Gen3_Mon(us)|Amazon Echo Look_Our|Amazon Echo Look_Our2|Amazon Fire TV_Mon(uk)|Amazon Fire TV_Mon(us)|Cloud Camera_Mon(us),2,amazon|unknown,TRUE,195,e659a43986e71b61fea5da0b6d9cf14664d04c62,SET_000478,1
+IP,72.21.207.87,13,Amazon Echo Gen1_Mon(us)|Amazon Echo Gen1_Our|Amazon Echo Gen1_Our2|Amazon Echo Gen1_YT|Amazon Echo Gen2_Mon(uk)|Amazon Echo Gen2_Mon(us)|Amazon Echo Gen2_Our|Amazon Echo Gen3_Mon(uk)|Amazon Echo Gen3_Mon(us)|Amazon Echo Look_Our|Amazon Fire TV_YT|Amazon T-echodot_IoTLS|Cloud Camera_Mon(us),2,amazon|unknown,TRUE,191,a59a99f573d154ca47af03edf6b4ab6b9e9c267f,SET_000479,1
+IP,54.239.29.128,8,Allure Speaker_Mon(uk)|Amazon Echo Gen1_Mon(us)|Amazon Echo Gen2_Mon(uk)|Amazon Echo Gen2_Mon(us)|Amazon Echo Gen3_Mon(uk)|Amazon Echo Gen3_Mon(us)|Amazon Fire TV_Mon(uk)|Amazon Fire TV_YT,2,amazon|harman kardon,TRUE,33,634662cfeae86619340b08dcd9762f965e33754d,SET_000480,1
+IP,54.239.29.142,12,Allure Speaker_Mon(uk)|Amazon Echo Gen1_Our|Amazon Echo Gen1_Our2|Amazon Echo Gen2_Mon(uk)|Amazon Echo Gen2_Mon(us)|Amazon Echo Gen2_Our|Amazon Echo Gen3_Mon(uk)|Amazon Echo Gen3_Mon(us)|Amazon Echo Look_Our|Amazon Echodot3a_IoTLS|Amazon Fire TV_Mon(uk)|Amazon Fire TV_YT,2,amazon|harman kardon,TRUE,96,81e61a15c6d930e80b33b4435228c18349c6e620,SET_000481,1
+IP,13.249.43.59,2,Amazon Echo Gen1_Our|LG Smart TV_Our,2,amazon|lg,TRUE,2,7c71e930b2125c50e40d0ee81f3f0d3be883203d,SET_000482,1
+IP,52.94.229.76,11,Amazon Echo Gen1_Our|Amazon Echo Gen1_Our2|Amazon Echo Gen1_YT|Amazon Echo Gen2_Mon(uk)|Amazon Echo Gen2_Mon(us)|Amazon Echo Gen2_Our|Amazon Echo Gen3_Mon(uk)|Amazon Echo Gen3_Mon(us)|Amazon Echo Look_Our|Amazon Fire TV_YT|Cloud Camera_Mon(us),2,amazon|unknown,TRUE,191,f33f62dcef541d854ae995d7942b05421e35650c,SET_000483,1
+IP,52.94.228.85,7,Amazon Echo Gen1_Our|Amazon Echo Gen2_Mon(uk)|Amazon Echo Gen2_Our|Amazon Echo Look_Our|Amazon Echo Look_Our2|Amazon Fire TV_YT|Cloud Camera_Mon(us),2,amazon|unknown,TRUE,92,8536552edb76c96bdd2f10688f6189671cfa8462,SET_000484,1
+IP,99.84.7.77,2,Allure Speaker_Mon(uk)|Amazon Echo Gen2_Mon(uk),2,amazon|harman kardon,TRUE,4,b96023b1cf007a3ad24159af873bd0f6b6d1f1db,SET_000485,1
+IP,54.239.31.104,8,Amazon Echo Gen1_Our|Amazon Echo Gen1_Our2|Amazon Echo Gen1_UNSW|Amazon Echo Gen2_Mon(uk)|Amazon Echo Gen2_Our|Amazon Echo Look_Our|Amazon Fire TV_YT|Cloud Camera_Mon(us),2,amazon|unknown,TRUE,18,c1258cb5b97609ea254e4c1b9695e5ef9401039b,SET_000486,1
+IP,52.46.133.103,8,Amazon Echo Gen1_Our|Amazon Echo Gen1_Our2|Amazon Echo Gen2_Mon(uk)|Amazon Echo Gen2_Our|Amazon Echo Look_Our|Amazon Fire TV_Mon(us)|Amazon Fire TV_YT|Cloud Camera_Mon(us),2,amazon|unknown,TRUE,18,a04d549355f2cbb2fb9da1d4004064f132c2458b,SET_000487,2
+IP,176.32.101.46,6,Amazon Echo Gen1_Our2|Amazon Echo Gen2_Our|Amazon Echo Gen3_Mon(us)|Amazon Echo Look_Our|Amazon Fire TV_YT|Cloud Camera_Mon(us),2,amazon|unknown,TRUE,17,fdb6e1c47e25b744f90e59f5b102b8b05b0bb004,SET_000488,1
+IP,35.201.78.171,3,Amazon Echo Gen1_YT|Google Home Mini_YT|Google Home_YT,2,amazon|google,TRUE,76,9f385f3bcae2c3a17ef50330da0ca32429c7ff59,SET_000489,2
+IP,54.239.26.114,2,Amazon Fire TV_YT|Cloud Camera_Mon(us),2,amazon|unknown,TRUE,28,2856565512ca7f5dac1411f8b340d2ee36ccbdd0,SET_000490,1
+IP,52.94.232.126,2,Amazon Fire TV_Mon(us)|LG Smart TV_Our,2,amazon|lg,TRUE,3,f35b730c0b49e36906b662e2cef02b9a1a7d7135,SET_000491,1
+IP,107.13.184.9,2,Amcrest Camera_Our2|Fos Camera_Our2,2,amcrest|foscam,TRUE,83,a2a2a1267a0981cf19d3f306a83dfed6a887e80f,SET_000492,2
+IP,52.10.65.197,2,Amazon Echo Gen2_Our|LG Smart TV_Our,2,amazon|lg,TRUE,7,4efbf1b78e8d8f6724eda1c5462e60ec8ad257ad,SET_000493,1
+IP,35.166.64.43,2,Amazon Echo Gen2_Our|LG Smart TV_Our,2,amazon|lg,TRUE,4,56c7455743c89c7cb73651bc751afa314d637471,SET_000494,1
+IP,52.10.130.49,2,Amazon Echo Gen2_Our|LG Smart TV_Our,2,amazon|lg,TRUE,11,dd174a8687f70566e334da25e4af9685520ce4f6,SET_000495,1
+IP,35.165.92.81,2,Amazon Echo Gen2_Our|LG Smart TV_Our,2,amazon|lg,TRUE,4,81975ffcadbb2a04b5d72ddd108f1188ce315f6f,SET_000496,1
+IP,172.217.12.238,3,Amazon Echo Gen2_Our|LG Smart TV_Our|LG Smart TV_Our2,2,amazon|lg,TRUE,17,f37086f38a3e1c1cc2a05cfc932aa684bc851745,SET_000497,1
+IP,172.217.9.206,3,Amazon Echo Gen2_Our|LG Smart TV_Our|LG Smart TV_Our2,2,amazon|lg,TRUE,9,33179823b9634e09843fdc0a26218405233bd69e,SET_000498,1
+IP,172.217.8.2,2,Amazon Echo Gen2_Our|LG Smart TV_Our2,2,amazon|lg,TRUE,6,2598144b054c1f5a42d5bdebd08525c9a8b6a385,SET_000499,1
+IP,172.217.7.174,2,Amazon Echo Gen2_Our|LG Smart TV_Our,2,amazon|lg,TRUE,16,a179484ad479bfdd4ea59e1c1421890fc10da1ae,SET_000500,1
+IP,172.217.13.246,3,Amazon Echo Gen2_Our|LG Smart TV_Our|LG Smart TV_Our2,2,amazon|lg,TRUE,54,65af3bd055dcaa3ab843dae8d114e45e3fc984fe,SET_000501,1
+IP,172.217.13.70,2,Amazon Echo Gen2_Our|LG Smart TV_Our,2,amazon|lg,TRUE,3,0c128bd40e06a521b9a3f797217c6c0f1dc41fe2,SET_000502,1
+IP,204.85.30.14,2,Amazon Echo Gen2_Our|LG Smart TV_Our,2,amazon|lg,TRUE,15,f37006315dbeb1d7e3a5c48269ec340ef4c2e2a4,SET_000503,1
+IP,204.85.30.12,2,Amazon Echo Gen2_Our|LG Smart TV_Our,2,amazon|lg,TRUE,15,8994a117acb8c8de88332c45fe0679643375f1c5,SET_000504,1
+IP,172.217.7.194,3,Amazon Echo Gen2_Our|LG Smart TV_Our|LG Smart TV_Our2,2,amazon|lg,TRUE,15,9b0ce72d6742a756337633d01fec3dc59bbe4f3e,SET_000505,1
+IP,172.217.15.66,2,Amazon Echo Gen2_Our|LG Smart TV_Our,2,amazon|lg,TRUE,11,255fbda7ec80d77aea644d6d568f48c9634aad3a,SET_000506,1
+IP,31.13.66.35,2,Amazon Echo Gen2_Our|LG Smart TV_Our,2,amazon|lg,TRUE,3,9508afa6ed3d3e120ea692b237d82e898b5d890e,SET_000507,2
+IP,172.217.13.228,2,Amazon Echo Gen2_Our|LG Smart TV_Our2,2,amazon|lg,TRUE,6,02759080a178c70108fccefd6484c6ecb64bf8b2,SET_000508,1
+IP,172.217.164.131,2,Amazon Echo Gen2_Our|LG Smart TV_Our,2,amazon|lg,TRUE,12,44ca77b1094620de5f54ab52637467e54abcdc6f,SET_000509,1
+IP,172.217.15.78,3,Amazon Echo Gen2_Our|LG Smart TV_Our|LG Smart TV_Our2,2,amazon|lg,TRUE,17,57c167103805206d87a2b44b3bd36962f0afcd28,SET_000510,1
+IP,204.85.30.13,2,Amazon Echo Gen2_Our|LG Smart TV_Our,2,amazon|lg,TRUE,7,13b6a5a19b1ad588a9e357d7627e3dfb4ea16f2c,SET_000511,1
+IP,54.69.144.245,2,Amazon Echo Gen2_Our|LG Smart TV_Our,2,amazon|lg,TRUE,20,a3544bb194332d7a00b563285d609d42ecd3c0d9,SET_000512,1
+IP,34.218.86.80,2,Amazon Echo Gen2_Our|LG Smart TV_Our,2,amazon|lg,TRUE,7,4a2bf643b2cb83182dc39ad557deb67e0723b304,SET_000513,1
+IP,34.212.141.131,2,Amazon Echo Gen2_Our|LG Smart TV_Our,2,amazon|lg,TRUE,31,c08c7f9e723a8d0e597a3adfc7461b03e4ad0e9b,SET_000514,1
+IP,35.160.4.172,2,Amazon Echo Gen2_Our|LG Smart TV_Our,2,amazon|lg,TRUE,21,a4316560beb1e0a0d7e728741505218ab3037783,SET_000515,1
+IP,52.46.157.10,2,Amazon Echo Gen2_Our|LG Smart TV_Our,2,amazon|lg,TRUE,3,655728847ed6543c10263ed04b8e79ecd9dc6a01,SET_000516,1
+IP,54.68.14.38,2,Amazon Echo Gen2_Our|LG Smart TV_Our,2,amazon|lg,TRUE,24,ad021d64ef4c860dd2b4a6aacfa061bfddd434d7,SET_000517,1
+IP,172.217.13.226,2,Amazon Echo Gen2_Our|LG Smart TV_Our,2,amazon|lg,TRUE,7,6f0f272c0fa77fce6d421b32c549b0bfe6886c78,SET_000518,1
+IP,172.217.13.66,2,Amazon Echo Gen2_Our|LG Smart TV_Our,2,amazon|lg,TRUE,12,e3579794f12a7ffbe8463e9372ad0da4edc68c0c,SET_000519,1
+IP,35.160.212.227,3,Amazon Echo Gen2_Our|LG Smart TV_Our|LG Smart TV_Our2,2,amazon|lg,TRUE,22,14be8d164c32befc8109a39112b539935777d992,SET_000520,1
+IP,52.33.52.239,2,Amazon Echo Gen2_Our|LG Smart TV_Our,2,amazon|lg,TRUE,17,ac3642b6fd6a46c878e2906a93b708a381fcdd90,SET_000521,1
+IP,54.200.44.244,2,Amazon Echo Gen2_Our|LG Smart TV_Our,2,amazon|lg,TRUE,7,6281aed5da040823e2495703ce70a172b5e1320f,SET_000522,1
+IP,204.85.32.32,2,Amazon Echo Gen2_Our|LG Smart TV_Our2,2,amazon|lg,TRUE,5,515f4d514b392b6fe9eb74d25fbc54de411edfb0,SET_000523,1
+IP,204.85.32.25,2,Amazon Echo Gen2_Our|LG Smart TV_Our2,2,amazon|lg,TRUE,3,3e63e61f553d3428e23c00ebab41acf267e2876c,SET_000524,1
+IP,172.217.164.162,2,Amazon Echo Gen2_Our|LG Smart TV_Our,2,amazon|lg,TRUE,13,cd04c187fefd5788118fda96177aecf53bc4ac45,SET_000525,1
+IP,118.26.252.224,2,Aqara Light_selfdata|Mijia Plug_selfdata,2,aqara|mijia,TRUE,3,d9577c517ee4f2313ffc072a9b52bbae444156a3,SET_000526,1
+IP,54.231.185.20,2,August Doorbell Camera_YT|D-Link Water Sensor_IoT-Sentinel,2,august|d-link,TRUE,2,9c85e82756e8e883164c07764b70470384b55787,SET_000527,1
+IP,54.231.176.228,2,August Doorbell Camera_YT|D-Link Sensor_IoT-Sentinel,2,august|d-link,TRUE,2,4105c522e163a50a9abfbb642bd801ff36d95210,SET_000528,1
+IP,52.84.133.131,2,August Doorbell Camera_YT|Bose Sound Touch10_YT,2,august|bose,TRUE,2,e0ac12b5f3b6931b819c19cacadb53b294be85df,SET_000529,1
+IP,54.231.168.180,2,August Doorbell Camera_YT|D-Link Siren_IoT-Sentinel,2,august|d-link,TRUE,2,24ac4a4cf37822faf0d9c2231845c249ae4722b2,SET_000530,1
+IP,54.231.168.216,2,August Doorbell Camera_YT|D-Link Water Sensor_IoT-Sentinel,2,august|d-link,TRUE,2,a08de0a86de021ea0a29c59d4fcbc7a105302466,SET_000531,1
+IP,54.231.184.216,2,August Doorbell Camera_YT|D-Link Switch_IoT-Sentinel,2,august|d-link,TRUE,4,7ec02c0fefc20d659188c6ce176acb39f1ca1c67,SET_000532,1
+IP,54.231.177.60,2,August Doorbell Camera_YT|D-Link Water Sensor_IoT-Sentinel,2,august|d-link,TRUE,4,09080b1fee463bde5195554584e32382c908334b,SET_000533,1
+IP,52.53.41.7,2,Bosiwo Camera Wired_Mon(uk)|Lefun Camera Wired_Mon(us),2,bosiwo|lefun,TRUE,5,e3c4720ffb2f80de4e401b2d87e9a8900e645618,SET_000534,1
+IP,182.118.46.83,2,Cubetoou Camera_selfdata|Honorxiaotun Camera_selfdata,2,cubetoou|honorxiaotun,TRUE,3,2e9fc434e6134759aa20634bd793931d5f32ed2f,SET_000535,1
+IP,111.48.126.28,2,Cubetoou Camera_selfdata|Honorxiaotun Camera_selfdata,2,cubetoou|honorxiaotun,TRUE,19,07a38b4b0f67c6b884fc219cdc7bccf66d488f8b,SET_000536,1
+IP,116.207.99.5,2,Cubetoou Camera_selfdata|Honorxiaotun Camera_selfdata,2,cubetoou|honorxiaotun,TRUE,16,d3701c10e8a14e816237801d0eb8e86467aa782c,SET_000537,1
+IP,101.43.178.162,2,Cubetoou Camera_selfdata|Honorxiaotun Camera_selfdata,2,cubetoou|honorxiaotun,TRUE,5,2c17f95d79ee49803c33595361166bfb612dfd1c,SET_000538,1
+IP,123.6.106.235,2,Cubetoou Camera_selfdata|Honorxiaotun Camera_selfdata,2,cubetoou|honorxiaotun,TRUE,4,c110e7a8e884464dc3ddd507cbf7d5fcc70a5dec,SET_000539,1
+IP,111.7.106.43,2,Cubetoou Camera_selfdata|Honorxiaotun Camera_selfdata,2,cubetoou|honorxiaotun,TRUE,3,e8253c8881fe4302330c65ca3576a1042299f9ad,SET_000540,1
+IP,50.7.114.59,2,Fos Camera_Our2|Insteon Camera_UNSW,2,foscam|insteon,TRUE,30,a04abfcba35c28313e1b636b2604eb801b0c869a,SET_000541,1
+IP,40.122.162.208,2,Harmon Kardon Invoke_YT|Invoke_Mon(us),2,harman kardon|unknown,TRUE,288,1684b95422ff64954806665cef07ba67c763fa7c,SET_000542,1
+IP,13.107.21.200,2,Harmon Kardon Invoke_YT|Invoke_Mon(us),2,harman kardon|unknown,TRUE,402,8ed3c109cac6b83c390e9a57afc9e752195a35d6,SET_000543,1
+IP,120.232.51.95,2,Govee Sensor_selfdata|Lecheng Camera_selfdata,2,govee|lecheng,TRUE,3,ee450796d8ec3b383a0ee700ad7e9d32287d2da1,SET_000544,1
+IP,13.107.3.128,3,Harmon Kardon Invoke_YT|Invoke_IoTLS|Invoke_Mon(us),2,harman kardon|unknown,TRUE,50,a28afa0ebea11f33e285c57e51c1d3be2c993dcd,SET_000545,2
+IP,212.64.129.40,2,Harmon Kardon Invoke_YT|Invoke_Mon(us),2,harman kardon|unknown,TRUE,31,e4cb967b9dfa360b54d9bbef31b197bbba926ad9,SET_000546,2
+IP,40.68.243.204,2,Harmon Kardon Invoke_YT|Invoke_Mon(us),2,harman kardon|unknown,TRUE,13,3b2752cf4bb469e41f52e8c423c2142e1f04ccc4,SET_000547,2
+IP,40.84.43.40,2,Harmon Kardon Invoke_YT|Invoke_Mon(us),2,harman kardon|unknown,TRUE,39,eaac19a9418ed4468f2543ba53f76811a013339c,SET_000548,2
+IP,23.101.156.198,2,Harmon Kardon Invoke_YT|Invoke_Mon(us),2,harman kardon|unknown,TRUE,8,d49472b60d9d46c0c34cd7c05d24d1a450bca66c,SET_000549,2
+IP,13.92.138.127,2,Harmon Kardon Invoke_YT|Invoke_Mon(us),2,harman kardon|unknown,TRUE,48,6159ac28d2e8afb263de6675e06db3b66973b9a2,SET_000550,1
+IP,42.81.212.159,2,Huawei Sound_selfdata|Lecheng Camera_selfdata,2,huawei|lecheng,TRUE,12,e9482d0aaf679792409a044fd4f6cf575e79b259,SET_000551,1
+IP,42.81.212.158,2,Huawei Sound_selfdata|Lecheng Camera_selfdata,2,huawei|lecheng,TRUE,14,a2bfcb906daddddc92b2e4aaa55eb2218f61fb90,SET_000552,1
+IP,42.81.212.151,2,Huawei Sound_selfdata|Lecheng Camera_selfdata,2,huawei|lecheng,TRUE,4,f128f2b0124e7e298d2ab9a9f20b4a86be54dc07,SET_000553,1
+IP,42.81.212.157,2,Huawei Sound_selfdata|Lecheng Camera_selfdata,2,huawei|lecheng,TRUE,11,8a711b8581dfbf4626da98d41460f13c8b3b222d,SET_000554,1
+IP,113.240.127.18,2,Huawei Camera_selfdata|qianniao_camera,2,huawei|qianniao,TRUE,27,ea9f4c13b815ca0eadd715e044cb23145f33d9f9,SET_000555,1
+IP,183.2.198.133,2,Huawei Camera_selfdata|Lecheng Camera_selfdata,2,huawei|lecheng,TRUE,3,da35081faa188e0ef5647dafb919ad8c235a22ee,SET_000556,1
+IP,39.156.66.14,2,Lenovo Camera_selfdata|Midea Speaker_selfdata,2,lenovo|midea,TRUE,406,e4def6e6113a71a53334cae9db0456be589b1f29,SET_000557,1
+IP,220.181.38.150,2,Lenovo Camera_selfdata|Midea Speaker_selfdata,2,lenovo|midea,TRUE,15,2fde1d7648669cecafea54fba35c8d5123f393f0,SET_000558,1
+IP,49.4.17.106,2,Lecheng Camera_selfdata|huawei_tv,2,huawei|lecheng,TRUE,17,a4f2088e96b05cffb3b57154d549410befb6eea0,SET_000559,1
+IP,49.4.38.205,2,Lecheng Camera_selfdata|huawei_tv,2,huawei|lecheng,TRUE,38,48cf8eba8e5fd351a75dd1798e66e7dae0dc068f,SET_000560,1
+IP,111.202.16.252,2,Lecheng Camera_selfdata|huawei_tv,2,huawei|lecheng,TRUE,212,babc804cdcc73f407a1e41e44bf9308bef099b50,SET_000561,1
+IP,49.4.32.7,2,Lecheng Camera_selfdata|huawei_tv,2,huawei|lecheng,TRUE,3,cbc406a33842e793bfab69c3caf6ede04573be7a,SET_000562,1
+IP,117.78.15.3,2,Lecheng Camera_selfdata|huawei_tv,2,huawei|lecheng,TRUE,12,a40c99ffa18fd6ebbb98ca7e7b4cf118889bb715,SET_000563,1
+IP,111.202.16.57,2,Lecheng Camera_selfdata|huawei_tv,2,huawei|lecheng,TRUE,2,1349522fec972ef21bf95cbd4634c2fa34e45b68,SET_000564,1
+Service,googleapis.l.google.com,6,Google Home Mini_Mon(uk)|Google Home Mini_Mon(us)|Google Home Mini_YT|Google Home_Mon(uk)|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,1444,f2aa5195da3bcb473e621c6764c6ad7cd8b93fe9,SET_000565,1
+Service,play.googleapis.com,2,Google Home Mini3_IoTLS|nVidia Shield_YT,2,google|nvidia,TRUE,4,f21dba85689a10adf19a2f042d346b842743e587,SET_000568,1
+Service,android.l.google.com,4,Google Home Mini_Mon(uk)|Google Home Mini_YT|Google Home_YT|nVidia Shield_YT,2,google|nvidia,TRUE,66,d5b596a7993257f08b075c8481f2e45381e34389,SET_000569,1
+Service,mqtt.wizconnected.cn,2,Philips Light_selfdata|Wiz Light_selfdata,2,philips|wiz,TRUE,15,94e3a0405daba9d93b3bada738e71322ba658046,SET_000571,1
+Service,obs.lz01-br-inet.cn-east-3.myhuaweicloud.com,2,Konka Camera_selfdata|Qiaoan Camera_selfdata,2,konka|qiaoan,TRUE,128,955bf57562d0d8999b19b6d88dc56998d547c959,SET_000576,1
+Service,api.us.xiaoyi.com,2,Roku TV_IoTLS|Yi Camera_Mon(us),2,roku|yi,TRUE,22,7146e16a90ace2128757608473be0ab7d5d554ca,SET_000168,2
+Service,partnerad.l.doubleclick.net,5,Roku TV_Mon(uk)|Roku TV_Mon(us)|Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,425,c3a1122e5cbe6bb529a80544a8f50fa2e113fc63,SET_000577,1
+Service,pagead-googlehosted.l.google.com,4,Roku TV_Mon(us)|Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,316,5caf9e3b81f55217b792a23060eff0c1a723cbfd,SET_000578,1
+Service,api-global.netflix.com,4,Roku TV_Mon(us)|Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,615,772e83c03efdb67bd9450d6375b213d68116a3c5,SET_000579,1
+Service,uiboot.us-west-2.prodaa.netflix.com,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,6,bf1cfdbd155fb92d765a0f7d595a16898744d7af,SET_000581,1
+Service,e7226.g.akamaiedge.net,4,Roku TV_Mon(us)|Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,75,45148e807c3b347f7d0e5c1c643aa0ebd100fc3e,SET_000585,1
+Service,ichnaea.us-west-2.prodaa.netflix.com,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,32,a0cf3b7111a452a190d09122186b56919297d63e,SET_000587,1
+Service,occ-0-162-987.1.nflxso.net,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,55,ca1ca92dcd2a7d676c42e0d56ac38076b27c0fc5,SET_000588,1
+Service,api-global.us-west-2.prodaa.netflix.com,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,91,8b6dfc447c7fafda6825cf833a149cd9d30c60cd,SET_000589,1
+Service,e13252.dscg.akamaiedge.net,2,LG Smart TV_Mon(us)|Roku TV_Mon(us),2,lg|roku,TRUE,4,5b9eaf2de4cf32586e92238d01fd1534e45f34c6,SET_000590,1
+Service,appboot.us-west-2.prodaa.netflix.com,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,20,8d92940d28c19273cae404ffc1c71b5a81a854f9,SET_000591,1
+Service,customerevents.us-west-2.prodaa.netflix.com,2,Roku TV_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,6,f231f3072f375a056957ea3f0067ec4974753748,SET_000592,1
+Service,dualstack.iotmoonraker-u-elb-1bkszq0bvnbyv-1001897703.us-east-1.elb.amazonaws.com,2,Bose Sound Touch10_YT|Roomba_YT,2,bose|roomba,TRUE,21,742a8cc603ab77c16bfba28c5a0ec25875a9986b,SET_000593,1
+Service,bob-dispatch-prod-na.amazon.com,10,Amazon Echo Gen1_Our|Amazon Echo Gen1_Our2|Amazon Echo Gen2_Mon(us)|Amazon Echo Gen2_Our|Amazon Echo Gen3_Mon(us)|Amazon Echo Look_Our|Amazon Echodot3a_IoTLS|Amazon Fire TV_IoTLS|Amazon T-echodot_IoTLS|Samsung Dryer_IoTLS,2,amazon|samsung,TRUE,286,50c93c40c9efe339f29ab9954666987e3ae7a4e3,SET_000596,1
+Service,updates.amazon.com,6,Amazon Echo Gen1_UNSW|Amazon Echo Gen1_YT|Amazon Echo Gen2_Mon(us)|Amazon Fire TV_YT|Amazon T-echodot_IoTLS|Samsung Dryer_IoTLS,2,amazon|samsung,TRUE,27,e1764f7007915a8cbdcbc102b0b8bcb05f9979c4,SET_000597,1
+Service,prod.amcs-tachyon.com,11,Amazon Echo Gen1_Mon(uk)|Amazon Echo Gen1_Mon(us)|Amazon Echo Gen1_Our|Amazon Echo Gen2_Mon(uk)|Amazon Echo Gen2_Mon(us)|Amazon Echo Gen2_Our|Amazon Echo Gen3_Mon(uk)|Amazon Echo Gen3_Mon(us)|Amazon Echodot3a_IoTLS|Amazon T-echodot_IoTLS|Samsung Dryer_IoTLS,2,amazon|samsung,TRUE,44,e02fc4a1d4841f82674275dd94dd7c21101f99ce,SET_000599,1
+Service,ytimg-edge-static.l.google.com,3,LG Smart TV_Mon(us)|Samsung Smart TV_Mon(uk)|Samsung Smart TV_YT,2,lg|samsung,TRUE,33,a5a10713ffe3e0e187924dc45fcba5badad24e44,SET_000601,1
+Service,play.l.google.com,3,Google Home Mini_YT|Google Home_YT|Samsung Smart TV_YT,2,google|samsung,TRUE,23,525f2ec10e459cbe3181042892682ccf328f2359,SET_000602,1
+Service,dart.l.doubleclick.net,2,Amazon Fire TV_Mon(uk)|Samsung Smart TV_YT,2,amazon|samsung,TRUE,11,15284f38fd5d18c55c1545f224a1b375c54b84d1,SET_000603,1
+Service,atv-ext.amazon.com,5,Amazon Echo Gen3_Mon(uk)|Amazon Echo Gen3_Mon(us)|Amazon Fire TV_Mon(us)|Amazon Fire TV_YT|Samsung Smart TV_YT,2,amazon|samsung,TRUE,48,bcb66521f14645b28b96121d623a352ee21f2d54,SET_000604,1
+Service,det-ta-g7g.amazon.com,9,Amazon Echo Gen1_Our|Amazon Echo Gen1_Our2|Amazon Echo Gen2_Our|Amazon Echo Gen3_Mon(uk)|Amazon Echo Gen3_Mon(us)|Amazon Echo Look_Our|Amazon Echo Look_Our2|Amazon Fire TV_YT|Samsung Smart TV_YT,2,amazon|samsung,TRUE,44,899ba895f84e181fc1fe26f26bc5d9c92e59346c,SET_000607,1
+Service,a-0001.a-msedge.net,2,Harmon Kardon Invoke_YT|Samsung Smart TV_YT,2,harman kardon|samsung,TRUE,395,13d722b9fd62c96bf32bb9038a208d6d06504c3a,SET_000608,1
+Service,aidevice.cn-hangzhou.log.aliyuncs.com,2,Tianmao Speaker_selfdata|midea_mirror,2,midea|tianmao,TRUE,65,00b2b843867f67ebab60cf8893d6634a96a6dbe9,SET_000610,1
+Service,cdn.cnbj2.fds.api.mi-img.com.wsglb0.com,2,Xiaobai Camera_selfdata|Xiaomi Camera_Mon(uk),2,xiaobai|xiaomi,TRUE,6,39012645030d700f28e88ada06a7b9f774452ab7,SET_000611,1
+Service,processor.smartcamera.api.io.mi.com,2,Xiaobai Doorbell_selfdata|Xiaomao Camera_selfdata,2,xiaobai|xiaomao,TRUE,11,6c67e1594e8aed084ed8f243c9ba413d48f46921,SET_000613,1
+Service,iot102.music.126.net.w.cdngslb.com,2,Xiaodu Clock_selfdata|xiaomitv_speaker,2,xiaodu|xiaomi,TRUE,16,7a40636dd58ddf244dcb76434333d2a42c33d2b7,SET_000615,1
+Service,xiaomi10.p2psy2.mijia.tech,3,Xiaomao Camera_selfdata|Xiaomi Camera3_selfdata|xiaomitv_speaker,2,xiaomao|xiaomi,TRUE,176,1b9aeb92e92b208d094e7483f2329b86c847b1a5,SET_000439,2
+Service,xiaomi10.p2psy3.mijia.tech,3,Xiaomao Camera_selfdata|Xiaomi Camera3_selfdata|xiaomitv_speaker,2,xiaomao|xiaomi,TRUE,169,ba22a0f70018c1c7a7e98b9213b4b5c9b9191147,SET_000440,2
+Service,music.dsplego-dk.sched.dcloudstc.com,3,Xiaojingyu Clock_selfdata|Xiaomi Sound_selfdata|Xiaomi Speaker_selfdata,2,xiaojingyu|xiaomi,TRUE,48,15e4d4058d129ea15316db6bfd323e17e97bbefe,SET_000616,1
+Service,wisedevice-hilink-drcn.things.dbankcloud.cn,2,Dalen Light_selfdata|Xiaotun Camera_selfdata,2,dalen|xiaotun,TRUE,7,65bc4045fc2805ab63abfe7e33453899aef99718,SET_000617,1
+Service,update-drcn.platform.hicloud.com,2,Dalen Light_selfdata|Xiaotun Camera_selfdata,2,dalen|xiaotun,TRUE,6,e00301cd763bf5e125536f1d6f1ac5bd8d0cfb80,SET_000619,1
+Service,device-messaging-na.amazon.com,10,Amazon Echo Gen1_Our|Amazon Echo Gen1_Our2|Amazon Echo Gen2_Mon(uk)|Amazon Echo Gen2_Our|Amazon Echo Gen3_Mon(us)|Amazon Echo Look_Our|Amazon Fire TV_Mon(uk)|Amazon Fire TV_Mon(us)|Amazon Fire TV_YT|Cloud Camera_Mon(us),2,amazon|unknown,TRUE,50,48eb0341031968ed5e3f184eb5e444e7f9e23436,SET_000620,1
+Service,todo-ta-g7g.amazon.com,11,Amazon Echo Gen1_Our|Amazon Echo Gen1_Our2|Amazon Echo Gen1_UNSW|Amazon Echo Gen1_YT|Amazon Echo Gen2_Mon(uk)|Amazon Echo Gen2_Our|Amazon Echo Gen3_Mon(us)|Amazon Echo Look_Our|Amazon Fire TV_Mon(us)|Amazon Fire TV_YT|Cloud Camera_Mon(us),2,amazon|unknown,TRUE,52,f8ebd50ede54640230bc729afb224138f003ea55,SET_000621,1
+Service,www.meethue.com,3,Amazon Echo Gen1_YT|Google Home Mini_YT|Google Home_YT,2,amazon|google,TRUE,76,9f385f3bcae2c3a17ef50330da0ca32429c7ff59,SET_000489,2
+Service,pipe.cloudapp.aria.akadns.net,2,Harmon Kardon Invoke_YT|Invoke_Mon(us),2,harman kardon|unknown,TRUE,273,5b70599d2421575ea89c8ffbf5bff5175f69120c,SET_000622,1
+Service,root.skype-edf.akadns.net,2,Harmon Kardon Invoke_YT|Invoke_Mon(us),2,harman kardon|unknown,TRUE,35,0bfea327d15afea14ac97d05fc3a1702a7d014ed,SET_000623,1
+Service,s-0001.s-msedge.net,3,Harmon Kardon Invoke_YT|Invoke_IoTLS|Invoke_Mon(us),2,harman kardon|unknown,TRUE,50,a28afa0ebea11f33e285c57e51c1d3be2c993dcd,SET_000545,2
+Service,harman-podium.redbend.com,2,Harmon Kardon Invoke_YT|Invoke_Mon(us),2,harman kardon|unknown,TRUE,31,e4cb967b9dfa360b54d9bbef31b197bbba926ad9,SET_000546,2
+Service,sconsentit911p.cloudapp.net,2,Harmon Kardon Invoke_YT|Invoke_Mon(us),2,harman kardon|unknown,TRUE,13,3b2752cf4bb469e41f52e8c423c2142e1f04ccc4,SET_000547,2
+Service,continuum.dds.microsoft.com.akadns.net,2,Harmon Kardon Invoke_YT|Invoke_Mon(us),2,harman kardon|unknown,TRUE,39,eaac19a9418ed4468f2543ba53f76811a013339c,SET_000548,2
+Service,vs.login.msa.akadns6.net,2,Harmon Kardon Invoke_YT|Invoke_Mon(us),2,harman kardon|unknown,TRUE,7,4112777ee7a560870d965796c05df0f7671d7ed0,SET_000624,1
+Service,dm3p.wns.notify.windows.com.akadns.net,2,Harmon Kardon Invoke_YT|Invoke_Mon(us),2,harman kardon|unknown,TRUE,5,e8d83243446a4b87eda947c42454a66a7fda53a6,SET_000625,1
+Service,skypeecs-prod-use-0.cloudapp.net,2,Harmon Kardon Invoke_YT|Invoke_Mon(us),2,harman kardon|unknown,TRUE,8,d49472b60d9d46c0c34cd7c05d24d1a450bca66c,SET_000549,2
+Service,rps-usea-b.cloudapp.net,2,Harmon Kardon Invoke_YT|Invoke_Mon(us),2,harman kardon|unknown,TRUE,47,1e34bb08ac33bd6df2202074fa41a3dc7be16c23,SET_000626,1
+Service,oauth-login-drcn-platform-dbankcloud-com-drcn.appacc-region.dbankedge.cn,2,Lecheng Camera_selfdata|huawei_tv,2,huawei|lecheng,TRUE,16,ba037887060136716e8bb20437a4022f928ab61e,SET_000627,1
+Service,smarthome.hicloud.com,2,Lecheng Camera_selfdata|huawei_tv,2,huawei|lecheng,TRUE,55,1ddc5747c3060d8e0157aea6bb8ca5aa6f960773,SET_000628,1
+Service,hcdnd.gslb.c.cdnhwc2.com,2,Lecheng Camera_selfdata|huawei_tv,2,huawei|lecheng,TRUE,31,2328db7105f922fc5ac82854a10d128f4ce9ce2d,SET_000629,1
+Service,hcdnd.csfw.c.cdnhwc6.com,2,Lecheng Camera_selfdata|huawei_tv,2,huawei|lecheng,TRUE,17,05804fca5f280b3092023d2718a973a486d9d814,SET_000630,1
+Service,0002-metrics1-data-hicloud-com.geac.dbankedge.cn,2,Lecheng Camera_selfdata|huawei_tv,2,huawei|lecheng,TRUE,214,d9d665ba71d32d3c3c958f365bb9e9af484a0330,SET_000631,1
+Service,hcdnw.hfak.c.cdnhwc2.com,2,Lecheng Camera_selfdata|huawei_tv,2,huawei|lecheng,TRUE,35,48de98efa6f3c4a243c0ab9274f47c52ea58881d,SET_000632,1
+Service,cn-beijing005-v6.edge.dbankedge.cn,2,Lecheng Camera_selfdata|huawei_tv,2,huawei|lecheng,TRUE,4,ee340954c98ef07761aeb5307f11391343e21dbf,SET_000633,1
+Service,obs.lz05-br-inet.cn-south-1.myhuaweicloud.com,2,Lecheng Camera_selfdata|qianniao_camera,2,lecheng|qianniao,TRUE,66,39e18f27f1dacfa5caf169e2d2096af58167eb6c,SET_000634,1
+Infrastructure,nb9621.neu.edu,2,LG Smart TV_Mon(us)|Nest Tstat_Mon(us),2,lg|nest,TRUE,10,fe40c737c8af91f214257795bcd0856732662709,SET_000013,2
+Infrastructure,cache.google.com,2,Samsung Smart TV_YT|nVidia Shield_YT,2,nvidia|samsung,TRUE,20,1d93f143a876c3612f5ac613f6b687b8531b1e5b,SET_000635,1
+Infrastructure,netflix-appliance2.sox.net,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,52,3be21eb2d7773995cf7f42480c0c6b5000e38b25,SET_000189,2
+Infrastructure,netflix-appliance1.sox.net,3,Roku TV_YT|Roku4_YT|Samsung Smart TV_YT,2,roku|samsung,TRUE,53,e35edb6ed60a6ad45e8541454c1707d899523768,SET_000312,2
+Infrastructure,unknown.yahoo.com,2,Amazon Echo Gen2_Our|Samsung Smart TV_YT,2,amazon|samsung,TRUE,4,afef464c71c646af242e43fc2616817a26974579,SET_000637,1
+Infrastructure,109.14.204.221.adsl-pool.sx.cn,2,Xiaojingyu Clock_selfdata|Xiaomi Sound_selfdata,2,xiaojingyu|xiaomi,TRUE,5,fe9187e92f84eff2bf2e9f20323e8af7c89747f1,SET_000443,2
+Infrastructure,dev.smatwebdesign.com,2,Amazon Echo Gen1_YT|Logitech Logi Circle_YT,2,amazon|logitech,TRUE,4,92351c8fec0ea8bfc63adccd733288bf3ebbeefc,SET_000459,2
+Infrastructure,clocka.ntpjs.org,2,Amazon Echo Gen1_YT|Logitech Logi Circle_YT,2,amazon|logitech,TRUE,3,ba4c879b5d6d3cec0e6867453760103abf8da5ab,SET_000460,2
+Infrastructure,ntp.your.org,2,Amazon Echo Gen1_UNSW|Logitech Logi Circle_YT,2,amazon|logitech,TRUE,13,acdd5025dc3a41426b62f7d8cb0782ca88d39caf,SET_000461,2
+Infrastructure,ns2.hsbnv.net,2,Amazon Echo Gen1_YT|Logitech Logi Circle_YT,2,amazon|logitech,TRUE,7,67f23739c1a2dfa8b7193236e60e57246b545967,SET_000462,2
+Infrastructure,tock.usshc.com,2,Amazon Echo Gen1_UNSW|Logitech Logi Circle_YT,2,amazon|logitech,TRUE,3,851825666d1a1b3e5f83a50c75e822c8e0de4b30,SET_000639,1
+Infrastructure,ns2.nuso.cloud,2,Amazon Echo Gen1_YT|Logitech Logi Circle_YT,2,amazon|logitech,TRUE,6,08e9916884f02d6cb33574b727b4f62391bd86b1,SET_000465,2
+Infrastructure,static-96-244-96-19.bltmmd.fios.verizon.net,2,Amazon Echo Gen1_UNSW|Logitech Logi Circle_YT,2,amazon|logitech,TRUE,40,354dd16316652894fa3d601777b2a3a7a9f68cc1,SET_000466,2
+Infrastructure,mirror1.sjc02.svwh.net,2,Amazon Echo Gen1_YT|Logitech Logi Circle_YT,2,amazon|logitech,TRUE,3,99adcbc67c80ecb8b0654e83f79b24d1e3eb7190,SET_000467,2
+Infrastructure,time-a-g.nist.gov,2,Fos Camera_Our2|Logitech Logi Circle_YT,2,foscam|logitech,TRUE,2329,b0d5f751f721eeb37219cd83807a8b679286ed77,SET_000468,2
+Infrastructure,device-messaging-na.amazon.com,8,Amazon Echo Gen1_Our|Amazon Echo Gen1_Our2|Amazon Echo Gen2_Mon(uk)|Amazon Echo Gen2_Our|Amazon Echo Look_Our|Amazon Fire TV_Mon(us)|Amazon Fire TV_YT|Cloud Camera_Mon(us),2,amazon|unknown,TRUE,18,a04d549355f2cbb2fb9da1d4004064f132c2458b,SET_000487,2
+Infrastructure,syn-107-013-184-009.res.spectrum.com,2,Amcrest Camera_Our2|Fos Camera_Our2,2,amcrest|foscam,TRUE,83,a2a2a1267a0981cf19d3f306a83dfed6a887e80f,SET_000492,2
+Infrastructure,star-mini.c10r.facebook.com,2,Amazon Echo Gen2_Our|LG Smart TV_Our,2,amazon|lg,TRUE,3,9508afa6ed3d3e120ea692b237d82e898b5d890e,SET_000507,2
