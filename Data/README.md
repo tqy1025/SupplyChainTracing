@@ -27,5 +27,5 @@ To ensure the reproducibility of our measurements, we utilize seven publicly ava
     *   **Source:** [IoTLS Data Repository](https://github.com/NEU-SNS/IoTLS)
 
 7.  **IoT\_LifeCycle [17]**
-    *   **Description:** Recent (2024) traffic traces covering 77 devices across their entire lifecycle.
+    *   **Description:** Recent (2024) traffic traces covering 72 devices across their entire lifecycle.
     *   **Source:** [Lifecycle-Based-Traffic-Dataset Repository](https://github.com/NKUHack4FGroup/Lifecycle-Based-Traffic-Dataset)
