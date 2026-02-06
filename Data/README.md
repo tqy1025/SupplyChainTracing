@@ -12,7 +12,7 @@ To ensure the reproducibility of our measurements, we utilize seven publicly ava
 
 3.  **Mon(IoT)r [27]** (Northeastern University)
     *   **Description:** Extensive measurement of information exposure from 81 devices in the USA and UK.
-    *   **Source:** [Mon(IoT)r Lab Data Portal](https://moniotrlab.ccis.neu.edu/imc19/)
+    *   **Source:** [Mon(IoT)r Lab Data Portal](https://github.com/NEU-SNS/intl-iot)
 
 4.  **YourThings [12]** (Georgia Institute of Technology)
     *   **Description:** Security evaluation of 45 home-based IoT deployments.
