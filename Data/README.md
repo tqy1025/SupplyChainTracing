@@ -24,7 +24,7 @@ To ensure the reproducibility of our measurements, we utilize seven publicly ava
 
 6.  **IoTLS [25]** (Northeastern University)
     *   **Description:** A large-scale study of TLS usage in 40 consumer IoT devices over 2 years.
-    *   **Source:** [IoTLS Data Repository](https://iotls.github.io/)
+    *   **Source:** [IoTLS Data Repository](https://github.com/NEU-SNS/IoTLS)
 
 7.  **IoT\_LifeCycle [17]** (Chinese Academy of Sciences / Tsinghua)
     *   **Description:** Recent (2024) traffic traces covering 72 devices across their entire lifecycle.
