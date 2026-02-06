@@ -30,9 +30,9 @@ GENERIC_FILTER_LAYERS = {"Service", "Infrastructure"}
 COUNT_UNKNOWN_VENDOR_AS_VENDOR = True   # if False, 'unknown' won't contribute to vendor-set size
 
 # Output files
-OUTPUT_TARGETLEVEL_CSV = os.path.join(OUT_DIR, "Targets_Implicit_DedupByFlowUIDHash.csv")
+OUTPUT_TARGETLEVEL_CSV = os.path.join(OUT_DIR, "Targets_Implicit_DedupByFlow.csv")
 OUTPUT_PKL = os.path.join(OUT_DIR, "Intersections_Implicit.pkl")
-OUTPUT_STATS_CSV = os.path.join(OUT_DIR, "Intersections_Stats_DedupByFlowUIDHash.csv")
+OUTPUT_STATS_CSV = os.path.join(OUT_DIR, "Intersections_Stats_DedupByFlow.csv")
 
 
 # Column bindings (expect these columns exist; will fill if missing)
@@ -528,3 +528,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
