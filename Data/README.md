@@ -8,7 +8,7 @@ To ensure the reproducibility of our measurements, we utilize seven publicly ava
 
 2.  **Our [11/8]** (Authors' Dataset)
     *   **Description:** Controlled traffic collected from 8 common IoT devices in the USA.
-    *   **Source:** [GitHub - das-lab/iot-fingerprinting](https://github.com/das-lab/iot-fingerprinting) (or your specific repository link)
+    *   **Source:** [GitHub - dilawer11/iot-device-fingerprinting](https://github.com/dilawer11/iot-device-fingerprinting)
 
 3.  **Mon(IoT)r [27]** (Northeastern University)
     *   **Description:** Extensive measurement of information exposure from 81 devices in the USA and UK.
