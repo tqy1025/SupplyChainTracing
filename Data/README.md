@@ -4,7 +4,7 @@ To ensure the reproducibility of our measurements, we utilize seven publicly ava
 
 1.  **UNSW [30]** (University of New South Wales)
     *   **Description:** Long-term traffic traces from 28 IoT devices.
-    *   **Source:** [UNSW IoT Analytics Platform](https://iotanalytics.unsw.edu.au/iot-traces)
+    *   **Source:** [UNSW IoT Analytics Platform](https://iotanalytics.unsw.edu.au/unsw-iotraffic.html)
 
 2.  **Our [11/8]** (Authors' Dataset)
     *   **Description:** Controlled traffic collected from 8 common IoT devices in the USA.
